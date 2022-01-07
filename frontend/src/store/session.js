@@ -1,8 +1,10 @@
 import { csrfFetch } from './csrf';
 
+//CONSTANTS for action creators
 const SET_USER = 'session/setUser';
 const REMOVE_USER = 'session/removeUser';
 
+//Action Creators
 const setUser = (user) => {
   return {
     type: SET_USER,
@@ -16,6 +18,7 @@ const removeUser = () => {
   };
 };
 
+//Thunk Action Creator
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
   const response = await csrfFetch('/api/session', {
