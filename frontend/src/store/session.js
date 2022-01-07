@@ -18,7 +18,7 @@ const removeUser = () => {
   };
 };
 
-//Thunk Action Creator - Create Session User
+//Thunk Action Creator - POST Login Action
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
   const response = await csrfFetch('/api/session', {
@@ -36,6 +36,22 @@ export const login = (user) => async (dispatch) => {
 //Think Action Creator - GET Request to Restore User
 export const restoreUser = () => async dispatch => {
   const response = await csrfFetch('/api/session');
+  const data = await response.json();
+  dispatch(setUser(data.user));
+  return response;
+};
+
+//Thunk Action Creator - POST SignUp Action
+export const signup = (user) => async (dispatch) => {
+  const { username, email, password } = user;
+  const response = await csrfFetch("/api/users", {
+    method: "POST",
+    body: JSON.stringify({
+      username,
+      email,
+      password,
+    }),
+  });
   const data = await response.json();
   dispatch(setUser(data.user));
   return response;
