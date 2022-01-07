@@ -36,7 +36,7 @@ function LoginFormPage() {
                 <label className='loginContainer'>
                     {/* Welcome to Airbnb */}
                     <input
-                        className='loginField'
+                        className='loginInputField'
                         type="text"
                         onChange={(e) => setCredential(e.target.value)}
                         value={credential}
@@ -46,7 +46,7 @@ function LoginFormPage() {
                 </label>
                 <label className='loginContainer'>
                     <input
-                        className='loginField'
+                        className='loginInputField'
                         type="text"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}

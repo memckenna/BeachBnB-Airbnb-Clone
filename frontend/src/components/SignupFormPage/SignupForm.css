@@ -1,32 +1,19 @@
-form {
+
+.signupContainer {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
 }
 
-.loginForm {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.signupForm {
     border: 1px solid gray;
+    padding: 20px 30px 20px 30px;
     border-radius: 10px;
-    padding: 20px, 20px;
-    width: 70%;
-    font-family: Arial, Helvetica, sans-serif;
+
 }
 
-.loginHeader {
-    text-align: center;
-    padding: 5px, 5px;
-    /* border-bottom: 1px, solid, rgb(46, 39, 39); */
-}
-
-.loginContainer {
-    display: flex;
-    justify-content: center;
-}
-
-.loginInputField {
+.signUpInputField {
     display: block;
     box-sizing: border-box;
     border-radius: 5px;
@@ -34,13 +21,10 @@ form {
     line-height: 20px;
     font-weight: 500;
     margin: 26px 12px 10px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    padding-left: 24px;
-    padding-right: 24px
+    padding: 14px 24px 14px 24px;
 }
 
-.loginButton {
+.signupButton {
     display: block;
     /* background-size: 200px 200px; */
     box-sizing: border-box;
@@ -51,8 +35,5 @@ form {
     line-height: 20px;
     font-weight: 500;
     background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% );
-    padding-top: 14px;
-    padding-bottom: 14px;
-    padding-left: 24px;
-    padding-right: 24px
+    padding: 14px 24px 14px 24px;
 }
