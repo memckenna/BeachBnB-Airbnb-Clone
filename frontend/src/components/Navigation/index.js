@@ -4,31 +4,35 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 
-function Navigation({ isLoaded }){
-  const sessionUser = useSelector(state => state.session.user);
+function Navigation({ isLoaded }) {
+    const sessionUser = useSelector(state => state.session.user);
 
-  let sessionLinks;
-  if (sessionUser) {
-    sessionLinks = (
-      <ProfileButton user={sessionUser} />
-    );
-  } else {
-    sessionLinks = (
-      <>
-        <NavLink to="/login">Log In</NavLink>
-        <NavLink to="/signup">Sign Up</NavLink>
-      </>
-    );
-  }
+    let sessionLinks;
+    if (sessionUser) {
+        sessionLinks = (
+            <ProfileButton user={sessionUser} />
+        );
+    } else {
+        sessionLinks = (
+            <>
+                <NavLink activeClassName='active' to="/login">Log In</NavLink>
+                <NavLink activeClassName='active' to="/signup">Sign Up</NavLink>
+            </>
+        );
+    }
 
-  return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {isLoaded && sessionLinks}
-      </li>
-    </ul>
-  );
+    return (
+        <nav>
+            <ul>
+                <li className='nav-links'>
+                    <NavLink activeClassName='active' exact to="/">
+                        <img className='logo' src='/images/airbnb-logo-white-bg.png' alt="Airbnb logo" />
+                    </NavLink>
+                    {isLoaded && sessionLinks}
+                </li>
+            </ul>
+        </nav>
+    );
 }
 
 export default Navigation;
