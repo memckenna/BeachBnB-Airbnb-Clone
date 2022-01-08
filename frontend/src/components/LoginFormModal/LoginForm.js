@@ -7,14 +7,9 @@ import './LoginForm.css';
 
 function LoginForm() {
     const dispatch = useDispatch();
-    // const sessionUser = useSelector(state => state.session.user);
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
-
-    // if (sessionUser) return (
-    //     <Redirect to="/" />
-    // );
 
     const handleSubmit = (e) => {
         e.preventDefault();
