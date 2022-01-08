@@ -6,16 +6,15 @@ form {
     width: 400px;
     height: 400px;
     border-top: 1px solid lightgray;
-
+    /* margin: 1% auto; */
 }
 
-.loginForm {
+.login-form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     border-radius: 10px;
     padding: 20px, 20px;
-    /* width: 70%; */
     font-family: Arial, Helvetica, sans-serif;
 
 }
@@ -24,7 +23,8 @@ form {
     text-align: center;
     padding: 5px, 5px;
     font-size: 16px;
-
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .welcome-header {
@@ -38,6 +38,7 @@ form {
 .login-input-container {
     display: flex;
     justify-content: center;
+
 }
 
 .login-input-field {
@@ -51,18 +52,18 @@ form {
     padding: 14px 24px 14px 24px;
     width: 100%;
     max-width: 375px;
+    border: 1px solid rgb(161, 157, 157);
 }
 
-.loginButton {
+.login-button {
     display: block;
-    /* background-size: 200px 200px; */
     box-sizing: border-box;
+    border: none;
     border-radius: 5px;
     text-align: center;
     font-size: 16px;
     color: white;
     line-height: 20px;
-    font-weight: 500;
     background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% );
     margin: 1em auto 1em;
     padding: 14px 24px 14px 24px;

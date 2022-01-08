@@ -21,7 +21,7 @@ function LoginForm() {
     }
 
     return (
-        <div className='loginForm'>
+        <div className='login-form'>
             <h1 className='login-header'>Log in or sign up</h1>
             <form onSubmit={handleSubmit}>
                 <ul>
@@ -49,7 +49,7 @@ function LoginForm() {
                         required
                     />
                 </label>
-                <button className='loginButton' type="submit">Log In</button>
+                <button className='login-button' type="submit">Log In</button>
             </form>
         </div>
     );
