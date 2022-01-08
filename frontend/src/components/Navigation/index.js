@@ -23,7 +23,7 @@ function Navigation({ isLoaded }) {
     }
 
     return (
-        <nav>
+        <nav className='nav-bar'>
             <ul>
                 <li className='nav-links'>
                     <NavLink activeClassName='active' exact to="/">

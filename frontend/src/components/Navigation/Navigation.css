@@ -1,16 +1,26 @@
 
-nav {
-    padding-left: 40px;
-    padding-right: 80px;
-    background-color: lightgreen;
-    height: 100%;
-    /* height: 80px; */
+.nav-bar {
+    display: block;
+    height: 80px;
+    /* position: fixed; */
+    /* line-height: 50px; */
+    width: 100%;
+    background-color: green;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
 
+.nav-bar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+
 .active {
     color:red;
+
 }
 
 
@@ -19,12 +29,26 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: pink;
-    padding: 10px 10px 10px 10px;
-
+    padding: 10px 80px 10px 80px;
 }
 
 .logo {
-    width: 70px;
+    /* width: 70px; */
+    width: 100px;
+    height: 70px;
+    /* padding-left: 80px; */
+    /* padding-left: 40px; when minimized */
+}
+
+.profile {
+    /* height: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: auto; */
+    /* position: relative; */
 }
 
 
@@ -33,17 +57,42 @@ nav {
     text-align: end;
     border-radius: 30px;
     font-size: 35px;
-    border: 2px solid lightgray;
-    /* background-color: gray; */
-    color: lightgray;
+    /* border: 2px solid lightgray; */
+    background-color: white;
+    color: gray;
     /* justify-content: flex-end; */
+    border: none;
+    cursor: pointer;
 
 }
+
+/* .profile-button:hover {
+
+} */
 
 .profile-dropdown-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding-right: 80px;
+
+    position: relative;
+
+}
+
+.profile-dropdown-container ul {
+    position: absolute;
+    margin-top: 55px;
+    width: 200px;
+    height: 200px;
+
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: left;
+    list-style: none;
+    cursor: pointer;
+
 }
 
 .profile-dropdown {
@@ -52,16 +101,20 @@ nav {
     grid-template-rows: repeat(3, auto);
     grid-gap: 40px;
     list-style-type:none;
-    border: 1px solid gray;
+    border: 1px solid lightgrey;
     border-radius: 10px;
-    /* position: relative; */
     background-color: white;
     box-sizing: border-box;
+    overflow: visible;
+    position: absolute;
+    left: auto;
+    right: 70px;
+
 }
+
+
 
 .profile-links {
     padding: 10px 5px 10px 5px;
 
 }
-
-
