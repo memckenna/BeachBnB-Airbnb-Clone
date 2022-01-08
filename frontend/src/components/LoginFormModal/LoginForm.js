@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import * as sessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Redirect } from 'react-router-dom';
 
 import './LoginForm.css';
 
@@ -23,15 +22,16 @@ function LoginForm() {
 
     return (
         <div className='loginForm'>
-            <h1 className='loginHeader'>Login Page</h1>
+            <h1 className='login-header'>Log in or sign up</h1>
             <form onSubmit={handleSubmit}>
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
-                <label className='loginContainer'>
+                <h2 className='welcome-header'>Welcome to Airbnb</h2>
+                <label className='login-input-container'>
                     {/* Welcome to Airbnb */}
                     <input
-                        className='loginInputField'
+                        className='login-input-field'
                         type="text"
                         onChange={(e) => setCredential(e.target.value)}
                         value={credential}
@@ -39,9 +39,9 @@ function LoginForm() {
                         required
                     />
                 </label>
-                <label className='loginContainer'>
+                <label className='login-input-container'>
                     <input
-                        className='loginInputField'
+                        className='login-input-field'
                         type="text"
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}
