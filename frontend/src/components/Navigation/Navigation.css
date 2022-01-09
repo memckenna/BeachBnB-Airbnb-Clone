@@ -1,6 +1,15 @@
-html {
-    height: 100%;
+#header {
+    position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    /* background-color: #cc0000; */
+    color: white;
+    /* font-family: 'Exo 2', sans-serif; */
+    padding: 1em;
+
 }
 
 .nav-bar {
@@ -10,8 +19,11 @@ html {
     /* line-height: 50px; */
     width: 100%;
     max-height: 80px;
+    min-height: 80px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
+    overflow: hidden;
+    /* position: fixed; */
 }
 
 .nav-bar ul {

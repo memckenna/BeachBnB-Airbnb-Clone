@@ -1,0 +1,85 @@
+html {
+    height: 100%;
+    width: 100%;
+    background-color: #EDF6F9;
+    overflow: auto;
+}
+
+#splash-page {
+    box-sizing: border-box;
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 40px;
+    overflow-wrap: auto;
+
+}
+
+.splash-page-image {
+    /* border: 1px solid black; */
+
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1280px;
+    height: 568px;
+
+}
+
+#splash-img-text {
+    position: absolute;
+    top: 100px;
+    left: 330px;
+    padding: 5px;
+
+    color: white;
+    /* border: 2px solid red; */
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    font-size: 43px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 43px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 2px gray;
+}
+
+
+.trip-section-text {
+    font-size: 38px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 43px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 50px 60px;
+    position: relative;
+    top: 100px;
+    padding: 40px 20px;
+}
+
+.trip-inspo-cards {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 30px;
+}
+
+.trip-inspo-cards li {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+
+.trip-inspo-cards img {
+    border-radius: 15px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
