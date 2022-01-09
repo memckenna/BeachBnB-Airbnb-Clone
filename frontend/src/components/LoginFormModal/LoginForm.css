@@ -1,3 +1,12 @@
+#log-in-but {
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: #006D77;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+}
+
 .login-form {
     display: flex;
     justify-content: center;
@@ -22,8 +31,6 @@
     border-radius: 12px;
     padding: 20px, 20px;
     font-family: Arial, Helvetica, sans-serif;
-
-
 }
 
 
@@ -67,6 +74,7 @@ label {
     cursor: default;
 }
 
+
 .login-button {
     display: block;
     box-sizing: border-box;
@@ -77,7 +85,8 @@ label {
     font-size: 16px;
     color: white;
     line-height: 20px;
-    background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% );
+    /* background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% ); */
+    background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
     margin: 1em auto 1em;
     padding: 14px 24px 14px 24px;
     width: 100%;

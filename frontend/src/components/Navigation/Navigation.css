@@ -24,9 +24,11 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: pink;
+    background-color: #FFDDD2;
     padding: 10px 80px 10px 80px;
     max-height: 80px;
+
+    /* box-shadow: rgb(0 0 0 / 10%) 0px 8px 28px; */
 }
 
 .logo {
@@ -53,7 +55,7 @@ html {
     display: block;
     text-align: end;
     border-radius: 30px;
-    font-size: 35px;
+    font-size: 40px;
     /* border: 2px solid lightgray; */
     background-color: white;
     color: gray;
