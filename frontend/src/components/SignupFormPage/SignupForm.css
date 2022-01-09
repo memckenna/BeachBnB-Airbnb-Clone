@@ -8,6 +8,11 @@
     margin: 10px 10px;
 }
 
+.errors {
+    margin-top: 100px;
+    list-style: none;
+}
+
 .signup-form {
     display: flex;
     justify-content: center;
