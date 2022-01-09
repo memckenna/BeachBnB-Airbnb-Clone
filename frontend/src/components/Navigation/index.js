@@ -19,21 +19,21 @@ function Navigation({ isLoaded }) {
             <>
                 <LoginFormModal />
                 <SignupFormModal />
-                {/* <NavLink activeClassName='active' to="/signup">Sign Up</NavLink> */}
             </>
         );
     }
 
     return (
         <nav className='nav-bar'>
-            <ul>
-                <li className='nav-links'>
-                    <NavLink activeClassName='active' exact to="/">
-                        <img className='logo' src='/images/beachbnb-logo.png' alt="BeachBnB logo" />
-                    </NavLink>
-                    {isLoaded && sessionLinks}
-                </li>
-            </ul>
+                <ul>
+                    <li className='nav-links'>
+                        <NavLink activeClassName='active' exact to="/">
+                            <img className='logo' src='/images/beachbnb-logo.png' alt="BeachBnB logo" />
+                        </NavLink>
+                        <li>{isLoaded && sessionLinks}</li>
+                        {/* {isLoaded && sessionLinks} */}
+                    </li>
+                </ul>
         </nav>
     );
 }
