@@ -1,39 +1,97 @@
+#sign-up-but {
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: #006D77;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+    margin: 10px 10px;
+}
 
-.signupContainer {
+.signup-form {
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    width: 568px;
+    height: 530px;
+    border-top: 1px solid lightgray;
+    /* margin: 1% auto; */
+
+    position: relative;
+    box-shadow: rgb(0 0 0 / 10%) 0px 8px 28px;
+    flex: 1 1 auto;
+    overflow-y: auto;
 }
 
-.signupForm {
-    border: 1px solid gray;
-    padding: 20px 30px 20px 30px;
-    border-radius: 10px;
+.signup-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 20px, 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.signup-header {
+    text-align: center;
+    padding: 5px, 5px;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
 
-.signUpInputField {
-    display: block;
+.welcome-header {
+    text-align: left;
+    padding-left: 15px;
+    font-weight:normal;
+    font-size: 22px;
+}
+
+.signup-input-field {
+    /* display: block; */
+    display: flex;
     box-sizing: border-box;
     border-radius: 5px;
     font-size: 16px;
     line-height: 20px;
     font-weight: 500;
-    margin: 26px 12px 10px;
+    margin: 1em auto 1em;
     padding: 14px 24px 14px 24px;
+    width: 100%;
+    max-width: 520px;
+    border: 1px solid rgb(161, 157, 157);
+}
+
+label {
+    cursor: default;
+}
+
+.text {
+    font-size: 12px;
+    font-weight: lighter;
+    color: gray;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 12px;
 }
 
 .signupButton {
     display: block;
-    /* background-size: 200px 200px; */
     box-sizing: border-box;
-    border-radius: 5px;
+    border: none;
+    border-radius: 8px;
     text-align: center;
+    align-self: center;
     font-size: 16px;
     color: white;
     line-height: 20px;
-    font-weight: 500;
-    background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% );
+    /* background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% ); */
+    background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
     padding: 14px 24px 14px 24px;
+    width: 100%;
+    max-width: 520px;
+    margin-bottom: 20px;
+
 }

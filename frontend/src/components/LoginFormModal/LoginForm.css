@@ -1,23 +1,38 @@
-form {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    width: 400px;
-    height: 400px;
-    border-top: 1px solid lightgray;
-    /* margin: 1% auto; */
+#log-in-but {
+    padding: 5px 10px 5px 10px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: #006D77;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
 }
 
 .login-form {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-radius: 10px;
-    padding: 20px, 20px;
-    font-family: Arial, Helvetica, sans-serif;
+
+    width: 568px;
+    height: 500px;
+    border-top: 1px solid lightgray;
+    /* margin: 1% auto; */
+
+    position: relative;
+    box-shadow: rgb(0 0 0 / 10%) 0px 8px 28px;
+    flex: 1 1 auto;
+    overflow-y: auto;
 
 }
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 20px, 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 
 .login-header {
     text-align: center;
@@ -32,17 +47,17 @@ form {
     padding-left: 15px;
     font-weight:normal;
     font-size: 22px;
-
 }
 
 .login-input-container {
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: center; */
 
 }
 
 .login-input-field {
-    display: block;
+    /* display: block; */
+    display: flex;
     box-sizing: border-box;
     border-radius: 5px;
     font-size: 16px;
@@ -51,22 +66,30 @@ form {
     margin: 1em auto 1em;
     padding: 14px 24px 14px 24px;
     width: 100%;
-    max-width: 375px;
+    max-width: 520px;
     border: 1px solid rgb(161, 157, 157);
 }
+
+label {
+    cursor: default;
+}
+
 
 .login-button {
     display: block;
     box-sizing: border-box;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     text-align: center;
+    align-self: center;
     font-size: 16px;
     color: white;
     line-height: 20px;
-    background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% );
+    /* background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% ); */
+    background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
     margin: 1em auto 1em;
     padding: 14px 24px 14px 24px;
     width: 100%;
-    max-width: 375px;
+    max-width: 520px;
+    margin-bottom: 20px;
 }
