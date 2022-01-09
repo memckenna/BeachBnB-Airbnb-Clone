@@ -21,15 +21,14 @@ function LoginForm() {
     }
 
     return (
-        <div className='login-form'>
+        <div className='login-container'>
             <h1 className='login-header'>Log in or sign up</h1>
-            <form onSubmit={handleSubmit}>
+            <form className='login-form' onSubmit={handleSubmit}>
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
                 </ul>
-                <h2 className='welcome-header'>Welcome to Airbnb</h2>
+                <h2 className='welcome-header'>Welcome to BeachBnB</h2>
                 <label className='login-input-container'>
-                    {/* Welcome to Airbnb */}
                     <input
                         className='login-input-field'
                         type="text"
