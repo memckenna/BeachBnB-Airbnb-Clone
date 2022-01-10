@@ -36,6 +36,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #FFDDD2;
+    /* background-color: #83C5BE; */
     padding: 10px 80px 10px 80px;
     max-height: 80px;
 
@@ -85,7 +86,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding-right: 80px;
-    position: relative;
+    /* position: relative; */
 
 }
 
@@ -124,6 +125,7 @@
 
 .profile-links {
     padding: 10px 5px 10px 5px;
+    color: black;
 
 }
 

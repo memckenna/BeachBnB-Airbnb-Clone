@@ -32,11 +32,8 @@ html {
 #splash-img-text {
     position: absolute;
     top: 130px;
-    left: 330px;
     padding: 5px;
-
     color: white;
-    /* border: 2px solid red; */
 
     display: flex;
     justify-content: center;
@@ -44,25 +41,24 @@ html {
 
     font-size: 43px;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     line-height: 43px;
     font-family: Arial, Helvetica, sans-serif;
     text-shadow: 1px 1px 2px gray;
 }
 
-.host-button {
+.flexible-button {
     position: absolute;
     display: flex;
     justify-content: center;
     align-self: center;
-    top: 230px;
+    top: 220px;
 
-    padding: 14px 18px 14px 18px;
+    padding: 14px 22px 14px 22px;
     font-size: 16px;
     border-radius: 23px;
     border: none;
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
-
 }
 
 
@@ -87,17 +83,13 @@ html {
     padding-top: 40px;
     padding-bottom: 40px;
     padding-right: 30px;
-
-
     /* overflow-wrap: auto; */
-
 }
 
 .trip-inspo-cards li {
     display: flex;
     flex-direction: column;
     margin: 0 15px;
-
 }
 
 .trip-inspo-cards img {
@@ -113,7 +105,6 @@ html {
 }
 
 .image-content {
-    /* border: 1px solid red; */
     padding: 50px 10px 70px 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -141,4 +132,56 @@ html {
 
 #trip-img-4 {
     background-color: #E29578;
+}
+
+.hosting-section {
+    box-sizing: border-box;
+    position: relative;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 40px;
+    overflow-wrap: auto;
+}
+
+.hosting-image {
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1280px;
+    height: 568px;
+    box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
+}
+
+.host-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    top: 230px;
+
+    padding: 14px 18px 14px 18px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: none;
+    box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
+}
+
+.hosting-text {
+    position: absolute;
+    top: 130px;
+    padding: 5px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    font-size: 43px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 43px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 2px gray;
 }
