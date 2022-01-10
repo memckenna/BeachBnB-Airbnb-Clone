@@ -10,7 +10,7 @@ html {
     position: relative;
     top: 100px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 50px 40px;
@@ -31,7 +31,7 @@ html {
 
 #splash-img-text {
     position: absolute;
-    top: 100px;
+    top: 130px;
     left: 330px;
     padding: 5px;
 
@@ -50,6 +50,20 @@ html {
     text-shadow: 1px 1px 2px gray;
 }
 
+.host-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    top: 230px;
+
+    padding: 12px 12px 12px 12px;
+    font-size: 16px;
+    border-radius: 19px;
+    border: none;
+    box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
+    
+}
 
 .trip-section-text {
     font-size: 38px;

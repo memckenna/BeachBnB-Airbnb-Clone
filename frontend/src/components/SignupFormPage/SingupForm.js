@@ -31,7 +31,6 @@ const SignupForm = () => {
     };
 
     return (
-
         <div>
             <div className="signup-container">
                 <h1 className='signup-header'>Log in or sign up</h1>

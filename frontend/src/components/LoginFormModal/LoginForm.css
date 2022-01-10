@@ -1,4 +1,4 @@
-#log-in-but {
+#log-in-nav-button {
     padding: 5px 10px 5px 10px;
     border-radius: 8px;
     border: 1px solid lightgrey;
@@ -92,4 +92,5 @@ label {
     width: 100%;
     max-width: 520px;
     margin-bottom: 20px;
+
 }
