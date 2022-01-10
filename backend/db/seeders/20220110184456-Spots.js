@@ -10,7 +10,7 @@ module.exports = {
       */
    return queryInterface.bulkInsert('Spots', [
      {
-       userId: 1,
+       userId: 5,
        address: "1234 Cozy Cottage Lane",
        city: "Panama City Beach",
        state: "Florida",
@@ -22,7 +22,7 @@ module.exports = {
        updatedAt: new Date()
      },
      {
-      userId: 1,
+      userId: 6,
       address: "2345 Beachfront Blvd",
       city: "Edisto Beach",
       state: "South Carolina",
@@ -34,7 +34,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      userId: 1,
+      userId: 7,
       address: "12 Summer Islands Lane",
       city: "Kiawah Island",
       state: "South Carolina",
@@ -46,7 +46,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      userId: 1,
+      userId: 5,
       address: "98 Cane Cottage Lane",
       city: "Ponte Vedra Beach",
       state: "Florida",
@@ -58,7 +58,7 @@ module.exports = {
       updatedAt: new Date()
     },
     {
-      userId: 1,
+      userId: 6,
       address: "433 FontaineBleau Street, Unit 1212",
       city: "Miami Beach",
       state: "Florida",
