@@ -25,6 +25,7 @@ html {
     width: 100%;
     max-width: 1280px;
     height: 568px;
+    box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
 
 }
 
@@ -70,16 +71,58 @@ html {
     padding-top: 40px;
     padding-bottom: 40px;
     padding-right: 30px;
+
+
+    /* overflow-wrap: auto; */
+
 }
 
 .trip-inspo-cards li {
     display: flex;
     flex-direction: column;
     margin: 0 15px;
+
 }
 
 .trip-inspo-cards img {
-    border-radius: 15px;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
+    /* border-radius: 15px; */
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    max-height: 200px;
+}
+
+.image-content {
+    /* border: 1px solid red; */
+    padding: 50px 10px 70px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    width: 100%;
+    max-width: 280px;
+    height: 100%;
+    max-height: 200px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
+}
+
+#trip-img-1 {
+    background-color: #006D77;
+}
+
+#trip-img-2 {
+    background-color: #83c5BE;
+}
+
+#trip-img-3 {
+    background-color: #FFDDD2;
+}
+
+#trip-img-4 {
+    background-color: #E29578;
 }
