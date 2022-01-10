@@ -1,6 +1,7 @@
 import React from 'react';
 import './HomePage.css'
 import TripInspiration from './TripInspiration';
+import BecomeAHost from './BecomeAHost';
 
 
 const SplashPage = () => {
@@ -9,11 +10,14 @@ const SplashPage = () => {
         <div>
             <div id='splash-page'>
                 <img className='splash-page-image' src='images/HomePageImages/photo-1615571022219-eb45cf7faa9d.jpeg' alt='Beach House'></img>
-                <div id='splash-img-text'>Looking to share your beach? Perfect.</div>
-                <button className='host-button' >Become a Host</button>
+                <div id='splash-img-text'>Not sure where to beach? Perfect.</div>
+                <button className='host-button' >I'm Flexible</button>
             </div>
             <div>
                 <TripInspiration />
+            </div>
+            <div>
+                <BecomeAHost />
             </div>
         </div>
     )

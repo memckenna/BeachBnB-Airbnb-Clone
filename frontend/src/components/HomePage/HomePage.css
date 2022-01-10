@@ -57,13 +57,15 @@ html {
     align-self: center;
     top: 230px;
 
-    padding: 12px 12px 12px 12px;
+    padding: 14px 18px 14px 18px;
     font-size: 16px;
-    border-radius: 19px;
+    border-radius: 23px;
     border: none;
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
-    
+
 }
+
+
 
 .trip-section-text {
     font-size: 38px;
