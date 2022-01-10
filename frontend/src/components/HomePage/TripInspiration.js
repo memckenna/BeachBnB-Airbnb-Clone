@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const TripInspiration = () => {
     return (
-        <div>
+        <div className="trip-inspo-container">
             <h2 className="trip-section-text">Inspiration for your next beach getaway</h2>
             <ul className="trip-inspo-cards">
                 <li>

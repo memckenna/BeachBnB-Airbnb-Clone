@@ -7,8 +7,7 @@
 
     /* background-color: #cc0000; */
     color: white;
-    /* font-family: 'Exo 2', sans-serif; */
-    padding: 1em;
+    /* padding: 1em; */
 
 }
 
@@ -37,6 +36,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #FFDDD2;
+    /* background-color: #83C5BE; */
     padding: 10px 80px 10px 80px;
     max-height: 80px;
 
@@ -51,16 +51,16 @@
 }
 
 
-.profile {
-    /* height: 10px;
+/* .profile {
+    height: 10px;
     background-color: white;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 80%;
-    margin: auto; */
-    /* position: relative; */
-}
+    margin: auto;
+    position: relative;
+} */
 
 
 .profile-button {
@@ -86,7 +86,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding-right: 80px;
-    position: relative;
+    /* position: relative; */
 
 }
 
@@ -125,6 +125,7 @@
 
 .profile-links {
     padding: 10px 5px 10px 5px;
+    color: black;
 
 }
 

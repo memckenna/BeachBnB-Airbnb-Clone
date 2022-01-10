@@ -1,6 +1,6 @@
 #modal {
     position: fixed;
-    top: 0;
+    top: 70px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -23,6 +23,6 @@
     position: absolute;
     background-color: white;
     border-radius: 11px;
-    
+
 
 }
