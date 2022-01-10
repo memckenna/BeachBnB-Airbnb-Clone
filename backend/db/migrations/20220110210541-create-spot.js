@@ -9,28 +9,37 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: { model: 'Users' }
       },
       address: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(256),
+        allowNull: false,
       },
       city: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
+        allowNull: false,
       },
       state: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
+        allowNull: false,
       },
       country: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(100),
+        allowNull: false,
       },
       zipcode: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(256),
+        allowNull: false,
       },
       price: {
-        type: Sequelize.NUMERIC
+        type: Sequelize.NUMERIC(10,2),
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
