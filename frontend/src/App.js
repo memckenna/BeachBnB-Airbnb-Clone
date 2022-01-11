@@ -22,12 +22,10 @@ function App() {
           <Route path="/">
             <SplashPage />
           </Route>
-          {/* <Route path="/spots">
+          <Route path="/spots">
 
           </Route>
-          <Route path="/hosts">
-
-          </Route> */}
+          
 
         </Switch>
       )}
