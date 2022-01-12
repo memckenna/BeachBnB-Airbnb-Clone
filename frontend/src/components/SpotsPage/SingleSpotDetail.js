@@ -11,6 +11,7 @@ const SingleSpotDetailPage = () => {
 
     const dispatch = useDispatch();
     const oneSpot = useSelector(state => state.spotState.listings[id])
+    // console.log(oneSpot)
 
     useEffect(() => {
         dispatch(getSpotById(id))
@@ -19,11 +20,11 @@ const SingleSpotDetailPage = () => {
 
     return (
         <div>
-            <h2 className='spot-detail-page'>{oneSpot.name}</h2>
-            <div>{oneSpot.address}</div>
-            <div>{oneSpot.city}, {oneSpot.state}</div>
-            <div>${oneSpot.price}</div>
-            <img id={id} key={oneSpot.id} src={oneSpot.Images[0].url}></img>
+            <h2 className='spot-detail-page'>{oneSpot?.name}</h2>
+            <div>{oneSpot?.address}</div>
+            <div>{oneSpot?.city}, {oneSpot?.state}</div>
+            <div>${oneSpot?.price}</div>
+            <img className='spot-images' id={id} key={oneSpot?.id} src={oneSpot?.Images[0].url}></img>
 
             {/* Add Reviews and Bookings */}
         </div>

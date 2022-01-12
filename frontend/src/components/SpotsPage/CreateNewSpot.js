@@ -21,9 +21,13 @@ const CreateNewSpot = () => {
     const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
 
-    const handleSubmit = async (e) => {
-        e.preventDefault(e);
+    // useEffect(() => {
+    //     dispatch(createNewSpot())
+    // })
 
+
+    const handleSubmit = async (e) => {
+        e.preventDefault(e)
         const newSpot = {
             name,
             address,
@@ -36,7 +40,7 @@ const CreateNewSpot = () => {
         }
         const spot = await dispatch(createNewSpot(newSpot));
         if(spot) {
-            history.pushState(`/spot/${spot.id}`)
+            history.push(`/spots/${spot.id}`)
         }
     }
 

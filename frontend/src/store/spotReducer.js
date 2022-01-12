@@ -31,7 +31,7 @@ export const getAllSpots = () => async (dispatch) => {
     // console.log("THIS IS MY DATA", data)
     dispatch(loadSpots(data));
     // console.log("THIS IS MY REPSONSE", response)
-    // return response; //ask if I should be returning reposnse or data
+    return response; //ask if I should be returning reposnse or data
     // return data
 }
 
@@ -42,19 +42,29 @@ export const getSpotById = (id) => async (dispatch) => {
     console.log("ONESPOT", data)
 
     dispatch(loadOneSpot(data))
-    // return response; //ask if I should be returning reposnse or data
+    return response; //ask if I should be returning reposnse or data
     // return data;
 }
 
 export const createNewSpot = (newSpot) => async (dispatch) => {
+    const { address, city, state, country, zipcode, name, price, image } = newSpot;
     const response = await csrfFetch('/api/spot/new', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newSpot)
+        body: JSON.stringify({
+            address,
+            city,
+            state,
+            country,
+            zipcode,
+            name,
+            price,
+            image
+        })
     });
     const data = await response.json();
-    dispatch(addSpot(data))
     console.log("CREATE NEW SPOT", data)
+    dispatch(addSpot(data))
     return data;
 
 }
