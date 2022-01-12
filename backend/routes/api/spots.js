@@ -57,9 +57,15 @@ const newSpotValidators = [
     check("zipcode")
         .exists({ checkFalsy: true })
         .withMessage("Please provide a Zip Code for the Listing"),
+    check("bedrooms")
+        .exists({ checkFalsy: true })
+        .withMessage("Please provide a count of Bedrooms for the Listing"),
+    check("baths")
+        .exists({ checkFalsy: true })
+        .withMessage("Please provide a count of Bathsfor the Listing"),
     check("price")
         .exists({ checkFalsy: true })
-        .withMessage("Please provide a value for price"),
+        .withMessage("Please provide a value for Price"),
     handleValidationErrors,
 ];
 
@@ -72,10 +78,10 @@ const newSpotValidators = [
 
 /* POST CREATE A LISTING */
 router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res, next) => {
-    const { userId } = req.user.id;
-    const { address, city, state, country, zipcode, name, price, image } = req.body;
+    const userId = req.user.id;
+    const { address, city, state, country, zipcode, name, bedrooms, baths, price, image } = req.body;
 
-    const newSpot = await Spot.create({ address, city, state, country, zipcode, name, price, image, userId });
+    const newSpot = await Spot.create({ address, city, state, country, zipcode, name, bedrooms, baths, price, image, userId });
 
     if (!newSpot) {
         const err = new Error('New Listing failed');
@@ -83,6 +89,12 @@ router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res
         err.title = 'New Listing failed';
         err.errors = ['The provided credentials were invalid.'];
         return next(err);
+    } else {
+        // const image = await Image.create({spotId:newSpot.id, url:req.body.url})
+        // const image = await Image.create({spotId:newSpot.id, url:req.body.image})
+        // newSpot.Images = [image]
+        const newImg = await Image.create({spotId : newSpot.id, url: req.body.image})
+        newSpot.dataValues.Images = [newImg]
     }
 
     return res.json(newSpot)
@@ -90,9 +102,15 @@ router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res
 
 
 /* PUT UPDATE A LISTING */
+// router.put("/:id", asyncHandler(async (req, res) => {
+
+// }))
 
 
 /** DELETE A LISTING */
+// router.delete("/:id", asyncHandler(async (req, res) => {
+
+// }))
 
 
 module.exports = router;

@@ -7,11 +7,12 @@ import { getSpotById } from '../../store/spotReducer';
 import './SpotsPage.css'
 
 const SingleSpotDetailPage = () => {
+    
     const { id } = useParams();
 
     const dispatch = useDispatch();
     const oneSpot = useSelector(state => state.spotState.listings[id])
-    // console.log(oneSpot)
+    console.log("THIS IS ONE SPOT IMAGE", oneSpot)
 
     useEffect(() => {
         dispatch(getSpotById(id))
@@ -31,9 +32,12 @@ const SingleSpotDetailPage = () => {
             <div className='spot-price'>
                 <div>${oneSpot?.price}/night</div>
             </div>
-            <div>
-                <h3>Entire residential home hosted by HOST NAME</h3>
-                <p>14 guests | 6 bedrooms | 9 beds | 5.5 baths</p>
+            <div className='detail-section'>
+                <h3 className='details-header'>Home Details</h3>
+                <div className='home-details'>
+                    <div className='beds'>Bedrooms: {oneSpot?.bedrooms}</div>
+                    <div className='baths'>Baths: {oneSpot?.baths}</div>
+                </div>
             </div>
 
             {/* Add Reviews and Bookings */}

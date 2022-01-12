@@ -58,7 +58,7 @@ export const getSpotById = (id) => async (dispatch) => {
 }
 
 export const createNewSpot = (newSpot) => async (dispatch) => {
-    const { address, city, state, country, zipcode, name, price, image, userId } = newSpot;
+    const { address, city, state, country, zipcode, name, bedrooms, baths, price, image } = newSpot;
     const response = await csrfFetch('/api/spots/new', {
         method: 'POST',
         body: JSON.stringify({
@@ -68,9 +68,10 @@ export const createNewSpot = (newSpot) => async (dispatch) => {
             country,
             zipcode,
             name,
+            bedrooms,
+            baths,
             price,
             image,
-            userId
         })
     });
     const data = await response.json();

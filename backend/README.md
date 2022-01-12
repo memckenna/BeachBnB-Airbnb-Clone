@@ -45,7 +45,7 @@ Place the following at the bottom of your `frontend/package.json` file.
 
 ## API Documentation
 
-<!-- ### `POST /api/test`
+### `POST /api/test`
 
 A test route to check that the request body is getting parsed correctly.
 
@@ -56,13 +56,13 @@ in the request built into the response as `req.body`:
 {
   requestBody: req.body
 }
-``` -->
+```
 
 ### `GET /api/spots`
 
 A route to fetch all the spots in the database.
 
-**Returns** a JSON response of the array of articles (`Spots[]`) fetched from the database.
+**Returns** a JSON response of the array of spots (`Spots[]`) fetched from the database.
 
 ### `GET /api/spots/:id`
 
@@ -90,9 +90,14 @@ response will be in the following format:
 ```
 
 ### `PUT /api/posts`
+A route to update an exisiting spot in the database, if the payload sent passes the validations.
 
+**Returns** a JSON reponse of a single id fetched from the database with the information updated.
 
 
 
 
 ### `DELETE /api/posts`
+A route to delete an exisiting spot in the database, if the payload sent passes the validations.
+
+**Returns** a JSON response of a redirect to page with the array of spots (`Spots[]`) fetched from the database.

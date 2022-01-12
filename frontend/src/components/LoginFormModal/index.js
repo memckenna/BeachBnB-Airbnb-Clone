@@ -1,9 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Modal } from '../../context/Modal';
 import LoginForm from './LoginForm';
+import * as sessionActions from '../../store/session';
+import { useDispatch } from 'react-redux';
 
 function LoginFormModal() {
+  const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
+  const [demoUser, setDemoUser] = useState(false);
+  const [credential, setCredential] = useState("Demo-lition")
+  const [password, setPassword] = useState("password")
+
+
+  // useEffect(() => {
+  //   demoUser = dispatch(sessionActions.login({ credential, password }))
+  // }, [dispatch, credential, password])
 
   return (
     <>
@@ -13,6 +24,9 @@ function LoginFormModal() {
           <LoginForm />
         </Modal>
       )}
+
+
+      <button onClick={() => dispatch(sessionActions.login({ credential, password }))}  >DEMO USER</button>
     </>
   );
 }

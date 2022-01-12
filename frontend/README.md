@@ -1,5 +1,5 @@
 
-# Create React App Template
+# BeachBnB - Airbnb Clone
 
 A no-frills template from which to create React applications with
 [Create React App](https://github.com/facebook/create-react-app).
