@@ -9,8 +9,8 @@ const TripInspiration = () => {
             <ul className="trip-inspo-cards">
                 <NavLink className='trip-nav' to='/spots'>
                     <li>
-                            <img src="images/HomePageImages/dreamy-beach.png" />
-                            <div id="trip-img-1" className="image-content">Dreamy Beach Getaway</div>
+                        <img src="images/HomePageImages/dreamy-beach.png" />
+                        <div id="trip-img-1" className="image-content">Dreamy Beach Getaway</div>
                     </li>
                 </NavLink>
                 <NavLink className='trip-nav' to='/spots'>

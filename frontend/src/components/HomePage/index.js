@@ -5,7 +5,7 @@ import TripInspiration from './TripInspiration';
 import BecomeAHost from './BecomeAHost';
 import SuggestedSpots from './SuggestedSpots';
 import { getAllSpots } from '../../store/spotReducer';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 
 
 const SplashPage = () => {
@@ -14,9 +14,6 @@ const SplashPage = () => {
     const showAllSpots = () => {
         dispatch(getAllSpots())
     }
-    useEffect(() => {
-
-    })
 
     return (
         <div>

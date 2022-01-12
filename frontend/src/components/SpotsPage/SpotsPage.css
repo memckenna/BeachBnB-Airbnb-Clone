@@ -50,15 +50,51 @@
 }
 
 
-.input-box {
+.input-form-div {
     display: flex;
     justify-content: center;
     flex-direction: row;
     margin-top: 200px;
+    /* background-color: seagreen; */
+
 }
 
 .new-spot-form {
-    /* display: flex;
+    display: flex;
     justify-content: center;
-    flex-direction: row; */
+    flex-direction: column;
+    width: 400px;
+}
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px 20px 10px;
+    margin: 10px 10px 10px 10px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    width: 450px;
+}
+
+.new-spot-button {
+    /* padding: 5px 10px 5px 10px; */
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px 20px 10px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: white;
+    /* background-color: white; */
+    background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+    margin: 10px 10px 10px 10px;
+    width: 450px;
+}
+
+.form-header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+
 }

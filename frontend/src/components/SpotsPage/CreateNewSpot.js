@@ -6,6 +6,7 @@ import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import './SpotsPage.css';
 
 import { createNewSpot } from "../../store/spotReducer";
+import { LoginForm } from "../LoginFormModal/LoginForm"
 
 const CreateNewSpot = () => {
     const dispatch = useDispatch();
@@ -35,72 +36,87 @@ const CreateNewSpot = () => {
         }
         const spot = await dispatch(createNewSpot(newSpot));
         if(spot) {
-            history.pushState(`/spots/${spot.id}`)
+            history.pushState(`/spot/${spot.id}`)
         }
     }
 
     return (
-        <div className="input-box">
-            <h1>Create New Listing</h1>
+        <div className="input-form-div">
             <div className="new-spot-form">
+                <h1 className="form-header">Create New Listing</h1>
                 <form onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                    placeholder="Name"
-                    name="name"
-                />
-                <input
-                    type="text"
-                    onChange={(e) => setAddress(e.target.value)}
-                    value={address}
-                    placeholder="Address"
-                    name="address"
-                />
-                <input
-                    type="text"
-                    onChange={(e) => setCity(e.target.value)}
-                    value={city}
-                    placeholder="City"
-                    name="city"
-                />
-                <input
-                    type="text"
-                    onChange={(e) => setState(e.target.value)}
-                    value={state}
-                    placeholder="State"
-                    name="state"
-                />
-                <input
-                    type="text"
-                    onChange={(e) => setCountry(e.target.value)}
-                    value={country}
-                    placeholder="Country"
-                    name="country"
-                />
-                <input
-                    type="number"
-                    onChange={(e) => setZipcode(e.target.value)}
-                    value={zipcode}
-                    placeholder="Zip Code"
-                    name="zipcode"
-                />
-                <input
-                    type="number"
-                    onChange={(e) => setPrice(e.target.value)}
-                    value={price}
-                    placeholder="Price"
-                    name="price"
-                />
-                <input
-                    type="url"
-                    onChange={(e) => setImage(e.target.value)}
-                    value={image}
-                    placeholder="Image"
-                    name="image"
-                />
-                <button type="submit">Submit</button>
+                    <input
+                        className="input-box"
+                        type="text"
+                        onChange={(e) => setName(e.target.value)}
+                        value={name}
+                        placeholder="Home Name"
+                        name="name"
+                        required
+                    />
+                    <input
+                        className="input-box"
+                        type="text"
+                        onChange={(e) => setAddress(e.target.value)}
+                        value={address}
+                        placeholder="Address"
+                        name="address"
+                        required
+                    />
+                    <input
+                        className="input-box"
+                        type="text"
+                        onChange={(e) => setCity(e.target.value)}
+                        value={city}
+                        placeholder="City"
+                        name="city"
+                        required
+                    />
+                    <input
+                        className="input-box"
+                        type="text"
+                        onChange={(e) => setState(e.target.value)}
+                        value={state}
+                        placeholder="State"
+                        name="state"
+                        required
+                    />
+                    <input
+                        className="input-box"
+                        type="text"
+                        onChange={(e) => setCountry(e.target.value)}
+                        value={country}
+                        placeholder="Country"
+                        name="country"
+                        required
+                    />
+                    <input
+                        className="input-box"
+                        type="number"
+                        onChange={(e) => setZipcode(e.target.value)}
+                        value={zipcode}
+                        placeholder="Zip Code"
+                        name="zipcode"
+                        required
+                    />
+                    <input
+                        className="input-box"
+                        type="number"
+                        onChange={(e) => setPrice(e.target.value)}
+                        value={price}
+                        placeholder="Price"
+                        name="price"
+                        required
+                    />
+                    <input
+                        className="input-box"
+                        type="url"
+                        onChange={(e) => setImage(e.target.value)}
+                        value={image}
+                        placeholder="Image"
+                        name="image"
+                    />
+                    <button className="new-spot-button" type="submit">Submit</button>
                 </form>
 
             </div>
