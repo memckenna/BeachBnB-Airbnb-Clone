@@ -23,6 +23,17 @@ export const addSpot = (newSpot) => ({
     newSpot
 });
 
+// export const updateSpot = (spot) => ({
+//     type: UPDATE_SPOT,
+//     spot
+// })
+
+// export const deleteSpot = (spotId, userId) => ({
+//     type: REMOVE_SPOT,
+//     spotId,
+//     userId
+// })
+
 /* GET ALL SPOTS */
 export const getAllSpots = () => async (dispatch) => {
     const response = await csrfFetch(`/api/spots`);
@@ -47,8 +58,8 @@ export const getSpotById = (id) => async (dispatch) => {
 }
 
 export const createNewSpot = (newSpot) => async (dispatch) => {
-    const { address, city, state, country, zipcode, name, price, image } = newSpot;
-    const response = await csrfFetch('/api/spot/new', {
+    const { address, city, state, country, zipcode, name, price, image, userId } = newSpot;
+    const response = await csrfFetch('/api/spots/new', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -59,7 +70,8 @@ export const createNewSpot = (newSpot) => async (dispatch) => {
             zipcode,
             name,
             price,
-            image
+            image,
+            userId
         })
     });
     const data = await response.json();

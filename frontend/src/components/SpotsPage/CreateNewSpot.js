@@ -11,6 +11,8 @@ import { LoginForm } from "../LoginFormModal/LoginForm"
 const CreateNewSpot = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const sessionUser = useSelector(state => state.session.user);
+    console.log(sessionUser)
 
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
@@ -20,6 +22,7 @@ const CreateNewSpot = () => {
     const [zipcode, setZipcode] = useState("");
     const [price, setPrice] = useState("");
     const [image, setImage] = useState("");
+    const [user, setUser] = useState(sessionUser.id)
 
     // useEffect(() => {
     //     dispatch(createNewSpot())
@@ -36,7 +39,8 @@ const CreateNewSpot = () => {
             country,
             zipcode,
             price,
-            image
+            image,
+            userId: sessionUser.id
         }
         const spot = await dispatch(createNewSpot(newSpot));
         if(spot) {

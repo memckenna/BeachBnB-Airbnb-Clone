@@ -72,17 +72,18 @@ const newSpotValidators = [
 
 /* POST CREATE A LISTING */
 router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res, next) => {
+    const { userId } = req.user.id;
     const { address, city, state, country, zipcode, name, price, image } = req.body;
 
-    const newSpot = await Spot.create({ address, city, state, country, zipcode, name, price, image });
+    const newSpot = await Spot.create({ address, city, state, country, zipcode, name, price, image, userId });
 
-    if (!newSpot) {
-        const err = new Error('New Listing failed');
-        err.status = 401;
-        err.title = 'New Listing failed';
-        err.errors = ['The provided credentials were invalid.'];
-        return next(err);
-    }
+    // if (!newSpot) {
+    //     const err = new Error('New Listing failed');
+    //     err.status = 401;
+    //     err.title = 'New Listing failed';
+    //     err.errors = ['The provided credentials were invalid.'];
+    //     return next(err);
+    // }
 
     return res.json(newSpot)
 }))
