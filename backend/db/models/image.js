@@ -2,11 +2,11 @@
 module.exports = (sequelize, DataTypes) => {
   const Image = sequelize.define('Image', {
     spotId: {
-      types: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     url: {
-      types: DataTypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false,
     }
 

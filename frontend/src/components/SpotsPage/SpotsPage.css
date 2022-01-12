@@ -1,0 +1,25 @@
+.spots-container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto;
+    border: 1px solid red;
+    padding: 50px 50px 50px 50px;
+    margin-top: 40px;
+    max-width: 1000px;
+}
+
+/* create media for max and min sizing*/
+
+.spot-detail {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto;
+    border: 1px solid gray;
+
+    padding: 100px 20px 100px 20px;
+
+}
+
+.spots-header {
+    margin-top: 100px;
+}

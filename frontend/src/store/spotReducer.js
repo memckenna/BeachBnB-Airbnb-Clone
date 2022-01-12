@@ -1,15 +1,22 @@
 import { csrfFetch } from './csrf';
 
 const LOAD_SPOTS = 'spot/loadSpots';
+const LOAD_ONE_SPOT = 'spot/loadOneSpot';
 const ADD_SPOT = 'spot/addSpot';
-const UPDATE_SPOT = 'spot/updateSpot';
-const REMOVE_SPOT = 'spot/removeSpot';
+// const UPDATE_SPOT = 'spot/updateSpot';
+// const REMOVE_SPOT = 'spot/removeSpot';
 
-//Action Creators
+//Action Creators - GET ALL SPOTS
 export const loadSpots = (spots) => ({
     type: LOAD_SPOTS,
     spots
 });
+
+//GET ONE SPOT
+export const loadOneSpot = (spot) => ({
+    type: LOAD_ONE_SPOT,
+    spot
+})
 
 export const addSpot = (newSpot) => ({
     type: ADD_SPOT,
@@ -21,12 +28,23 @@ export const getAllSpots = () => async (dispatch) => {
     const response = await csrfFetch(`/api/spots`);
 
     const data = await response.json();
-    dispatch(loadSpots(data.spots));
+    // console.log("THIS IS MY DATA", data)
+    dispatch(loadSpots(data));
+    // console.log("THIS IS MY REPSONSE", response)
     return response;
 }
 
+export const getSpotById = (id) => async (dispatch) => {
+    const response = await csrfFetch(`/api/spots/${id}`);
 
-const initialState = { listings: {}, isLoading: true }
+    const data = await response.json();
+    console.log("ONESPOT", data)
+
+    dispatch(loadOneSpot(data))
+    return response;
+}
+
+const initialState = { listings: {} }
 
 const spotReducer = (state = initialState, action) => {
     let newState;
@@ -34,13 +52,24 @@ const spotReducer = (state = initialState, action) => {
         case LOAD_SPOTS: {
             newState = {...state}
             newState.listings = action.spots.reduce((listings, spot) => {
-                listings[spot.id] = spot;
-                return listings;
-            }, {});
+                    listings[spot.id] = spot
+                    // console.log("MY LISTINGS", spot)
+                    return listings;
+                }, {})
+                return newState;
+        }
+        case LOAD_ONE_SPOT: {
+            newState = {
+                ...state,
+            };
+            newState.listings[action.spot.id] = action.spot
             return newState;
         }
+
+        default:
+            return state;
     }
 }
 
 
-export default spotReducer
+export default spotReducer;

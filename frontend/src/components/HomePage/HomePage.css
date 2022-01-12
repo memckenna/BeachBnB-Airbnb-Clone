@@ -90,6 +90,7 @@ html {
     display: flex;
     flex-direction: column;
     margin: 0 15px;
+
 }
 
 .trip-inspo-cards img {
@@ -116,6 +117,10 @@ html {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
+}
+
+.trip-nav {
+    text-decoration: none;
 }
 
 #trip-img-1 {

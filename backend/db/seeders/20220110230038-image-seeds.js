@@ -28,6 +28,18 @@ module.exports = {
        updatedAt: new Date()
      },
      {
+       spotId: 1,
+       url: "https://a0.muscache.com/im/pictures/miso/Hosting-48123503/original/5fa71ec3-534e-41b6-b958-9f0adec80e46.jpeg?im_w=1200",
+       createdAt: new Date(),
+       updatedAt: new Date()
+     },
+     {
+       spotId: 1,
+       url: "https://a0.muscache.com/im/pictures/82ee0966-b82b-45e0-aedf-e73bc322f20a.jpg?im_w=1200",
+       createdAt: new Date(),
+       updatedAt: new Date()
+     },
+     {
       spotId: 4,
       url: "https://a0.muscache.com/im/pictures/13638b7b-fd9c-40e0-b61d-c9c9d8c4b93c.jpg?im_w=1200",
       createdAt: new Date(),
