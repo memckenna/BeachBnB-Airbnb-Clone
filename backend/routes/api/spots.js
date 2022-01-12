@@ -24,19 +24,25 @@ router.get("/:id", asyncHandler(async (req, res) => {
     });
 
     return res.json(spotById)
-
-    // const { id } = req.body;
-    // const spotById = await Spot.findByPk(id);
-    // return res.json(spotById)
 }))
 
-/* GET CREATE A LISTING */
-// router.get("", asyncHandler(async (req, res) => {
-//     const response = await
-// }))
 
+const listingValidators = [
+    
+]
+/* GET CREATE A LISTING */
+router.get("/new", asyncHandler(async (req, res) => {
+    const spot = await Spot.create(req.body);
+
+    return res.json(spot)
+}))
 
 /* POST CREATE A LISTING */
+router.post("/new", asyncHandler(async (req, res) => {
+    const spot = await Spot.create(req.body);
+
+    return res.json(spot)
+}))
 
 
 /* PUT UPDATE A LISTING */

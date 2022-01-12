@@ -16,10 +16,49 @@
     grid-template-rows: auto;
     border: 1px solid gray;
 
-    padding: 100px 20px 100px 20px;
+    padding: 50px 20px 80px 20px;
+
 
 }
 
 .spots-header {
     margin-top: 100px;
+}
+
+.spot-detail-page {
+    margin-top: 100px;
+}
+
+.card-dets {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.card-image {
+    display: flex;
+    align-self: flex-end;
+    width: 300px;
+    height: 220px;
+    border-radius: 10px;
+}
+
+.spot-info {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.input-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 200px;
+}
+
+.new-spot-form {
+    /* display: flex;
+    justify-content: center;
+    flex-direction: row; */
 }

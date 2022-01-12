@@ -31,7 +31,8 @@ export const getAllSpots = () => async (dispatch) => {
     // console.log("THIS IS MY DATA", data)
     dispatch(loadSpots(data));
     // console.log("THIS IS MY REPSONSE", response)
-    return response;
+    // return response; //ask if I should be returning reposnse or data
+    // return data
 }
 
 export const getSpotById = (id) => async (dispatch) => {
@@ -41,7 +42,21 @@ export const getSpotById = (id) => async (dispatch) => {
     console.log("ONESPOT", data)
 
     dispatch(loadOneSpot(data))
-    return response;
+    // return response; //ask if I should be returning reposnse or data
+    // return data;
+}
+
+export const createNewSpot = (newSpot) => async (dispatch) => {
+    const response = await csrfFetch('/api/spot/new', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newSpot)
+    });
+    const data = await response.json();
+    dispatch(addSpot(data))
+    console.log("CREATE NEW SPOT", data)
+    return data;
+
 }
 
 const initialState = { listings: {} }
@@ -65,6 +80,10 @@ const spotReducer = (state = initialState, action) => {
             newState.listings[action.spot.id] = action.spot
             return newState;
         }
+        case ADD_SPOT:
+            newState = {...state}
+            newState.listings = {...newState.listings, [action.newSpot.id]: action.newSpot}
+            return newState;
 
         default:
             return state;

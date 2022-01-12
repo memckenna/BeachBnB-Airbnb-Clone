@@ -9,6 +9,8 @@ import SplashPage from "./components/HomePage";
 import Footer from "./components/Footer";
 import SpotsBrowserPage from "./components/SpotsPage/index";
 import SpotDetail from "./components/SpotsPage/SpotDetailPage";
+import SingleSpotDetailPage from "./components/SpotsPage/SingleSpotDetail";
+import CreateNewSpot from "./components/SpotsPage/CreateNewSpot";
 
 
 function App() {
@@ -30,7 +32,10 @@ function App() {
             <SpotsBrowserPage />
           </Route>
           <Route path="/spots/:id" exact>
-            {/* <SpotDetail /> */}
+            <SingleSpotDetailPage />
+          </Route>
+          <Route path="/spot/new" exact>
+            <CreateNewSpot />
           </Route>
         </Switch>
       )}
