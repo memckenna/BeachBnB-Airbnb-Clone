@@ -42,7 +42,7 @@ const CreateNewSpot = () => {
             image,
             userId: sessionUser.id
         }
-        const spot = await dispatch(createNewSpot(newSpot));
+        const spot = dispatch(createNewSpot(newSpot));
         if(spot) {
             history.push(`/spots/${spot.id}`)
         }
