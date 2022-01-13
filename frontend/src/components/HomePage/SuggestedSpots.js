@@ -11,7 +11,7 @@ const SuggestedSpots = () => {
 
     return (
         <div>
-            <h2>Beach Stay Suggestions</h2>
+            {/* <h2>Beach Stay Suggestions</h2> */}
 
 
             <ul className="trip-inspo-cards">

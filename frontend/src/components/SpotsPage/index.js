@@ -20,7 +20,7 @@ const SpotsBrowserPage = () => {
 
     return (
         <div>
-            <h1 className='spots-header'>Spots List</h1>
+            <h1 className='spots-header'>Beach homes based of your search</h1>
             <ul className='spots-container'>
                 {spots.map(({ id, name }) => (
                     <SpotCardDetail key={id} id={id} name={name}  />

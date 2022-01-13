@@ -19,14 +19,25 @@ const SpotCardDetail = ({ id, name }) => {
         <li className="spot-detail">
             <div className='card-dets'>
                 <div className='spot-info'>
-                    <h2>{name}</h2>
-                    <NavLink key={oneSpot.id} to={`/spots/${id}`}>{oneSpot.name}</NavLink>
-                    <div>{oneSpot.address}</div>
-                    <div>{oneSpot.city}, {oneSpot.state}</div>
-                    <div>${oneSpot.price}</div>
+                    <div>
+                        <h2 className='card-header'>{name}</h2>
+                    </div>
+                    <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>{oneSpot.name}</NavLink>
+                    <div className='city-state'>
+                        <div>{oneSpot.address} |</div>
+                        <div className='city'>{oneSpot.city}, </div>
+                        <div>{oneSpot.state}</div>
+                    </div>
+                    <div className='bed-bath'>
+                        <div>Bedrooms: {oneSpot.bedrooms} </div>
+                        <div className='baths'>Baths: {oneSpot.baths}</div>
+                    </div>
+                    <div className='card-price'>${oneSpot.price}/night</div>
                 </div>
                 <div>
-                    <img className='card-image' id={id} key={oneSpot.id} src={oneSpot.Images[0]?.url}></img>
+                    <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>
+                        <img className='card-image' id={id} key={oneSpot.id} src={oneSpot.Images[0]?.url}></img>
+                    </NavLink>
                 </div>
             </div>
         </li>

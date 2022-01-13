@@ -2,7 +2,7 @@
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     padding: 50px 50px 50px 50px;
     margin-top: 40px;
     max-width: 1000px;
@@ -14,9 +14,13 @@
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto;
-    border: 1px solid gray;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 5px;
 
     padding: 50px 20px 80px 20px;
+    margin: 6px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
 
 }
 
@@ -24,6 +28,9 @@
     margin-top: 100px;
     padding: 0;
     margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 60px;
+    font-size: 25px;
 }
 
 .errors {
@@ -74,7 +81,8 @@
     border: 1px solid gray;
     width: fit-content;
     padding: 0px 20px 20px 20px;
-    margin: 20px 20px;
+    margin: 20px 10px;
+    border-radius: 8px;
 }
 
 .home-details {
@@ -95,8 +103,26 @@
 .card-dets {
     display: flex;
     justify-content: space-around;
-    flex-direction: column;
+    /* flex-direction: column; */
+    font-family: Arial, Helvetica, sans-serif;
 }
+.navlink-card {
+    text-decoration: none;
+    font-weight: bolder;
+    color: black;
+    margin-bottom: 10px;
+}
+.card-header {
+    display: flex;
+    justify-content: row;
+}
+
+.bed-bath {
+    display: flex;
+    justify-content: row;
+
+}
+
 
 .card-image {
     display: flex;
@@ -104,6 +130,22 @@
     width: 300px;
     height: 220px;
     border-radius: 10px;
+}
+.city-state {
+    display: flex;
+    justify-content: row;
+
+}
+.city {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.card-price {
+    /* display: flex;
+    justify-content: flex-end; */
+    padding-top: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .spot-info {
@@ -160,4 +202,22 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 700;
 
+}
+
+.edit-delete-button {
+    display: flex;
+    justify-content: row;
+    margin: 10px 20px 50px 10px;
+
+}
+
+.edit-listing {
+    padding-right: 10px;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: #006D77;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
 }

@@ -41,18 +41,20 @@ const SingleSpotDetailPage = () => {
                 <h3 className='details-header'>Home Details</h3>
                 <div className='home-details'>
                     <div className='beds'>Bedrooms: {oneSpot?.bedrooms}</div>
-                    <div className='baths'>Baths: {oneSpot?.baths}</div>
+                    <div className='baths'> Baths: {oneSpot?.baths}</div>
                 </div>
             </div>
-            <div>
-                <NavLink to={`/spots/${oneSpot?.id}/edit`} >
-                    <button className='edit-listing'>Edit Listing</button>
-                </NavLink>
-            </div>
-            <div>
-                <NavLink to={`/spots`} >
-                    <button onClick={() => dispatch(removeSpot(oneSpot.id))} className='edit-listing'>Delete Listing</button>
-                </NavLink>
+            <div className='edit-delete-button'>
+                <div>
+                    <NavLink to={`/spots/${oneSpot?.id}/edit`} >
+                        <button className='edit-listing'>Edit Listing</button>
+                    </NavLink>
+                </div>
+                <div>
+                    <NavLink to={`/spots`} >
+                        <button onClick={() => dispatch(removeSpot(oneSpot.id))} className='edit-listing'>Delete Listing</button>
+                    </NavLink>
+                </div>
             </div>
 
             {/* <Route path="/spots/:id">
