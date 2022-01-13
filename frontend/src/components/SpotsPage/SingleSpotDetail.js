@@ -5,6 +5,7 @@ import { NavLink, Route, useParams } from 'react-router-dom';
 import { getSpotById } from '../../store/spotReducer';
 import EditSpotForm from './EditSpotForm'
 import { removeSpot } from '../../store/spotReducer';
+// import * as sessionActions from "../../store/session";
 
 
 import './SpotsPage.css'
@@ -13,10 +14,10 @@ const SingleSpotDetailPage = () => {
     const { id } = useParams();
     const dispatch = useDispatch();
     const oneSpot = useSelector(state => state.spotState.listings[id])
-    console.log("THIS IS ONE SPOT IMAGE", oneSpot)
+    // const sessionUser = useSelector((state) => state.session.user);
+    // const [deleteSpot, setDeleteSpot] = useEffect(false)
 
     // const [showEditSpotForm, setShowEditSpotForm] = useState(false)
-
 
     useEffect(() => {
         dispatch(getSpotById(id))
@@ -55,7 +56,7 @@ const SingleSpotDetailPage = () => {
                 </div>
                 <div>
                     <NavLink to={`/spots`} >
-                        <button onClick={() => dispatch(removeSpot(oneSpot.id))} className='edit-listing'>Delete Listing</button>
+                        <button onClick={() => dispatch(removeSpot(oneSpot?.id))} className='edit-listing'>Delete Listing</button>
                     </NavLink>
                 </div>
             </div>

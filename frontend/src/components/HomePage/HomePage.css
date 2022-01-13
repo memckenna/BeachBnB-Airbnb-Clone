@@ -23,7 +23,7 @@ html {
 
     border-radius: 12px;
     width: 100%;
-    max-width: 1280px;
+    max-width: 1300px;
     height: 568px;
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
 
@@ -54,11 +54,13 @@ html {
     align-self: center;
     top: 220px;
 
-    padding: 14px 22px 14px 22px;
+    padding: 15px 25px 15px 25px;
+
     font-size: 16px;
     border-radius: 23px;
     border: none;
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
+    font-weight: bold;
 }
 
 
@@ -69,10 +71,12 @@ html {
     letter-spacing: -0.02em;
     line-height: 43px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 50px 60px;
+    margin: 50px 200px;
     position: relative;
     top: 100px;
     padding: 40px 20px;
+
+
 }
 
 .trip-inspo-cards {
@@ -154,7 +158,7 @@ html {
 .hosting-image {
     border-radius: 12px;
     width: 100%;
-    max-width: 1280px;
+    max-width: 1300px;
     height: 568px;
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
 }

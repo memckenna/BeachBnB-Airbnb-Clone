@@ -9,7 +9,6 @@ import SpotsBrowserPage from '.';
 const SpotCardDetail = ({ id, name }) => {
     const dispatch = useDispatch();
     const oneSpot = useSelector(state => state.spotState.listings[id])
-    console.log("THIS IS ONE SPOT", oneSpot)
 
     // useEffect(() => {
     //     dispatch(getSpotById(id))
