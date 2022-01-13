@@ -11,6 +11,7 @@ import SpotsBrowserPage from "./components/SpotsPage/index";
 import SpotDetail from "./components/SpotsPage/SpotDetailPage";
 import SingleSpotDetailPage from "./components/SpotsPage/SingleSpotDetail";
 import CreateNewSpot from "./components/SpotsPage/CreateNewSpot";
+import EditSpotForm from "./components/SpotsPage/EditSpotForm";
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/spots/:id" exact>
             <SingleSpotDetailPage />
+          </Route>
+          <Route path="/spots/:id/edit">
+                <EditSpotForm  />
           </Route>
           <Route path="/spot/new" exact>
             <CreateNewSpot />

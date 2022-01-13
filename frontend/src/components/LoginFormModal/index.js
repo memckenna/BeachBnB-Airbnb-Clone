@@ -11,11 +11,6 @@ function LoginFormModal() {
   const [credential, setCredential] = useState("Demo-lition")
   const [password, setPassword] = useState("password")
 
-
-  // useEffect(() => {
-  //   demoUser = dispatch(sessionActions.login({ credential, password }))
-  // }, [dispatch, credential, password])
-
   return (
     <>
       <button id='log-in-nav-button' onClick={() => setShowModal(true)}>Log In</button>
@@ -26,7 +21,7 @@ function LoginFormModal() {
       )}
 
 
-      <button onClick={() => dispatch(sessionActions.login({ credential, password }))}  >DEMO USER</button>
+      <button className='demo-button' onClick={() => dispatch(sessionActions.login({ credential, password }))}  >DEMO</button>
     </>
   );
 }

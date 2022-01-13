@@ -7,6 +7,7 @@ const { requireAuth } = require('../../utils/auth')
 const db = require("../../db/models")
 const { Spot } = require('../../db/models');
 const { Image } = require('../../db/models');
+
 const router = express.Router();
 
 /* GET All Listings ??? */
@@ -69,12 +70,6 @@ const newSpotValidators = [
     handleValidationErrors,
 ];
 
-/* GET CREATE A LISTING */
-// router.get("/new", asyncHandler(async (req, res) => {
-//     const spot = await Spot.create(req.body);
-
-//     return res.json(spot)
-// }))
 
 /* POST CREATE A LISTING */
 router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res, next) => {
@@ -102,13 +97,45 @@ router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res
 
 
 /* PUT UPDATE A LISTING */
-// router.put("/:id", asyncHandler(async (req, res) => {
+router.put("/:id/edit", newSpotValidators, requireAuth, asyncHandler(async (req, res, next) => {
+    const spotId = req.params.id
 
-// }))
+    // const userId = req.user.id;
+    console.log("SPOTID", spotId)
+
+
+    const { address, city, state, country, zipcode, name, bedrooms, baths, price, image } = req.body;
+
+    const updateSpot = await Spot.update({ address, city, state, country, zipcode, name, bedrooms, baths, price, image, userId }, {
+        where: {
+            id: spotId
+        }
+    });
+
+    // const updatedSpot = await Spot.update(req.body, {where: {id: spotId}})
+
+    if (!updateSpot) {
+        const err = new Error('Updating Listing failed');
+        err.status = 401;
+        err.title = 'Updating Listing failed';
+        err.errors = ['The provided credentials were invalid.'];
+        return next(err);
+    } else {
+
+        const updateImg = await Image.update({spotId : newSpot.id, url: req.body.image})
+        updateSpot.dataValues.Images = [updateImg]
+    }
+    return res.json(updateSpot)
+}))
 
 
 /** DELETE A LISTING */
 // router.delete("/:id", asyncHandler(async (req, res) => {
+//     const spotId = parseInt(req.params.id, 10);
+//     const spotToDelete = await db.Spot.findByPk(spotId);
+
+//     await Spot.destory({where: {id: spotToDelete.id}})
+
 
 // }))
 

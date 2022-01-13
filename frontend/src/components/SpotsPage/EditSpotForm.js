@@ -1,32 +1,32 @@
-import React from "react";
-
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
-import './SpotsPage.css';
+import { useHistory, useParams } from 'react-router-dom';
+import { updateASpot } from '../../store/spotReducer';
 
-import { createNewSpot } from "../../store/spotReducer";
-import { LoginForm } from "../LoginFormModal/LoginForm"
+const EditSpotForm = () => {
 
-const CreateNewSpot = () => {
+    const { id } = useParams();
+    const spotDetails = useSelector(state => state.spotState.listings[id])
+    console.log("SPOT DETAILS", spotDetails)
+    // console.log("PLEASE WORK", spot)
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const [name, setName] = useState("");
-    const [address, setAddress] = useState("");
-    const [city, setCity] = useState("");
-    const [state, setState] = useState("");
-    const [country, setCountry] = useState("");
-    const [zipcode, setZipcode] = useState("");
-    const [price, setPrice] = useState("0");
-    const [bedrooms, setBedrooms] = useState("0")
-    const [baths, setBaths] = useState("0")
-    const [image, setImage] = useState("");
-    const [errors, setErrors] = useState([])
+    const [name, setName] = useState(spotDetails.name);
+    const [address, setAddress] = useState(spotDetails.address);
+    const [city, setCity] = useState(spotDetails.city);
+    const [state, setState] = useState(spotDetails.state);
+    const [country, setCountry] = useState(spotDetails.country);
+    const [zipcode, setZipcode] = useState(spotDetails.zipcode);
+    const [price, setPrice] = useState(spotDetails.price);
+    const [bedrooms, setBedrooms] = useState(spotDetails.bedrooms)
+    const [baths, setBaths] = useState(spotDetails.baths)
+    const [image, setImage] = useState(spotDetails.Images[0].url);
+    const [errors, setErrors] = useState([]);
 
     const handleSubmit = async (e) => {
         e.preventDefault(e)
-        const newSpot = {
+        const updatedSpot = {
             name,
             address,
             city,
@@ -38,11 +38,10 @@ const CreateNewSpot = () => {
             baths,
             image,
         }
-
-        const spot = await dispatch(createNewSpot(newSpot));
-        if(spot) {
-            history.push(`/spots/${spot.id}`)
-        }
+       const spotUpdated = await dispatch(updateASpot(updatedSpot));
+       if(spotUpdated) {
+            history.push(`/spots/${spotUpdated.id}`)
+       }
     }
 
     useEffect(() => {
@@ -62,10 +61,11 @@ const CreateNewSpot = () => {
         setErrors(validationErrors)
     }, [name, address, city, state, country, zipcode, price, bedrooms, baths, image]);
 
+
     return (
         <div className="input-form-div">
             <div className="new-spot-form">
-                <h1 className="form-header">Create New Listing</h1>
+                <h1 className="form-header">Edit Listing</h1>
                 <ul className="errors">
                     {errors.map((error) => (
                         <li key={error}>{error}</li>
@@ -161,7 +161,8 @@ const CreateNewSpot = () => {
                         placeholder="Image"
                         name="image"
                     />
-                    <button className="new-spot-button" type="submit">Submit</button>
+                    <button className="new-spot-button" type="submit">Update Listing</button>
+                    {/* <button type="button" onClick={handleCancelClick}>Cancel</button> */}
                 </form>
 
             </div>
@@ -169,4 +170,4 @@ const CreateNewSpot = () => {
     )
 }
 
-export default CreateNewSpot;
+export default EditSpotForm;
