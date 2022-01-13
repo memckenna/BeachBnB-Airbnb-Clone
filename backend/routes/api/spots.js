@@ -98,21 +98,19 @@ router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res
 
 /* PUT UPDATE A LISTING */
 router.put("/:id/edit", newSpotValidators, requireAuth, asyncHandler(async (req, res, next) => {
+    // const spotId = parseInt(req.params.id, 10)
     const spotId = req.params.id
-
-    // const userId = req.user.id;
-    console.log("SPOTID", spotId)
-
-
+    const userId = parseInt(req.user.id, 10)
+    // console.log(req.body)
     const { address, city, state, country, zipcode, name, bedrooms, baths, price, image } = req.body;
+    const currentSpot = await Spot.findByPk(spotId);
 
-    const updateSpot = await Spot.update({ address, city, state, country, zipcode, name, bedrooms, baths, price, image, userId }, {
-        where: {
-            id: spotId
-        }
-    });
+    const updateSpot = await currentSpot.update({address, city, state, country, zipcode, name, bedrooms, baths, price, image})
 
-    // const updatedSpot = await Spot.update(req.body, {where: {id: spotId}})
+    // const updateSpot = await Spot.update({ address, city, state, country, zipcode, name, bedrooms, baths, price, image, userId }, {
+    //     where: {id: spotId},});
+    // console.log("SPOT ID", spotId)
+    // console.log("UPDATE SPOT", updateSpot)
 
     if (!updateSpot) {
         const err = new Error('Updating Listing failed');
@@ -121,8 +119,15 @@ router.put("/:id/edit", newSpotValidators, requireAuth, asyncHandler(async (req,
         err.errors = ['The provided credentials were invalid.'];
         return next(err);
     } else {
-
-        const updateImg = await Image.update({spotId : newSpot.id, url: req.body.image})
+        // const updateImg = await Image.update({spotId : updateSpot.id, url: req.body.image})
+        const updateImg = await Image.update({id : updateSpot.id, url: req.body.image}, {
+            where: {
+                id: req.params.id
+            }
+        })
+        // console.log(updateImg)
+        // console.log("THIS IS MY IMAGE", updateSpot)
+        // updateSpot = [updateImg]
         updateSpot.dataValues.Images = [updateImg]
     }
     return res.json(updateSpot)
@@ -130,14 +135,54 @@ router.put("/:id/edit", newSpotValidators, requireAuth, asyncHandler(async (req,
 
 
 /** DELETE A LISTING */
-// router.delete("/:id", asyncHandler(async (req, res) => {
-//     const spotId = parseInt(req.params.id, 10);
-//     const spotToDelete = await db.Spot.findByPk(spotId);
+router.delete("/:id", asyncHandler(async (req, res, next) => {
+    const { userId } = req.body;
+    // const spotId = parseInt(req.params.id, 10);
+    const id = req.params.id;
+    // const currentSpot = await Spot.findByPk(id);
+    const currentSpot = await Spot.findByPk(req.params.id, {
+        include: [Image]
+    });
 
-//     await Spot.destory({where: {id: spotToDelete.id}})
+    if (!currentSpot) {
+        const err = new Error('Deleteing this spot failed');
+        err.status = 401;
+        err.title = 'Deleteing this spot failed';
+        err.errors = ['The provided credentials were invalid.'];
+        return next(err);
+    } else {
+        // const updateImg = await Image.update({spotId : updateSpot.id, url: req.body.image})
+        const { spotId } = req.body
+        console.log("THIS IS MY SPOTID", spotId)
+        const currentImage = await Image.findByPk(id, {
+            where: {
+                id: spotId
+            }
+        });
+        if(currentImage) {
+            const deleteImage = await Image.destroy({where: { id: currentImage.spotId }})
+            currentSpot.dataValues.Images = [deleteImage]
+        }
 
+        // const deleteImage = await currentImage.destroy()
+        console.log("CURRRENT", currentImage)
+        // const deleteImage = await currentImage.destroy({id : currentSpot.id, url: req.body.image}, {
+        //     where: {
+        //         spotId: req.params.id
+        //     }
+        // })
+        // const deleteImg = await Image.destroy({id : currentSpot.id, url: req.body.image}, {
+        //     where: {
+        //         id: req.params.spotId
+        //     },
+        // })
+    }
 
-// }))
+    const deleteSpot = await currentSpot.destroy();
+    console.log("PLEASE DELETE SPOT", deleteSpot)
+
+    return res.json()
+}))
 
 
 module.exports = router;

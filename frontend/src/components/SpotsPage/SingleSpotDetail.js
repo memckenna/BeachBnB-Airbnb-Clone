@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
 import { getSpotById } from '../../store/spotReducer';
 import EditSpotForm from './EditSpotForm'
+import { removeSpot } from '../../store/spotReducer';
+
 
 import './SpotsPage.css'
 
@@ -30,7 +32,7 @@ const SingleSpotDetailPage = () => {
                 <div>{oneSpot?.city}, {oneSpot?.state}</div>
             </div>
             <div>
-                <img className='spot-images' id={id} key={oneSpot?.id} src={oneSpot?.Images[0].url}></img>
+                <img className='spot-images' id={id} key={oneSpot?.id} src={oneSpot?.Images[0]?.url}></img>
             </div>
             <div className='spot-price'>
                 <div>${oneSpot?.price}/night</div>
@@ -43,13 +45,13 @@ const SingleSpotDetailPage = () => {
                 </div>
             </div>
             <div>
-                <NavLink to={`/spots/${id}/edit`} >
-                    <button className='edit-listing'>Update Listing</button>
+                <NavLink to={`/spots/${oneSpot?.id}/edit`} >
+                    <button className='edit-listing'>Edit Listing</button>
                 </NavLink>
             </div>
             <div>
-                <NavLink to={`/spots/${id}`} >
-                    <button className='edit-listing'>Delete Listing</button>
+                <NavLink to={`/spots`} >
+                    <button onClick={() => dispatch(removeSpot(oneSpot.id))} className='edit-listing'>Delete Listing</button>
                 </NavLink>
             </div>
 

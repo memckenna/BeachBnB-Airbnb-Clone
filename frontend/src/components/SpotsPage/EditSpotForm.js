@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink, Route } from 'react-router-dom';
 import { useHistory, useParams } from 'react-router-dom';
 import { updateASpot } from '../../store/spotReducer';
 
@@ -12,16 +13,16 @@ const EditSpotForm = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const [name, setName] = useState(spotDetails.name);
-    const [address, setAddress] = useState(spotDetails.address);
-    const [city, setCity] = useState(spotDetails.city);
-    const [state, setState] = useState(spotDetails.state);
-    const [country, setCountry] = useState(spotDetails.country);
-    const [zipcode, setZipcode] = useState(spotDetails.zipcode);
-    const [price, setPrice] = useState(spotDetails.price);
-    const [bedrooms, setBedrooms] = useState(spotDetails.bedrooms)
-    const [baths, setBaths] = useState(spotDetails.baths)
-    const [image, setImage] = useState(spotDetails.Images[0].url);
+    const [name, setName] = useState(spotDetails?.name);
+    const [address, setAddress] = useState(spotDetails?.address);
+    const [city, setCity] = useState(spotDetails?.city);
+    const [state, setState] = useState(spotDetails?.state);
+    const [country, setCountry] = useState(spotDetails?.country);
+    const [zipcode, setZipcode] = useState(spotDetails?.zipcode);
+    const [price, setPrice] = useState(spotDetails?.price);
+    const [bedrooms, setBedrooms] = useState(spotDetails?.bedrooms)
+    const [baths, setBaths] = useState(spotDetails?.baths)
+    const [image, setImage] = useState(spotDetails?.Images[0].url);
     const [errors, setErrors] = useState([]);
 
     const handleSubmit = async (e) => {
@@ -38,7 +39,9 @@ const EditSpotForm = () => {
             baths,
             image,
         }
-       const spotUpdated = await dispatch(updateASpot(updatedSpot));
+
+       const spotUpdated = await dispatch(updateASpot(updatedSpot, id));
+
        if(spotUpdated) {
             history.push(`/spots/${spotUpdated.id}`)
        }
@@ -161,7 +164,9 @@ const EditSpotForm = () => {
                         placeholder="Image"
                         name="image"
                     />
-                    <button className="new-spot-button" type="submit">Update Listing</button>
+                    {/* <NavLink to={`/spots/${id}`}> */}
+                        <button className="new-spot-button" type="submit">Update Listing</button>
+                    {/* </NavLink> */}
                     {/* <button type="button" onClick={handleCancelClick}>Cancel</button> */}
                 </form>
 

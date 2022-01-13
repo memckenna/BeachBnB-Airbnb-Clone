@@ -7,7 +7,6 @@ import { getSpotById } from '../../store/spotReducer';
 import SpotsBrowserPage from '.';
 
 const SpotCardDetail = ({ id, name }) => {
-    // const { spotId } = useParams();
     const dispatch = useDispatch();
     const oneSpot = useSelector(state => state.spotState.listings[id])
     console.log("THIS IS ONE SPOT", oneSpot)
@@ -27,7 +26,7 @@ const SpotCardDetail = ({ id, name }) => {
                     <div>${oneSpot.price}</div>
                 </div>
                 <div>
-                    <img className='card-image' id={id} key={oneSpot.id} src={oneSpot.Images[0].url}></img>
+                    <img className='card-image' id={id} key={oneSpot.id} src={oneSpot.Images[0]?.url}></img>
                 </div>
             </div>
         </li>
