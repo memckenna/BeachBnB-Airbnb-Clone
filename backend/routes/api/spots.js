@@ -148,24 +148,32 @@ router.delete("/:id", asyncHandler(async (req, res, next) => {
         const err = new Error('Deleteing this spot failed');
         err.status = 401;
         err.title = 'Deleteing this spot failed';
-        err.errors = ['The provided credentials were invalid.'];
-        return next(err);
-    } else {
+
+        next(err);
+    }
+    // else {
         // const updateImg = await Image.update({spotId : updateSpot.id, url: req.body.image})
-        const { spotId } = req.body
-        console.log("THIS IS MY SPOTID", spotId)
-        const currentImage = await Image.findByPk(id, {
-            where: {
-                id: spotId
-            }
-        });
-        if(currentImage) {
-            const deleteImage = await Image.destroy({where: { id: currentImage.spotId }})
-            currentSpot.dataValues.Images = [deleteImage]
-        }
+        // const { spotId } = req.body
+        // console.log("THIS IS MY SPOTID", spotId)
+        // const currentImage = await Image.findByPk(id, {
+        //     where: {
+        //         id: spotId
+        //     }
+        // });
+
+        // const currentImage = await Image.findByPk(id)
+
+        // const deleteImage = await Image.destroy()
+        // currentSpot.dataValues.Images = [deleteImage]
+
+        // if(currentImage) {
+        //     // const deleteImage = await Image.destroy({where: { id: currentImage.spotId }})
+        //     const deleteImage = await Image.destroy({{onDelete: 'cascade', hooks:true}})
+        //     currentSpot.dataValues.Images = [deleteImage]
+        // }
 
         // const deleteImage = await currentImage.destroy()
-        console.log("CURRRENT", currentImage)
+        // console.log("CURRRENT", currentImage)
         // const deleteImage = await currentImage.destroy({id : currentSpot.id, url: req.body.image}, {
         //     where: {
         //         spotId: req.params.id
@@ -176,9 +184,10 @@ router.delete("/:id", asyncHandler(async (req, res, next) => {
         //         id: req.params.spotId
         //     },
         // })
-    }
+    // }
 
     const deleteSpot = await currentSpot.destroy();
+    // const deleteSpot = await currentSpot.destroy(onDelete: 'cascade', hooks: true);
     console.log("PLEASE DELETE SPOT", deleteSpot)
 
     return res.json()

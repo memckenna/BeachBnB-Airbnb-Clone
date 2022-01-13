@@ -43,6 +43,9 @@ const SingleSpotDetailPage = () => {
                     <div className='beds'>Bedrooms: {oneSpot?.bedrooms}</div>
                     <div className='baths'> Baths: {oneSpot?.baths}</div>
                 </div>
+                {/* <div className='spot-price'>
+                    <div>${oneSpot?.price}/night</div>
+                </div> */}
             </div>
             <div className='edit-delete-button'>
                 <div>
