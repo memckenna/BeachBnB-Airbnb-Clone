@@ -21,16 +21,6 @@ const Footer = () => {
                         <Link className="linkedin" scr="https://www.linkedin.com/in/meganmckenna1/" alt="linkedin">LinkedIn: meganmckenna1</Link>
                     </li>
                 </ul>
-                <div>
-                    {/* <p>@2022 BeachBnB</p>
-                    <p className="name">Megan McKenna</p>
-                    <div>
-                        <Link className="github" scr="https://github.com/memckenna">GitHub: memckenna</Link>
-                    </div>
-                    <div>
-                        <Link className="linkedin" scr="https://www.linkedin.com/in/meganmckenna1/">LinkedIn: meganmckenna1</Link>
-                    </div> */}
-                </div>
             </div>
         </footer>
     )

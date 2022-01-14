@@ -38,7 +38,6 @@ const EditSpotForm = () => {
             baths,
             image,
         }
-
        const spotUpdated = await dispatch(updateASpot(updatedSpot, id));
 
        if(spotUpdated) {
@@ -49,15 +48,15 @@ const EditSpotForm = () => {
     useEffect(() => {
         const validationErrors = [];
 
-        if(name.length < 4) validationErrors.push("Name must be 4 or more characters");
-        if(address.length < 10) validationErrors.push("Address must be 10 or more characters");
-        if(city.length < 3) validationErrors.push("City must be 3 or more characters");
-        if(state.length < 3) validationErrors.push("State must be 3 or more characters");
-        if(country.length < 3) validationErrors.push("Country must be 3 or more characters");
+        if(name.length < 4) validationErrors.push("Please enter the name of your home");
+        if(address.length < 10) validationErrors.push("Please enter the address of your home");
+        if(city.length < 3) validationErrors.push("Please enter the city of your home");
+        if(state.length < 3) validationErrors.push("Please enter the state of your home");
+        if(country.length < 3) validationErrors.push("Please enter the country of your home");
         if(zipcode.length === 0) validationErrors.push("Please provide a zip code");
-        if(bedrooms === 0) validationErrors.push("Please provide the amount of bedrooms or beds");
-        if(baths === 0 ) validationErrors.push("Please provide the amount of bathrooms");
-        if(price === 0) validationErrors.push("Please provide the price that you would like to list you home for");
+        if(bedrooms <= 0) validationErrors.push("Please provide the amount of bedrooms or beds");
+        if(baths <= 0 ) validationErrors.push("Please provide the amount of bathrooms");
+        if(price <= 0) validationErrors.push("Please provide the nightly rate for your home");
         if(!image.startsWith("https://")) validationErrors.push("Please provide the full image address");
 
         setErrors(validationErrors)
@@ -162,6 +161,7 @@ const EditSpotForm = () => {
                         value={image}
                         placeholder="Image"
                         name="image"
+                        required
                     />
                     {/* <NavLink to={`/spots/${id}`}> */}
                         <button className="new-spot-button" type="submit">Update Listing</button>
