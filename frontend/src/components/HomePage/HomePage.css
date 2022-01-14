@@ -54,6 +54,7 @@ html {
     justify-content: center;
     align-self: center;
     top: 220px;
+    right:850px;
 
     padding: 15px 25px 15px 25px;
 
@@ -64,6 +65,12 @@ html {
     font-weight: bold;
 }
 
+.inspo-trip-container {
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    max-height: 568px;
+}
 
 
 .trip-section-text {
@@ -72,13 +79,12 @@ html {
     letter-spacing: -0.02em;
     line-height: 43px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 50px 200px;
+    margin: 50px 310px;
     position: relative;
     top: 100px;
     padding: 40px 0px;
     width: 100%;
     max-width: 1300px;
-
 }
 
 .trip-inspo-cards {
@@ -172,7 +178,7 @@ html {
     justify-content: center;
     align-self: center;
     top: 230px;
-
+    right: 850px;
     padding: 14px 18px 14px 18px;
     font-size: 16px;
     border-radius: 12px;
