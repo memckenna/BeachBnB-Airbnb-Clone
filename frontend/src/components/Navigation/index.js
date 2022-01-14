@@ -31,6 +31,7 @@ function Navigation({ isLoaded }) {
                             <NavLink activeClassName='active' exact to="/">
                                 <img className='logo' src='/images/beachbnb-logo.png' alt="BeachBnB logo" />
                             </NavLink>
+                            <NavLink className="become-a-host" to="/spot/new">Become A Host</NavLink>
                             <div>{isLoaded && sessionLinks}</div>
                             {/* {isLoaded && sessionLinks} */}
                         </li>

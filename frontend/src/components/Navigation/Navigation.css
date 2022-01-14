@@ -145,3 +145,18 @@
     padding-top: 10px;
 
 }
+
+.become-a-host {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    /* padding-right: 80px; */
+    /* padding-left: 900px; */
+
+    /* position: relative; */
+    padding-bottom: 20px;
+    color: #006D77;
+    font-weight: bolder;
+    text-shadow: gray 1px 1px 1px;
+
+}
