@@ -1,5 +1,19 @@
 # BeachBnB-Airbnb-Clone
 
+BeachBnb is an AirBnB clone inspired by beach vacation rentals.
+
+The technologies used for the front and backend are:
+* React
+* Redux
+* JavaScript
+* Express
+* Sequelize
+* PostgreSQL
+* HTML5
+* CSS
+* JSON API
+* Git
+
 In the BeachBnb clone you will connect a backend application to use thunk
 actions and a frontend application.
 
@@ -40,7 +54,7 @@ Place the following at the bottom of your `frontend/package.json` file.
     "proxy": "http://localhost:5000"
 ```
 
-Once you have completed the backend application setup, you can run `npm start` for both the backend server and the frontend server and text  that everything is working but creating the test route below. 
+Once you have completed the backend application setup, you can run `npm start` for both the backend server and the frontend server and text  that everything is working but creating the test route below.
 
 ## API Documentation
 
