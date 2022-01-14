@@ -143,7 +143,7 @@ router.delete("/:id", asyncHandler(async (req, res, next) => {
 
     const deleteSpot = await currentSpot.destroy();
 
-    return res.json()
+    return res.json({})
 }))
 
 

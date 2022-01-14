@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { NavLink, Route, useParams } from 'react-router-dom';
 import { getSpotById } from '../../store/spotReducer';
 import EditSpotForm from './EditSpotForm'
@@ -11,6 +12,7 @@ import { removeSpot } from '../../store/spotReducer';
 import './SpotsPage.css'
 
 const SingleSpotDetailPage = () => {
+    const history = useHistory();
     const { id } = useParams();
     const dispatch = useDispatch();
     const oneSpot = useSelector(state => state.spotState.listings[id])
@@ -55,9 +57,9 @@ const SingleSpotDetailPage = () => {
                     </NavLink>
                 </div>
                 <div>
-                    <NavLink to={`/spots`} >
-                        <button onClick={() => dispatch(removeSpot(oneSpot?.id))} className='edit-listing'>Delete Listing</button>
-                    </NavLink>
+                    {/* <NavLink to={`/spots`} > */}
+                        <button onClick={() => dispatch(removeSpot(oneSpot?.id)).then(()=> history.push('/spots'))} className='edit-listing'>Delete Listing</button>
+                    {/* </NavLink> */}
                 </div>
             </div>
 
