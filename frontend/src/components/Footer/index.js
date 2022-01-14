@@ -12,8 +12,8 @@ const Footer = () => {
                         <p>@2022 BeachBnB</p>
                         <p className="name">Megan McKenna</p>
                     </div>
-                    <Link className="github" scr="https://github.com/memckenna">GitHub</Link>
-                    <Link className="linkedin" scr="https://www.linkedin.com/in/meganmckenna1/">LinkedIn</Link>
+                    <Link className="github" scr="https://github.com/memckenna">GitHub: memckenna</Link>
+                    <Link className="linkedin" scr="https://www.linkedin.com/in/meganmckenna1/">LinkedIn: meganmckenna1</Link>
                 </div>
             </div>
         </footer>

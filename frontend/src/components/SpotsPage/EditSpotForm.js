@@ -8,8 +8,7 @@ const EditSpotForm = () => {
 
     const { id } = useParams();
     const spotDetails = useSelector(state => state.spotState.listings[id])
-    console.log("SPOT DETAILS", spotDetails)
-    // console.log("PLEASE WORK", spot)
+
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -68,7 +67,7 @@ const EditSpotForm = () => {
     return (
         <div className="input-form-div">
             <div className="new-spot-form">
-                <h1 className="form-header">Edit Listing</h1>
+                <h1 className="form-header">Edit Your Listing</h1>
                 <ul className="errors">
                     {errors.map((error) => (
                         <li key={error}>{error}</li>

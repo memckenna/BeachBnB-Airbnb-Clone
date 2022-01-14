@@ -39,7 +39,6 @@ export const getAllSpots = () => async (dispatch) => {
     const response = await csrfFetch(`/api/spots`);
 
     const data = await response.json();
-    // console.log("THIS IS MY DATA", data)
     dispatch(loadSpots(data));
 }
 
@@ -47,8 +46,6 @@ export const getSpotById = (id) => async (dispatch) => {
     const response = await csrfFetch(`/api/spots/${id}`);
 
     const data = await response.json();
-    console.log("ONESPOT", data)
-
     dispatch(loadOneSpot(data))
 }
 
@@ -103,8 +100,8 @@ export const removeSpot = (spotId) => async (dispatch) => {
         method: 'delete'
     });
 
-    const spot = await response.json();
-    dispatch(deleteSpot(spot));
+    // const spot = await response.json();
+    dispatch(deleteSpot(spotId));
 }
 
 const initialState = { listings: {} }
@@ -116,7 +113,6 @@ const spotReducer = (state = initialState, action) => {
             newState = {...state}
             newState.listings = action.spots.reduce((listings, spot) => {
                     listings[spot.id] = spot
-                    // console.log("MY LISTINGS", spot)
                     return listings;
                 }, {})
                 return newState;

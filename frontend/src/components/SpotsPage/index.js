@@ -12,7 +12,6 @@ const SpotsBrowserPage = () => {
     const spotsObject = useSelector(state => state.spotState.listings);
 
     const spots = Object.values(spotsObject);
-    console.log("VALUES", spots)
 
     useEffect(() => {
         dispatch(getAllSpots());
@@ -20,7 +19,7 @@ const SpotsBrowserPage = () => {
 
     return (
         <div>
-            <h1 className='spots-header'>Beach homes based of your search</h1>
+            <h1 className='spots-header'>Beach homes that you will love</h1>
             <ul className='spots-container'>
                 {spots.map(({ id, name }) => (
                     <SpotCardDetail key={id} id={id} name={name}  />

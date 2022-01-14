@@ -16,7 +16,7 @@
     grid-template-rows: auto;
     border: 1px solid lightgray;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 10px;
 
     padding: 50px 20px 80px 20px;
     margin: 6px;
@@ -33,20 +33,36 @@
     font-size: 25px;
 }
 
+.creds {
+    font-weight: bold;
+
+}
 .errors {
-    color: red;
+    color: black;
     margin: 0;
-    border: 1px solid gray;
+    /* border: 1px solid lightgray; */
+    /* background-color: white; */
+    border-radius: 10px;
+    /* align-self: center; */
+
+    padding: 20px 60px 20px 60px;
+    list-style: square;
 }
 
 .spot-detail-page {
-    margin-top: 100px;
+    margin-top: 130px;
+    margin-bottom: 60px;
     display: flex;
     justify-content: start;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     font-weight: normal;
+    background-color: white;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 20px 20px 20px 30px;
 
 }
 
@@ -82,10 +98,10 @@
     justify-content: flex-start;
     /* border: 1px solid gray; */
     width: fit-content;
-    padding: 0px 20px 20px 20px;
-    margin: 20px 10px;
-    border-radius: 8px;
-    background-color: white;
+    padding: 0px 20px 20px 0px;
+    margin: 0px 10px;
+    /* border-radius: 8px; */
+    /* background-color: white; */
 
 }
 
@@ -125,7 +141,8 @@
 .bed-bath {
     display: flex;
     justify-content: row;
-
+    padding-top: 10px;
+    padding-left: 2px;
 }
 
 
@@ -135,6 +152,7 @@
     width: 300px;
     height: 220px;
     border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
 }
 .city-state {
     display: flex;

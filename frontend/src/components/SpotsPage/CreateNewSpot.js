@@ -67,6 +67,7 @@ const CreateNewSpot = () => {
             <div className="new-spot-form">
                 <h1 className="form-header">Create New Listing</h1>
                 <ul className="errors">
+                    <p className="creds">Please provide the following credentials:</p>
                     {errors.map((error) => (
                         <li key={error}>{error}</li>
                     ))}
