@@ -48,6 +48,14 @@ module.exports = {
       endDate: new Date(),
       createdAt: new Date(),
       updatedAt: new Date()
+    },
+    {
+      userId: "1",
+      spotId: "7",
+      startDate: new Date(),
+      endDate: new Date(),
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
 
    ], {});

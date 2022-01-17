@@ -13,6 +13,7 @@ import SingleSpotDetailPage from "./components/SpotsPage/SingleSpotDetail";
 import CreateNewSpot from "./components/SpotsPage/CreateNewSpot";
 import EditSpotForm from "./components/SpotsPage/EditSpotForm";
 import BookingsPage from "./components/Bookings";
+import SingleBookingDetails from "./components/Bookings/SingleBooking";
 
 
 function App() {
@@ -44,6 +45,9 @@ function App() {
           </Route>
           <Route path="/bookings" exact>
             <BookingsPage />
+          </Route>
+          <Route path="/bookings/:id" exact>
+            <SingleBookingDetails />
           </Route>
         </Switch>
       )}

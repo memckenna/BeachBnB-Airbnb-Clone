@@ -12,7 +12,7 @@ const BookingsPage = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     console.log(sessionUser)
-    const bookingsObject = useSelector(state => state.bookingState.bookings)
+    const bookingsObject = useSelector(state => state.bookingState.trips)
     const bookings = Object.values(bookingsObject);
 
     // console.log("This is my Booking", bookings)
@@ -25,25 +25,23 @@ const BookingsPage = () => {
     if(!sessionUser) {
        window.alert("You must be signed in to access bookings")
        setTimeout(() => {
-           window.location.reload(true);
-       }, 5000);
-       return
+           window.location.pathname = "/";
+       }, 1000);
+    //    return
     }
 
-    // useEffect(() => {
-
-    //         dispatch(getAllBookings());
-
-    // }, [dispatch]);
+    useEffect(() => {
+            dispatch(getAllBookings());
+    }, [dispatch]);
 
     return (
         <div className='bookings-page' >
-            <h1 className='bookings-header'>Bookings</h1>
+            <h1 className='bookings-header'>Trips</h1>
             <ul className='bookings-container'>
                 {bookings.map(({id}) => (
                     <BookingDetails key={id} id={id} />
                 ))}
-                <li>Trips</li>
+
 
             </ul>
         </div>

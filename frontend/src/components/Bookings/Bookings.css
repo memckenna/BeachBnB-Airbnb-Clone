@@ -1,3 +1,9 @@
+html {
+    /* height: 100%;
+    width: 100%;
+    background-color: #EDF6F9;
+    overflow: auto; */
+}
 
 .bookings-container {
     box-sizing: border-box;
@@ -8,7 +14,7 @@
     margin-top: 40px;
     max-width: 1500px;
     width: 100%;
-    min-height: 100px;
+    min-height: 1000px;
     height: 100%;
 
     margin-top: 100px;
@@ -31,4 +37,84 @@
 .bookings-header {
     margin-top: 100px;
     border: 1px solid red;
+}
+
+.single-booking-container {
+    /* box-sizing: border-box;
+    display: flex;
+    padding: 40px 40px 40px 40px;
+    margin-top: 100px;
+    max-width: 1500px;
+    width: 100%;
+    min-height: 100px;
+    height: 100%; */
+
+    /* box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 10px;
+
+    padding: 50px 20px 80px 20px;
+    margin: 6px;
+    margin-top: 100px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px; */
+
+    margin-top: 130px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: white;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    padding: 0px 0px 0px 00px;
+}
+
+.single-booking-header {
+    box-sizing: border-box;
+    position: relative;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 40px;
+    overflow-wrap: auto;
+}
+
+.booking-image {
+    border-radius: 12px;
+    width: 100%;
+    max-width: 1300px;
+    height: 100%;
+    max-height: 568px;
+    box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
+}
+
+.booking-image-text {
+    position: absolute;
+    top: 130px;
+    padding: 5px;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    font-size: 43px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 43px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 1px 1px 2px gray;
+}
+
+.checkin-checkout {
+   
 }

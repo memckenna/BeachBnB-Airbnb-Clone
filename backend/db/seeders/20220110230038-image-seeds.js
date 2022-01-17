@@ -56,6 +56,12 @@ module.exports = {
       url: "https://a0.muscache.com/im/pictures/miso/Hosting-53344025/original/8db0ac0c-2124-4588-8331-e3d7b619bc0d.jpeg?im_w=1200",
       createdAt: new Date(),
       updatedAt: new Date()
+    },
+    {
+      spotId: 7,
+      url: "https://a0.muscache.com/im/pictures/miso/Hosting-46496139/original/8dab2f0b-0ac9-4a87-9b7a-2af5ecd47155.jpeg?im_w=1200",
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
 
    ], {});

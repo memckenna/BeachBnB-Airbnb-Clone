@@ -17,7 +17,7 @@ const SingleSpotDetailPage = () => {
     // const sessionUser = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
     const oneSpot = useSelector(state => state.spotState.listings[id])
-    // console.log(oneSpot)
+
     // const [deleteSpot, setDeleteSpot] = useEffect(false)
     // const [showEditSpotForm, setShowEditSpotForm] = useState(false)
 
