@@ -11,6 +11,7 @@ const BookingDetails = ({id}) => {
     console.log("SPOTTTTT", oneSpot)
     console.log("BOOKING DETAIL", bookingDetail);
 
+
     return (
         <li className="bookings-detail">
             <div>
@@ -19,7 +20,7 @@ const BookingDetails = ({id}) => {
                     {/* <NavLink key={bookingDetail.Spot.id} to={`/spots/${bookingDetail?.Spot?.id}`}>{bookingDetail.Spot.name}</NavLink> */}
                 </div>
                 <div>
-                    <NavLink key={bookingDetail.Spot.id} to={`/bookings/${id}`}>{bookingDetail?.Spot?.name}</NavLink>
+                    <NavLink key={bookingDetail.id} to={`/bookings/${id}`}>{bookingDetail?.Spot?.name}</NavLink>
                 </div>
                 <div>
                     <img className='spot-images' id={id} key={oneSpot?.id} src={oneSpot?.Images[0]?.url}></img>

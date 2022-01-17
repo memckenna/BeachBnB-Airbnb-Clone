@@ -116,5 +116,12 @@ html {
 }
 
 .checkin-checkout {
-   
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.checkin {
+
+    padding-right: 200px;
 }

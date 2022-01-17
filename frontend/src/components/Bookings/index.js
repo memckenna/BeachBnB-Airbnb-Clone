@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
 import { getAllBookings } from '../../store/bookingsReducer';
+import { getAllSpots } from '../../store/spotReducer';
 
 import * as sessionActions from "../../store/session";
 import * as bookingsActions from "../../store/bookingsReducer";
@@ -31,7 +32,8 @@ const BookingsPage = () => {
     }
 
     useEffect(() => {
-            dispatch(getAllBookings());
+        dispatch(getAllBookings());
+        dispatch(getAllSpots());
     }, [dispatch]);
 
     return (
