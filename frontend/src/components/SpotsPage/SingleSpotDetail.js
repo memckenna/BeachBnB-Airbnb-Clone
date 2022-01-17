@@ -14,15 +14,16 @@ import './SpotsPage.css'
 const SingleSpotDetailPage = () => {
     const history = useHistory();
     const { id } = useParams();
+    // const sessionUser = useSelector((state) => state.session.user);
     const dispatch = useDispatch();
     const oneSpot = useSelector(state => state.spotState.listings[id])
-    // const sessionUser = useSelector((state) => state.session.user);
+    // console.log(oneSpot)
     // const [deleteSpot, setDeleteSpot] = useEffect(false)
-
     // const [showEditSpotForm, setShowEditSpotForm] = useState(false)
 
     useEffect(() => {
         dispatch(getSpotById(id))
+
     }, [dispatch, id])
 
 

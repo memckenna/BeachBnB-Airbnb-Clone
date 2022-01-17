@@ -6,11 +6,24 @@ import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import './SpotsPage.css';
 
 import { createNewSpot } from "../../store/spotReducer";
-import { LoginForm } from "../LoginFormModal/LoginForm"
+
+import LoginFormModal from '../LoginFormModal';
+
 
 const CreateNewSpot = () => {
     const dispatch = useDispatch();
     const history = useHistory();
+    const sessionUser = useSelector((state) => state.session.user);
+
+    if(!sessionUser) {
+        window.location.pathname = "/"
+        window.alert("You must be signed in to perform this action")
+        // setTimeout(() => {
+        //     <LoginFormModal />
+        //     // window.location.reload(true);
+        // }, 2000);
+        // return
+     }
 
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
@@ -38,7 +51,6 @@ const CreateNewSpot = () => {
             baths,
             image,
         }
-
         const spot = await dispatch(createNewSpot(newSpot));
         if(spot) {
             history.push(`/spots/${spot.id}`)

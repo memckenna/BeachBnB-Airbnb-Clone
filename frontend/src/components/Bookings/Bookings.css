@@ -1,0 +1,34 @@
+
+.bookings-container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto;
+    border: 1px solid red;
+    padding: 40px 40px 40px 40px;
+    margin-top: 40px;
+    max-width: 1500px;
+    width: 100%;
+    min-height: 100px;
+    height: 100%;
+
+    margin-top: 100px;
+
+}
+
+.bookings-detail {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto;
+    border: 1px solid lightgray;
+    background-color: white;
+    border-radius: 10px;
+
+    padding: 50px 20px 80px 20px;
+    margin: 6px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+}
+
+.bookings-header {
+    margin-top: 100px;
+    border: 1px solid red;
+}
