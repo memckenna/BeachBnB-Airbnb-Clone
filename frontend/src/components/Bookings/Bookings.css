@@ -115,13 +115,30 @@ html {
     text-shadow: 1px 1px 2px gray;
 }
 
-.checkin-checkout {
+
+
+.datepicker {
     display: flex;
     justify-content: center;
-    padding-top: 50px;
+    border: 1px solid lightgray;
+    padding: 0px 10px 0px 10px;
+    border-radius: 12px;
+}
+.date {
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+.checkin {
+    text-align: left;
+    font-size: 14px;
+    border-right: 1px solid lightgray;
+
 }
 
-.checkin {
-
-    padding-right: 200px;
+.checkout {
+    text-align: left;
+    font-size: 14px;
+    padding-left: 10px;
 }

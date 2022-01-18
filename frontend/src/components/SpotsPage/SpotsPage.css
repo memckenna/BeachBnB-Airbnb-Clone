@@ -1,3 +1,4 @@
+
 .spots-container {
     box-sizing: border-box;
     display: grid;
@@ -49,77 +50,6 @@
     list-style: square;
 }
 
-.spot-detail-page {
-    margin-top: 130px;
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: normal;
-    background-color: white;
-    width: 100%;
-    max-width: 800px;
-    border-radius: 10px;
-    padding: 20px 20px 20px 30px;
-
-}
-
-.spot-images {
-    display: flex;
-    align-self: flex-end;
-    width: 300px;
-    height: 220px;
-    border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
-}
-
-.spot-address {
-    display: flex;
-    justify-content: start;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    padding: 0px 0px 20px 0px;
-}
-
-.spot-price {
-    display: flex;
-    justify-content: flex-start;
-
-    font-weight: bold;
-    padding: 0px 20px 0px 20px;
-    margin: 20px 0px;
-}
-
-.detail-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    /* border: 1px solid gray; */
-    width: fit-content;
-    padding: 0px 20px 20px 0px;
-    margin: 0px 10px;
-    /* border-radius: 8px; */
-    /* background-color: white; */
-
-}
-
-.home-details {
-    display: flex;
-
-}
-.details-header {
-    padding: 0px 10px 0px 10px;
-
-}
-
-.beds {
-    padding: 0px 10px 10px 10px;
-}
-.baths {
-    padding: 0px 10px 10px 10px;
-}
 
 .card-dets {
     display: flex;
@@ -243,4 +173,209 @@
     color: #006D77;
     background-color: white;
     box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+}
+.spot-detail-page {
+    margin-top: 130px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    background-color: white;
+    width: auto;
+    max-width: 1400px;
+    border-radius: 10px;
+    padding: 20px 20px 20px 30px;
+
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 0 80px;
+}
+
+.spot-images {
+    display: flex;
+    align-self: flex-end;
+    width: 300px;
+    height: 220px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
+}
+
+.spot-address {
+    display: flex;
+    justify-content: start;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding: 0px 0px 20px 0px;
+}
+
+.spot-price {
+    display: flex;
+    justify-content: flex-start;
+
+    font-weight: bold;
+    padding: 0px 20px 0px 20px;
+    margin: 20px 0px;
+}
+
+.detail-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* border: 1px solid gray; */
+    width: fit-content;
+    padding: 0px 20px 20px 0px;
+    margin: 0px 10px;
+    /* border-radius: 8px; */
+    /* background-color: white; */
+
+}
+
+.home-details {
+    display: flex;
+
+}
+.details-header {
+    padding: 0px 10px 0px 10px;
+
+}
+
+.beds {
+    padding: 0px 10px 10px 10px;
+}
+.baths {
+    padding: 0px 10px 10px 10px;
+}
+
+.home-info-container {
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    padding-left: 24px;
+    padding-right: 24px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border-bottom: 1px solid black;
+}
+
+.main-content {
+
+}
+
+.stay-info {
+    display: block;
+    box-sizing: border-box;
+
+
+    border-top: 1px solid black;
+    /* border-bottom: 1px solid black; */
+    padding: 32px 0;
+    margin: 0 0 24px;
+
+    max-width: 653px;
+    width: 100%;
+    max-height: 300px;
+    height: 100%;
+    flex: 0 1 auto;
+
+
+}
+.stay-info h3 {
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: 20px;
+}
+
+.stay-info p {
+    font-size: 14px;
+    font-weight: 300;
+
+}
+
+.home-description {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 48px;
+}
+
+.sleep-info {
+    border-bottom: 1px solid black;
+    display: block;
+}
+
+.amenity-offerings {
+    border-bottom: 1px solid black;
+    display: block;
+}
+
+.left-calendar {
+    /* border-bottom: 1px solid black; */
+}
+
+.booking-section {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 12px;
+    padding: 24px 24px 24px 24px;
+    width: 380px;
+    /* width: 100%; */
+    height: 454px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 110px;
+
+
+
+}
+.booking {
+    display: flex;
+    flex-direction: column;
+    /* -webkit-box-direction:normal ;
+    -webkit-box-orient: vertical; */
+
+}
+
+.booking-calendar {
+    display: block;
+
+    box-sizing: border-box;
+    /* margin-left: 100px; */
+
+    /* position: sticky; */
+
+}
+
+.reserve {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.reserve-button {
+    display: flex;
+    justify-content: center;
+    padding: 16px 10px 16px 10px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+
+    background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
 }
