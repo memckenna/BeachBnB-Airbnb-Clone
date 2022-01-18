@@ -108,6 +108,7 @@ const SingleSpotDetailPage = () => {
                         </div>
                         <div className='reserve'>
                             <button className='reserve-button'>Reserve</button>
+                            <div className='reserve-text'>You won't be charged yet</div>
                         </div>
                     </div>
                 </div>
