@@ -178,7 +178,7 @@
     margin-top: 130px;
     margin-bottom: 60px;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
@@ -205,7 +205,7 @@
 
 .spot-address {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     padding: 0px 0px 20px 0px;
