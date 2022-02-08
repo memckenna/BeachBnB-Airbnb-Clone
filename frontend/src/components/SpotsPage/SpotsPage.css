@@ -268,9 +268,7 @@
     border-bottom: 1px solid black;
 }
 
-.main-content {
 
-}
 
 .stay-info {
     display: block;
@@ -320,9 +318,7 @@
     display: block;
 }
 
-.left-calendar {
-    /* border-bottom: 1px solid black; */
-}
+
 
 .booking-section {
     box-sizing: border-box;
