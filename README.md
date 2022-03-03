@@ -20,18 +20,9 @@ BeachBnb is a full-stack applicationan, inspired by AirBnB, that allows users to
     
 <div align='center'>
 <h1 align='center' style='font-weight: bold'>Technologies Used </h1>
-The technologies used for the front and backend are:
-* React
-* Redux
-* JavaScript
-* Express
-* Sequelize
-* PostgreSQL
-* HTML5
-* CSS
-* JSON API
-* Git
 
+React  |  Redux  |  JavaScript  |  Express  |   Sequelize  |  PostgreSQL  |  HTML5  |  CSS  |  JSON API  |  Git
+</div>
 In the BeachBnb clone you will connect a backend application to use thunk
 actions and a frontend application.
 
