@@ -23,9 +23,11 @@ BeachBnb is a full-stack applicationan, inspired by AirBnB, that allows users to
 
 React  |  Redux  |  JavaScript  |  Express  |   Sequelize  |  PostgreSQL  |  HTML5  |  CSS  |  JSON API  |  Git
 </div>
-In the BeachBnb clone you will connect a backend application to use thunk
-actions and a frontend application.
 
+BeachBnB is developed using React, Redux, Express, and Sequelize to create a full stack application. Heroku was used for production hosting.
+
+<br>
+</br>
 
 ## Setup
 
