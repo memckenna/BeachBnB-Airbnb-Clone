@@ -1,7 +1,25 @@
-# BeachBnB-Airbnb-Clone
+<h1 align='center' style='font-weight: bold'>BeachBnB</h1>
 
-BeachBnb is an AirBnB clone inspired by beach vacation rentals.
+<br>
+</br>
 
+<h1 align='center' style='font-weight: bold'>BeachBnB at a Glance</h1>
+
+BeachBnb is a full-stack applicationan, inspired by AirBnB, that allows users to become a host for their beach home vacation rentals, as well as view the vactation rentals of other users. Logged in users can view the feedpage where they can either click to become a host or navigate to inspired getaway vacation rental suggestions. 
+
+<br>
+</br>
+
+<div align='center'>
+<h1 align='center' style='font-weight: bold'>Index</h1>
+<a href='https://github.com/memckenna/BeachBnB-Airbnb-Clone/wiki/Database-Schema'>Database Schema</a> - <a href='https://github.com/memckenna/BeachBnB-Airbnb-Clone/wiki/Feature-List'>Feature List</a> 
+</div>
+
+<br>
+</br>   
+    
+<div align='center'>
+<h1 align='center' style='font-weight: bold'>Technologies Used </h1>
 The technologies used for the front and backend are:
 * React
 * Redux
