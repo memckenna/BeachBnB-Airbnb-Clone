@@ -25,7 +25,7 @@ const BecomeAHost = ({ isLoaded }) => {
     // }
 
     return (
-        <div>
+        <div className='become-a-host-section'>
             <div className="hosting-section">
                 <img className="hosting-image" src="images/HomePageImages/beach-hosting.jpeg"></img>
                 <div className="hosting-text">Ready to host your beach home?</div>

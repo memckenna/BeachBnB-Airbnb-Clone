@@ -30,7 +30,7 @@ const SplashPage = () => {
             <div>
                 <TripInspiration />
             </div>
-            <div>
+            <div >
                 <BecomeAHost />
             </div>
             <div>

@@ -7,17 +7,23 @@
 
     /* background-color: #cc0000; */
     color: white;
-    /* padding: 1em; */
+    transform: translateY(0px) translateZ(0px);
 
+    /* padding: 1em; */
+    /* height: 100px; */
 }
+
+
 
 .nav-bar {
     display: block;
-    height: 80px;
+    /* display: flex; */
+    /* height: 80px; */
+    height: 100%;
     /* position: fixed; */
     /* line-height: 50px; */
     width: 100%;
-    max-height: 80px;
+    max-height: 100px;
     min-height: 80px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
@@ -25,11 +31,11 @@
     /* position: fixed; */
 }
 
-.nav-bar ul {
+/* .nav-bar ul {
     list-style: none;
     padding: 0;
     margin: 0;
-}
+} */
 
 .nav-links {
     display: flex;
@@ -37,17 +43,35 @@
     align-items: center;
     background-color: #FFDDD2;
     /* background-color: #83C5BE; */
-    padding: 10px 80px 10px 80px;
+    /* padding: 10px 80px 10px 80px; */
+    padding-right: 80px;
+    padding-left: 80px;
     max-height: 80px;
+    height: 100%;
 
     /* box-shadow: rgb(0 0 0 / 10%) 0px 8px 28px; */
 }
 
+.login-signup-button {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.right-nav-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo {
     /* width: 70px; */
-    width: 180px;
+    width: 170px;
     height: 150px;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 
@@ -150,14 +174,15 @@
 .become-a-host {
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 22px;
-    /* padding-right: 80px; */
+    font-size: 18px;
+    padding-right: 10px;
     /* padding-left: 900px; */
 
     /* position: relative; */
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
     color: #006D77;
     font-weight: bolder;
     text-shadow: gray 1px 1px 1px;
+
 
 }
