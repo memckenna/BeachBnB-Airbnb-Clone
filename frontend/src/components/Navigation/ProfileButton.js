@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Route, NavLink } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import BookingsPage from '../Bookings/index';
+
+import LoginFormModal from "../LoginFormModal";
+import SignupFormModal from "../SignupFormPage";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const sessionUser = useSelector(state => state.session.user)
 
   const openMenu = () => {
     if (showMenu) return;
@@ -30,6 +34,18 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
+  // let sessionLinks;
+  // if (!user) {
+  //     sessionLinks = (
+  //         // <ProfileButton user={sessionUser} />
+  //         <>
+  //             <LoginFormModal />
+  //             <SignupFormModal />
+  //         </>
+  //     );
+  // }
+
+
     return (
         <>
             <div className="profile">
@@ -41,12 +57,36 @@ function ProfileButton({ user }) {
                         <ul className="profile-dropdown">
                             <li className="profile-links">{user.username}</li>
                             <li className="profile-links">{user.email}</li>
+                            {/* <li className="profile-links">
+                              <div className="profile-links">{isLoaded && sessionLinks}</div>
+                            </li> */}
+
                             <li>
                             <NavLink className="profile-links" to={`/bookings`}>Bookings</NavLink>
                             </li>
                             <li className="profile-links logout">
                                 <button className="logout-button" onClick={logout}>Log Out</button>
                             </li>
+                            {/* {!sessionUser ?
+                                <li className="profile-links logout">
+                                  <LoginFormModal />
+                                  <SignupFormModal />
+
+                                </li> :
+                                <li className="profile-links logout">
+                                      <button className="logout-button" onClick={logout}>Log Out</button>
+                                </li>
+                            } */}
+                            {/* {sessionUser ?
+                              <li className="profile-links logout">
+                                  <button className="logout-button" onClick={logout}>Log Out</button>
+                              </li> :
+                              <li className="profile-links logout">
+                                <LoginFormModal />
+                                <SignupFormModal />
+
+                              </li>
+                            } */}
                         </ul>
                     )}
                 </div>

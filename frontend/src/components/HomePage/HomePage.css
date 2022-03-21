@@ -1,7 +1,8 @@
 html {
     height: 100%;
     width: 100%;
-    background-color: #EDF6F9;
+    /* background-color: #EDF6F9; */
+    background-color: white;
     overflow: auto;
 }
 
