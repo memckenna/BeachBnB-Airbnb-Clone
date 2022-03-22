@@ -17,10 +17,15 @@ const SpotCardDetail = ({ id, name }) => {
     return (
         <li className="spot-detail">
             <div className='card-dets'>
+                <div>
+                    <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>
+                        <img className='card-image' id={id} key={oneSpot.id} src={oneSpot.Images[0]?.url}></img>
+                    </NavLink>
+                </div>
                 <div className='spot-info'>
-                    <div>
+                    {/* <div>
                         <h2 className='card-header'>{name}</h2>
-                    </div>
+                    </div> */}
                     <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>{oneSpot.name}</NavLink>
                     <div className='city-state'>
                         <div>{oneSpot.address} |</div>
@@ -28,16 +33,19 @@ const SpotCardDetail = ({ id, name }) => {
                         <div>{oneSpot.state}</div>
                     </div>
                     <div className='bed-bath'>
-                        <div>Bedrooms: {oneSpot.bedrooms} </div>
-                        <div className='baths'>Baths: {oneSpot.baths}</div>
+                        <div className='beds'>{oneSpot.bedrooms} bedrooms</div>
+                        {/* <div className='dot-separator'>
+                            <i className="fas fa-circle"></i>
+                        </div> */}
+                        <div className='baths'>{oneSpot.baths} baths</div>
                     </div>
                     <div className='card-price'>${oneSpot.price}/night</div>
                 </div>
-                <div>
+                {/* <div>
                     <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>
                         <img className='card-image' id={id} key={oneSpot.id} src={oneSpot.Images[0]?.url}></img>
                     </NavLink>
-                </div>
+                </div> */}
             </div>
         </li>
     )

@@ -51,7 +51,9 @@ function ProfileButton({ user }) {
             <div className="profile">
                 <div className='profile-dropdown-container'>
                     <button className="profile-button" onClick={openMenu}>
+                        <img className="profile-menu-lines" src="/images/thin_lines_menu_icon.png" />
                         <i className="fas fa-user-circle"></i>
+                        {/* <i className="far fa-address-card"></i> */}
                     </button>
                     {showMenu && (
                         <ul className="profile-dropdown">
