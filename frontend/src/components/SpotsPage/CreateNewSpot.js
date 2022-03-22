@@ -18,6 +18,7 @@ const CreateNewSpot = () => {
     if(!sessionUser) {
         window.location.pathname = "/"
         window.alert("You must be signed in to perform this action")
+        
         // setTimeout(() => {
         //     <LoginFormModal />
         //     // window.location.reload(true);

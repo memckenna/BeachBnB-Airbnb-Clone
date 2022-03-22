@@ -8,22 +8,34 @@ import './Bookings.css';
 const BookingDetails = ({id}) => {
     const bookingDetail = useSelector(state => state.bookingState.trips[id]);
     const oneSpot = useSelector(state => state.spotState.listings[id]);
-    console.log("SPOTTTTT", oneSpot)
+    // const spot = useSelector(state => state.spotState)
+    // console.log("SPOT STATE", spot)
+    // console.log("SPOTTTTT", oneSpot)
     console.log("BOOKING DETAIL", bookingDetail);
 
 
     return (
         <li className="bookings-detail">
-            <div>
-                <div>
-                    <h2>{bookingDetail.Spot.name}</h2>
-                    {/* <NavLink key={bookingDetail.Spot.id} to={`/spots/${bookingDetail?.Spot?.id}`}>{bookingDetail.Spot.name}</NavLink> */}
+            <div className="bookings-detail-div">
+                <div className="booking-detail-left">
+                    <div>
+                        <img className='spot-images' id={id} key={bookingDetail?.Spot?.id} src={bookingDetail?.Spot?.Images[0]?.url}></img>
+                    </div>
                 </div>
-                <div>
-                    <NavLink key={bookingDetail.id} to={`/bookings/${id}`}>{bookingDetail?.Spot?.name}</NavLink>
-                </div>
-                <div>
-                    <img className='spot-images' id={id} key={oneSpot?.id} src={oneSpot?.Images[0]?.url}></img>
+                <div className="booking-detail-right">
+                    <div>
+                        <h2>{bookingDetail?.Spot?.name}</h2>
+                        {/* <NavLink key={bookingDetail.Spot.id} to={`/spots/${bookingDetail?.Spot?.id}`}>{bookingDetail.Spot.name}</NavLink> */}
+                    </div>
+                    <div>
+                        <NavLink key={bookingDetail?.id} to={`/bookings/${id}`}>{bookingDetail?.Spot?.name}</NavLink>
+                    </div>
+                    <div>
+                        Hosted by {bookingDetail?.Spot?.User?.username}
+                    </div>
+                    <div>
+                        {bookingDetail.startDate.split('T')[0].replaceAll('-', ' / ')} - {bookingDetail.endDate.split('T')[0].replaceAll('-', ' / ')}
+                    </div>
                 </div>
             </div>
         </li>

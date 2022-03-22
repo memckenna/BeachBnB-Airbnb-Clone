@@ -14,25 +14,27 @@ const SingleBookingDetails = () => {
     const { id } = useParams();
     console.log(id)
     const oneBooking = useSelector(state => state.bookingState.trips[id]);
-    const oneSpot = useSelector(state => state.spotState.listings[id])
-    console.log("THIS IS ONE SPOT" , oneSpot)
+    // const oneSpot = useSelector(state => state.spotState)
+    // console.log("THIS IS ONE SPOT" , oneSpot)
+    console.log("booking state", oneBooking?.Spot)
 
     useEffect(() => {
         dispatch(getOneBooking(id))
-        dispatch(getSpotById(id))
+        // dispatch(getSpotById(oneBooking?.Spot?.id))
     }, [dispatch, id])
 
     return (
         <div className="single-booking-container">
             <div className="single-booking-header">
-                <div className="booking-image-text">Your stay at {oneBooking?.Spot.name}</div>
+                <div className="booking-image-text">Your stay at {oneBooking?.Spot?.name}</div>
                 {/* <NavLink to={`/spots/${oneSpot.id}`}> */}
-                    <img className='booking-image' id={id} key={oneSpot?.id} src={oneSpot?.Images[0]?.url}></img>
+                    <img className='booking-image' id={id} key={oneBooking?.Spot?.id} src={oneBooking?.Spot?.Images[0]?.url}></img>
+
                 {/* </NavLink> */}
 
                 <div className="checkin-checkout">
-                    <div className="checkin">Check-in</div>
-                    <div>Checkout</div>
+                    <div className="single-checkin"><strong>Check-in:</strong> {oneBooking?.startDate.split('T')[0].replaceAll('-', ' / ')}</div>
+                    <div className="single-checkout"><strong>Checkout:</strong> {oneBooking?.endDate.split('T')[0].replaceAll('-', ' / ')}</div>
                 </div>
             </div>
             <div>

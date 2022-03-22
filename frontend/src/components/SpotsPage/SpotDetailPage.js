@@ -28,9 +28,10 @@ const SpotCardDetail = ({ id, name }) => {
                     </div> */}
                     <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>{oneSpot.name}</NavLink>
                     <div className='city-state'>
-                        <div>{oneSpot.address} |</div>
+                        {/* <div>{oneSpot.address} |</div>
                         <div className='city'>{oneSpot.city}, </div>
-                        <div>{oneSpot.state}</div>
+                        <div>{oneSpot.state}</div> */}
+                        <a href={`https://www.google.com/maps/place/${oneSpot.city}+${oneSpot.state}+${oneSpot.country}`} target="_blank">{oneSpot.city}, {oneSpot.state}, {oneSpot.country}</a>
                     </div>
                     <div className='bed-bath'>
                         <div className='beds'>{oneSpot.bedrooms} bedrooms</div>
@@ -39,7 +40,9 @@ const SpotCardDetail = ({ id, name }) => {
                         </div> */}
                         <div className='baths'>{oneSpot.baths} baths</div>
                     </div>
-                    <div className='card-price'>${oneSpot.price}/night</div>
+                    <div className='single-spot-price'>
+                        <div className='card-price'>${oneSpot.price}/night</div>
+                    </div>
                 </div>
                 {/* <div>
                     <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>

@@ -6,14 +6,17 @@ const { handleValidationErrors } = require('../../utils/validation');
 const { requireAuth } = require('../../utils/auth')
 const db = require("../../db/models")
 const { Spot } = require('../../db/models');
-const { Image } = require('../../db/models');
+const { Image, Booking } = require('../../db/models');
 
 const router = express.Router();
 
 /* GET All Listings */
 router.get('/', asyncHandler(async (req, res) => {
     const spots = await Spot.findAll({
-        include: [Image]
+        include: [
+            Image,
+            Booking
+        ]
     });
 
     return res.json(spots);
@@ -22,7 +25,10 @@ router.get('/', asyncHandler(async (req, res) => {
 /* GET EACH LISTING BY ID */
 router.get("/:id", asyncHandler(async (req, res) => {
     const spotById = await Spot.findByPk(req.params.id, {
-        include: [Image]
+        include: [
+            Image,
+            Booking
+        ]
     });
 
     return res.json(spotById)
@@ -90,7 +96,7 @@ router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res
         // const image = await Image.create({spotId:newSpot.id, url:req.body.image})
         // newSpot.Images = [image]
         const newImg = await Image.create({spotId : newSpot.id, url: req.body.image})
-        
+
         newSpot.dataValues.Images = [newImg]
     }
 

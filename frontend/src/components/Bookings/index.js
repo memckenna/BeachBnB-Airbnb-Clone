@@ -15,6 +15,8 @@ const BookingsPage = () => {
     console.log(sessionUser)
     const bookingsObject = useSelector(state => state.bookingState.trips)
     const bookings = Object.values(bookingsObject);
+    console.log('bookings object', bookingsObject)
+    console.log(bookings)
 
     // console.log("This is my Booking", bookings)
     // console.log(bookings)
@@ -23,12 +25,12 @@ const BookingsPage = () => {
     //     bookingId: bookings.id,
     //     userId: sessionUser.id
     // }
-    if(!sessionUser) {
-       window.alert("You must be signed in to access bookings")
-       setTimeout(() => {
-           window.location.pathname = "/";
-       }, 1000);
-    //    return
+    if (!sessionUser) {
+        window.alert("You must be signed in to access bookings")
+        setTimeout(() => {
+            window.location.pathname = "/";
+        }, 1000);
+        //    return
     }
 
     useEffect(() => {
@@ -39,9 +41,12 @@ const BookingsPage = () => {
     return (
         <div className='bookings-page' >
             <h1 className='bookings-header'>Trips</h1>
+            {/* {bookings} */}
+
+
             <ul className='bookings-container'>
-                {bookings.map(({id}) => (
-                    <BookingDetails key={id} id={id} />
+                {bookings.map((booking) => (
+                    <BookingDetails key={booking.id} id={booking.id} />
                 ))}
 
 

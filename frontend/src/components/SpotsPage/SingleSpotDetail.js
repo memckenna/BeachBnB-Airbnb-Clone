@@ -1,24 +1,26 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { NavLink, Route, useParams } from 'react-router-dom';
+import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import { getSpotById } from '../../store/spotReducer';
 import EditSpotForm from './EditSpotForm'
 import { removeSpot } from '../../store/spotReducer';
 import BookingCalendar from '../Bookings/BookingCalendar';
+import { createNewBooking } from '../../store/bookingsReducer';
 // import * as sessionActions from "../../store/session";
 
 
 import './SpotsPage.css'
 
 const SingleSpotDetailPage = () => {
+    const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
-    // const sessionUser = useSelector((state) => state.session.user);
-    const dispatch = useDispatch();
-    const oneSpot = useSelector(state => state.spotState.listings[id])
 
+    const spot = useSelector(state => state.spotState)
+    const sessionUser = useSelector((state) => state.session.user);
+    const oneSpot = useSelector(state => state.spotState.listings[id])
+    console.log("SPOT STATE", spot.listings[id])
     // const [deleteSpot, setDeleteSpot] = useEffect(false)
     // const [showEditSpotForm, setShowEditSpotForm] = useState(false)
 
@@ -26,7 +28,6 @@ const SingleSpotDetailPage = () => {
         dispatch(getSpotById(id))
 
     }, [dispatch, id])
-
 
 
     return (
@@ -49,16 +50,32 @@ const SingleSpotDetailPage = () => {
                     <div className='baths'> Baths: {oneSpot?.baths}</div>
                 </div>
             </div>
-            <div className='edit-delete-button'>
-                <div>
-                    <NavLink to={`/spots/${oneSpot?.id}/edit`} >
-                        <button className='edit-listing'>Edit Listing</button>
-                    </NavLink>
-                </div>
-                <div>
-                    <button onClick={() => dispatch(removeSpot(oneSpot?.id)).then(()=> history.push('/spots'))} className='edit-listing'>Delete Listing</button>
-                </div>
-            </div>
+            {sessionUser?.id === oneSpot?.userId ?
+                <div className='edit-delete-button'>
+                    <div>
+                        <NavLink to={`/spots/${oneSpot?.id}/edit`} >
+                            <button className='edit-listing'>Edit Listing</button>
+                        </NavLink>
+                    </div>
+                    <div>
+                        <button onClick={() => dispatch(removeSpot(oneSpot?.id)).then(() => history.push('/spots'))} className='edit-listing'>Delete Listing</button>
+                    </div>
+                </div> :
+                <BookingCalendar spot={oneSpot}/>
+
+                // <div className='booking-section'>
+                //     <div className='booking'>
+                //         <div className='booking-calendar'>
+
+                //             <BookingCalendar />
+                //         </div>
+                //         <div className='reserve'>
+                //             <button className='reserve-button'>Reserve</button>
+                //             <div className='reserve-text'>You won't be charged yet</div>
+                //         </div>
+                //     </div>
+                // </div>
+            }
             <div className='home-info-container'>
                 <div className='main-content'>
                     <div className='stay-info'>
@@ -99,18 +116,6 @@ const SingleSpotDetailPage = () => {
                         </div>
                     </div>
 
-                </div>
-                <div className='booking-section'>
-                    <div className='booking'>
-                        <div className='booking-calendar'>
-
-                            <BookingCalendar />
-                        </div>
-                        <div className='reserve'>
-                            <button className='reserve-button'>Reserve</button>
-                            <div className='reserve-text'>You won't be charged yet</div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
