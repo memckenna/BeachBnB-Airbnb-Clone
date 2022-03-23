@@ -1,16 +1,17 @@
 import React from "react";
 import DatePicker from "react-datepicker";
+import moment from "moment";
 
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
+import { NavLink, Route, useParams, useHistory, Redirect } from 'react-router-dom';
 import { createNewBooking } from "../../store/bookingsReducer";
 import { getOneBooking } from "../../store/bookingsReducer";
 
 import "react-datepicker/dist/react-datepicker.css";
 import './Bookings.css'
 
-const BookingCalendar = ({spot}) => {
+const BookingCalendar = ({ spot }) => {
      const dispatch = useDispatch();
      const history = useHistory();
      const { id } = useParams()
@@ -18,43 +19,55 @@ const BookingCalendar = ({spot}) => {
      const sessionUser = useSelector(state => state.session.user)
      console.log("BOOKING STATE", bookingObj)
 
-
      const [startDate, setStartDate] = useState(new Date());
-     console.log(startDate.toDateString())
      const [endDate, setEndDate] = useState(new Date());
-     const [spotId, setSpotId] = useState(bookingObj?.spotId)
-     const [userId, setUserId] = useState(sessionUser?.id)
+     // const [spotId, setSpotId] = useState(bookingObj?.spotId)
+     // const [userId, setUserId] = useState(sessionUser?.id)
+     const [errors, setErrors] = useState([])
 
      useEffect(() => {
           dispatch(getOneBooking(id))
-     },[dispatch, id])
+
+     }, [dispatch, id])
+
+
+
+     const handleStartDate = (date) => {
+          setStartDate(date)
+          setEndDate(null)
+     }
+     const handleEndDate = (date) => {
+          setEndDate(date)
+     }
 
      const createBooking = async (e) => {
           e.preventDefault()
 
-          const newBooking = { startDate, endDate, spotId, userId};
+          const booking = {
+               startDate,
+               endDate,
+               spotId: bookingObj?.spotId,
+               userId: sessionUser?.id
+          };
 
-          const booking = await dispatch(createNewBooking(newBooking))
-          if (booking) {
-               setSpotId(booking.spotId)
-               setUserId(sessionUser?.id)
-               history.push(`/bookings/${booking.spotId}`)
+          const newBooking = await dispatch(createNewBooking(booking))
+          await dispatch(getOneBooking(id))
+
+          if(newBooking) {
+               history.push(`/bookings`)
           }
      }
 
-     // const bookedDates = Object.values(spot?.Bookings)?.map((booking, idx) => {
-     //      console.log(booking)
-     // })
-     // console.log(bookedDates)
-     // const disableDates = date => {
-     //      return !bookedDates.includes(date.startDate)
-     // }
-     // console.log(disableDates)
+
+//     if (!sessionUser) return <Redirect to="/" />;
 
      return (
           <div className='booking-section'>
                <div className='booking'>
                     <div className='booking-calendar'>
+                         <ul>
+                              {errors?.map((error, idx) => <li key={idx}>{error}</li>)}
+                         </ul>
                          <form onSubmit={createBooking} className="datepicker">
                               <div className="booking-calendar-dates">
                                    <div className="checkin">
@@ -65,9 +78,10 @@ const BookingCalendar = ({spot}) => {
                                              selectsStart
                                              startDate={startDate}
                                              endDate={endDate}
-                                             onChange={date => setStartDate(date)}
                                              minDate={new Date()}
-                                             // isValidDate={}
+                                             // onChange={date => setStartDate(date)}
+                                             onChange={handleStartDate}
+
                                         />
                                    </div>
                                    <div className="checkout">
@@ -79,7 +93,9 @@ const BookingCalendar = ({spot}) => {
                                              startDate={startDate}
                                              endDate={endDate}
                                              minDate={startDate}
-                                             onChange={date => setEndDate(date)}
+                                             onChange={handleEndDate}
+                                             // onChange={date => setEndDate(date)}
+
                                         />
                                    </div>
 
@@ -90,12 +106,22 @@ const BookingCalendar = ({spot}) => {
                               </div>
                          </form>
                     </div>
+                    {startDate && endDate && (
+                         <div>
+                              <p>
+                                   You selected {moment(startDate).format("LL")} to{" "}
+                                   {moment(endDate).format("LL")}
+                              </p>
+                         </div>
+                    )}
+
                     <div>
                          <h3>Unavailable Dates: </h3>
                          {spot?.Bookings?.length ?
                               Object.values(spot?.Bookings)?.map((booking, idx) => (
 
-                                   <li key={booking.id}>{booking?.startDate.split('T')[0].replaceAll('-', ' / ')}  -  {booking?.endDate.split('T')[0].replaceAll('-', ' / ')}</li>
+                                   // <li key={booking.id}>{booking?.startDate.split('T')[0].replaceAll('-', ' / ')}  -  {booking?.endDate.split('T')[0].replaceAll('-', ' / ')}</li>
+                                   <li key={booking?.id}>{moment(booking?.startDate).format("LL")} -{" "} {moment(booking?.endDate).format("LL")}</li>
                               )) :
                               <li>Be the first to book this spot</li>
                          }

@@ -12,19 +12,12 @@ import BookingDetails from './BookingDetails';
 const BookingsPage = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
-    console.log(sessionUser)
+    // console.log(sessionUser)
     const bookingsObject = useSelector(state => state.bookingState.trips)
     const bookings = Object.values(bookingsObject);
-    console.log('bookings object', bookingsObject)
-    console.log(bookings)
-
-    // console.log("This is my Booking", bookings)
+    // console.log('bookings object', bookingsObject)
     // console.log(bookings)
 
-    // const paylod = {
-    //     bookingId: bookings.id,
-    //     userId: sessionUser.id
-    // }
     if (!sessionUser) {
         window.alert("You must be signed in to access bookings")
         setTimeout(() => {
@@ -45,8 +38,8 @@ const BookingsPage = () => {
 
 
             <ul className='bookings-container'>
-                {bookings.map((booking) => (
-                    <BookingDetails key={booking.id} id={booking.id} />
+                {bookings?.map((booking) => (
+                    <BookingDetails key={booking?.id} id={booking?.id} />
                 ))}
 
 

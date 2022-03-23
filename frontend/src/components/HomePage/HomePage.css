@@ -57,6 +57,15 @@ html {
     border: none;
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
     font-weight: bold;
+    /* color: linear-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    /* background-image: linear-gradient(45deg, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1));
+    background-clip: text;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent; */
+
 }
 
 .inspo-trip-container {

@@ -52,8 +52,8 @@ router.post('/new', asyncHandler(async (req, res) => {
 
     const { spotId, userId, startDate, endDate } = req.body;
 
-    await Booking.create(createBooking)
-    return res.json({createBooking})
+    const newBooking = await Booking.create(createBooking)
+    return res.json(newBooking)
 }))
 
 //Get a booking to edit

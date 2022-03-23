@@ -7,6 +7,7 @@ import EditSpotForm from './EditSpotForm'
 import { removeSpot } from '../../store/spotReducer';
 import BookingCalendar from '../Bookings/BookingCalendar';
 import { createNewBooking } from '../../store/bookingsReducer';
+import { getOneBooking } from '../../store/bookingsReducer';
 // import * as sessionActions from "../../store/session";
 
 
@@ -20,13 +21,15 @@ const SingleSpotDetailPage = () => {
     const spot = useSelector(state => state.spotState)
     const sessionUser = useSelector((state) => state.session.user);
     const oneSpot = useSelector(state => state.spotState.listings[id])
+    const bookingObj = useSelector(state => state.bookingState.trips[id])
+    console.log("BOOKING SINGLE SPOT", bookingObj)
     console.log("SPOT STATE", spot.listings[id])
     // const [deleteSpot, setDeleteSpot] = useEffect(false)
     // const [showEditSpotForm, setShowEditSpotForm] = useState(false)
 
     useEffect(() => {
         dispatch(getSpotById(id))
-
+        // dispatch(getOneBooking(bookingObj?.id))
     }, [dispatch, id])
 
 
@@ -62,19 +65,6 @@ const SingleSpotDetailPage = () => {
                     </div>
                 </div> :
                 <BookingCalendar spot={oneSpot}/>
-
-                // <div className='booking-section'>
-                //     <div className='booking'>
-                //         <div className='booking-calendar'>
-
-                //             <BookingCalendar />
-                //         </div>
-                //         <div className='reserve'>
-                //             <button className='reserve-button'>Reserve</button>
-                //             <div className='reserve-text'>You won't be charged yet</div>
-                //         </div>
-                //     </div>
-                // </div>
             }
             <div className='home-info-container'>
                 <div className='main-content'>

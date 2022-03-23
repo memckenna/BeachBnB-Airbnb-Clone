@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
+import moment from "moment";
+
 
 import './Bookings.css';
 
@@ -34,7 +36,8 @@ const BookingDetails = ({id}) => {
                         Hosted by {bookingDetail?.Spot?.User?.username}
                     </div>
                     <div>
-                        {bookingDetail.startDate.split('T')[0].replaceAll('-', ' / ')} - {bookingDetail.endDate.split('T')[0].replaceAll('-', ' / ')}
+                        {/* {bookingDetail.startDate.split('T')[0].replaceAll('-', ' / ')} - {bookingDetail.endDate.split('T')[0].replaceAll('-', ' / ')} */}
+                        {moment(bookingDetail.startDate).format("LL")} -{" "} {moment(bookingDetail.endDate).format("LL")}
                     </div>
                 </div>
             </div>
