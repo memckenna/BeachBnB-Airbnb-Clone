@@ -1,3 +1,5 @@
+
+
 .edit-booking-calendar {
     /* display: block; */
     box-sizing: border-box;
@@ -82,4 +84,18 @@
     text-align: left;
     font-size: 14px;
     padding-left: 10px;
+}
+
+
+.edit-booking-button {
+    padding: 15px 20px 15px 20px;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 20px;
+    border: none;
+}
+
+.edit-booking-button-div {
+    padding-left: 40px;
+
 }

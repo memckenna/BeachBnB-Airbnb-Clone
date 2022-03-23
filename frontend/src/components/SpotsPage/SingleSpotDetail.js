@@ -9,8 +9,8 @@ import BookingCalendar from '../Bookings/BookingCalendar';
 import { createNewBooking } from '../../store/bookingsReducer';
 import { getOneBooking } from '../../store/bookingsReducer';
 // import * as sessionActions from "../../store/session";
-
-
+import { getAllSpotReviews } from '../../store/reviewReducer';
+import GetAllReviewsOnSpot from '../Reviews/GetAllReviews';
 import './SpotsPage.css'
 
 const SingleSpotDetailPage = () => {
@@ -22,6 +22,8 @@ const SingleSpotDetailPage = () => {
     const sessionUser = useSelector((state) => state.session.user);
     const oneSpot = useSelector(state => state.spotState.listings[id])
     const bookingObj = useSelector(state => state.bookingState.trips[id])
+    const reviewObj = useSelector(state => state.reviewState)
+    console.log("REVIEWS", reviewObj)
     console.log("BOOKING SINGLE SPOT", bookingObj)
     console.log("SPOT STATE", spot.listings[id])
     // const [deleteSpot, setDeleteSpot] = useEffect(false)
@@ -29,6 +31,7 @@ const SingleSpotDetailPage = () => {
 
     useEffect(() => {
         dispatch(getSpotById(id))
+        dispatch(getAllSpotReviews())
         // dispatch(getOneBooking(bookingObj?.id))
     }, [dispatch, id])
 
@@ -88,7 +91,7 @@ const SingleSpotDetailPage = () => {
                                 <h3>Free cancellation for 48 hours</h3>
                             </div>
                         </div>
-                        <div className='home-description'>
+                        {/* <div className='home-description'>
                             <div>
                                 <p>HOME DESCRIPTION PARAGRAPH</p>
                             </div>
@@ -107,7 +110,7 @@ const SingleSpotDetailPage = () => {
                             <div>
                                 <h3>NUMBER nights in CITY (calendar underneith)</h3>
                             </div>
-                        </div>
+                        </div> */}
 
                     </div>
                 </div>
@@ -116,6 +119,11 @@ const SingleSpotDetailPage = () => {
 
             <div>
                 <h3>REVIEWS</h3>
+                {/* <div>
+                    {reviewObj?.map(review => (
+                        <GetAllReviewsOnSpot key={review?.id} id={review?.id} />
+                    ))}
+                </div> */}
             </div>
             <div>
                 <h3>Where you'll be</h3>

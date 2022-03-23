@@ -47,12 +47,6 @@ export const createNewBooking = (booking) => async(dispatch) => {
     const response = await csrfFetch(`/api/bookings/new`, {
         method: 'POST',
         body: JSON.stringify(booking),
-        // body: JSON.stringify({
-        //     startDate,
-        //     endDate,
-        //     spotId,
-        //     userId
-        // }),
     });
 
     const newBooking = await response.json();
@@ -119,15 +113,15 @@ const bookingReducer = (state = initialState, action) => {
             newState.trips[action.booking.id] = action.booking;
             console.log("NEW BOOKING STATE", newState)
             // newState.trips = {...newState.trips, [action.booking.id]: action.booking}
-            return newState
+            return newState;
         case UPDATE_BOOKING:
             newState = {...state}
             newState.trips[action.booking.id] = action.booking;
-            return newState
+            return newState;
         case DELETE_BOOKING:
             newState = {...state}
             delete newState.trips[action.booking.id]
-
+            return newState;
 
         default:
             return state;

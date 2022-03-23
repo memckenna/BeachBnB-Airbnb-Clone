@@ -85,29 +85,10 @@ html {
 }
 
 .single-booking-container {
-    /* box-sizing: border-box;
-    display: flex;
-    padding: 40px 40px 40px 40px;
-    margin-top: 100px;
-    max-width: 1500px;
-    width: 100%;
-    min-height: 100px;
-    height: 100%; */
-
-    /* box-sizing: border-box;
-    display: grid;
-    grid-template-rows: auto;
-    border: 1px solid lightgray;
-    background-color: white;
-    border-radius: 10px;
-
-    padding: 50px 20px 80px 20px;
-    margin: 6px;
-    margin-top: 100px;
-    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px; */
-
     margin-top: 130px;
     margin-bottom: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -254,14 +235,16 @@ html {
 }
 
 .single-checkin {
-    text-align: left;
+    display: flex;
+    /* text-align: left; */
     font-size: 18px;
 }
 
 .single-checkout {
-    text-align: left;
+    display: flex;
+    /* text-align: left; */
     font-size: 18px;
-    padding-left: 200px;
+    padding-left: 180px;
 }
 
 .checkin {
@@ -275,4 +258,28 @@ html {
     text-align: left;
     font-size: 14px;
     padding-left: 10px;
+}
+
+.edit-delete-bookings-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1300px;
+}
+
+.edit-single-booking-button-modal {
+    /* padding-right: 10px; */
+}
+
+.delete-single-booking-button-div {
+    padding-right: 40px;
+}
+
+.delete-single-booking-button {
+    padding: 15px 20px 15px 20px;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 20px;
+    border: none;
+
 }

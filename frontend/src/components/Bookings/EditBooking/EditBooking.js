@@ -86,7 +86,7 @@ const EditBooking = ({onClose}) => {
 
                     </div>
                     <div className='reserve'>
-                        <button type="submit" className='reserve-button'>Reserve</button>
+                        <button type="submit" className='reserve-button'>Update Reservation</button>
                         <div className='reserve-text'>Please select new dates</div>
                     </div>
                 </form>
