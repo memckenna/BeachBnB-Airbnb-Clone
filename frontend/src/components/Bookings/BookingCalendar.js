@@ -51,14 +51,8 @@ const BookingCalendar = ({ spot }) => {
           // await dispatch(getOneBooking(id))
           dispatch(getAllBookings())
           history.push(`/bookings`)
-
-
-          // if(newBooking) {
-          // }
      }
-
-
-//     if (!sessionUser) return <Redirect to="/" />;
+    if (!sessionUser) return <Redirect to="/" />;
 
      return (
           <div className='booking-section'>

@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import { NavLink, Route, useParams } from 'react-router-dom';
 import { getOneBooking } from "../../store/bookingsReducer";
 import { getSpotById } from "../../store/spotReducer";
+import EditABookingModal from "./EditBooking";
 
 import './Bookings.css';
 
@@ -36,6 +37,9 @@ const SingleBookingDetails = () => {
                     <div className="single-checkin"><strong>Check-in:</strong> {oneBooking?.startDate.split('T')[0].replaceAll('-', ' / ')}</div>
                     <div className="single-checkout"><strong>Checkout:</strong> {oneBooking?.endDate.split('T')[0].replaceAll('-', ' / ')}</div>
                 </div>
+            </div>
+            <div>
+                <EditABookingModal />
             </div>
             <div>
                 <h2>Reservation details</h2>

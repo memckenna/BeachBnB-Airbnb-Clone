@@ -1,0 +1,85 @@
+.edit-booking-calendar {
+    /* display: block; */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-booking-calendar-price {
+    padding-bottom: 15px;
+    padding-left: 45px;
+}
+
+.edit-booking-calendar-dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* border: 1px solid red; */
+    border-bottom: .1px solid lightgray;
+    /* padding-bottom: 1px; */
+    align-items: center;
+
+}
+
+.reserve {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.reserve-button {
+    display: flex;
+    justify-content: center;
+    padding: 16px 10px 16px 10px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+
+    background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
+}
+
+.reserve-text {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 10px;
+    letter-spacing: 0.03em;
+}
+
+
+
+.edit-datepicker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    border: 1px solid lightgray;
+    /* padding: 0px 10px 0px 10px; */
+    border-radius: 12px;
+    width: 400px;
+    height: 175px;
+}
+
+.edit-date {
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.checkin {
+    text-align: left;
+    font-size: 14px;
+    border-right: 1px solid lightgray;
+
+}
+
+.checkout {
+    text-align: left;
+    font-size: 14px;
+    padding-left: 10px;
+}
