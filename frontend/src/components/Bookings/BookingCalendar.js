@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams, useHistory, Redirect } from 'react-router-dom';
 import { createNewBooking } from "../../store/bookingsReducer";
-import { getOneBooking } from "../../store/bookingsReducer";
+import { getOneBooking, getAllBookings } from "../../store/bookingsReducer";
 
 import "react-datepicker/dist/react-datepicker.css";
 import './Bookings.css'
@@ -27,10 +27,7 @@ const BookingCalendar = ({ spot }) => {
 
      useEffect(() => {
           dispatch(getOneBooking(id))
-
      }, [dispatch, id])
-
-
 
      const handleStartDate = (date) => {
           setStartDate(date)
@@ -50,12 +47,14 @@ const BookingCalendar = ({ spot }) => {
                userId: sessionUser?.id
           };
 
-          const newBooking = await dispatch(createNewBooking(booking))
-          await dispatch(getOneBooking(id))
+          await dispatch(createNewBooking(booking))
+          // await dispatch(getOneBooking(id))
+          dispatch(getAllBookings())
+          history.push(`/bookings`)
 
-          if(newBooking) {
-               history.push(`/bookings`)
-          }
+
+          // if(newBooking) {
+          // }
      }
 
 
@@ -68,6 +67,7 @@ const BookingCalendar = ({ spot }) => {
                          <ul>
                               {errors?.map((error, idx) => <li key={idx}>{error}</li>)}
                          </ul>
+                         <div className="booking-calendar-price"><strong>${bookingObj?.Spot?.price}</strong> / night</div>
                          <form onSubmit={createBooking} className="datepicker">
                               <div className="booking-calendar-dates">
                                    <div className="checkin">

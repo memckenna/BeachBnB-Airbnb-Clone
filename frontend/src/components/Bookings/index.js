@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
 import { getAllBookings } from '../../store/bookingsReducer';
 import { getAllSpots } from '../../store/spotReducer';
+import moment from "moment";
 
-import * as sessionActions from "../../store/session";
-import * as bookingsActions from "../../store/bookingsReducer";
 import './Bookings.css';
 import BookingDetails from './BookingDetails';
 
@@ -33,16 +32,25 @@ const BookingsPage = () => {
 
     return (
         <div className='bookings-page' >
-            <h1 className='bookings-header'>Trips</h1>
-            {/* {bookings} */}
+            {/* <div>
+                {bookings.length &&
+                    <button>Start searching</button>
+                }
+            </div> */}
+            <ul className='bookings-container'>
+                <h1 className='future-stay-text'>Trips</h1>
+                {bookings?.map((booking) => (
+                     moment(booking.startDate).isAfter(new Date()) &&
+                        <BookingDetails key={booking?.id} id={booking?.id} />
+                ))}
+            </ul>
 
-
+            <h2 className='already-stayed-text'>Where you've been</h2>
             <ul className='bookings-container'>
                 {bookings?.map((booking) => (
-                    <BookingDetails key={booking?.id} id={booking?.id} />
+                     moment(booking.startDate).isBefore(new Date())&&
+                        <BookingDetails key={booking?.id} id={booking?.id} />
                 ))}
-
-
             </ul>
         </div>
     )

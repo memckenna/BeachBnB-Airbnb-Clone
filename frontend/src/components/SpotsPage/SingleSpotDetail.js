@@ -53,60 +53,65 @@ const SingleSpotDetailPage = () => {
                     <div className='baths'> Baths: {oneSpot?.baths}</div>
                 </div>
             </div>
-            {sessionUser?.id === oneSpot?.userId ?
-                <div className='edit-delete-button'>
-                    <div>
-                        <NavLink to={`/spots/${oneSpot?.id}/edit`} >
-                            <button className='edit-listing'>Edit Listing</button>
-                        </NavLink>
-                    </div>
-                    <div>
-                        <button onClick={() => dispatch(removeSpot(oneSpot?.id)).then(() => history.push('/spots'))} className='edit-listing'>Delete Listing</button>
-                    </div>
-                </div> :
-                <BookingCalendar spot={oneSpot}/>
-            }
-            <div className='home-info-container'>
-                <div className='main-content'>
-                    <div className='stay-info'>
-                        <div>
-                            <h3>Entire home</h3>
-                            <p>You'll have the house to yourself</p>
-                        </div>
-                        <div>
-                            <h3>Enhanced Clean</h3>
-                            <p>This Host committed to Airbnb's 5-step enhanced cleaning process.</p>
-                        </div>
-                        <div>
-                            <h3>Self check-in</h3>
-                            <p>Check yourself in with the lockbox</p>
-                        </div>
-                        <div>
-                            <h3>Free cancellation for 48 hours</h3>
-                        </div>
-                    </div>
-                    <div className='home-description'>
-                        <div>
-                            <p>HOME DESCRIPTION PARAGRAPH</p>
-                        </div>
-                    </div>
-                    <div className='sleep-info'>
-                        <div>
-                            <h3>Where you'll sleep</h3>
-                        </div>
-                    </div>
-                    <div className='amenity-offerings'>
-                        <div>
-                            <h3>What this place offers</h3>
-                        </div>
-                    </div>
-                    <div className='left-calendar'>
-                        <div>
-                            <h3>NUMBER nights in CITY (calendar underneith)</h3>
-                        </div>
-                    </div>
-
+            <div className='calendar-edit-details-container'>
+                <div className='calendar-edit-section'>
+                    {sessionUser?.id === oneSpot?.userId ?
+                        <div className='edit-delete-button'>
+                            <div>
+                                <NavLink to={`/spots/${oneSpot?.id}/edit`} >
+                                    <button className='edit-listing'>Edit Listing</button>
+                                </NavLink>
+                            </div>
+                            <div>
+                                <button onClick={() => dispatch(removeSpot(oneSpot?.id)).then(() => history.push('/spots'))} className='edit-listing'>Delete Listing</button>
+                            </div>
+                        </div> :
+                        <BookingCalendar spot={oneSpot}/>
+                    }
                 </div>
+                <div className='home-info-container'>
+                    <div className='main-content'>
+                        <div className='stay-info'>
+                            <div>
+                                <h3>Entire home</h3>
+                                <p>You'll have the house to yourself</p>
+                            </div>
+                            <div>
+                                <h3>Enhanced Clean</h3>
+                                <p>This Host committed to Airbnb's 5-step enhanced cleaning process.</p>
+                            </div>
+                            <div>
+                                <h3>Self check-in</h3>
+                                <p>Check yourself in with the lockbox</p>
+                            </div>
+                            <div>
+                                <h3>Free cancellation for 48 hours</h3>
+                            </div>
+                        </div>
+                        <div className='home-description'>
+                            <div>
+                                <p>HOME DESCRIPTION PARAGRAPH</p>
+                            </div>
+                        </div>
+                        <div className='sleep-info'>
+                            <div>
+                                <h3>Where you'll sleep</h3>
+                            </div>
+                        </div>
+                        <div className='amenity-offerings'>
+                            <div>
+                                <h3>What this place offers</h3>
+                            </div>
+                        </div>
+                        <div className='left-calendar'>
+                            <div>
+                                <h3>NUMBER nights in CITY (calendar underneith)</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
             <div>
