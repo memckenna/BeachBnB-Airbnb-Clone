@@ -5,8 +5,7 @@ import moment from "moment";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams, useHistory, Redirect } from 'react-router-dom';
-import { updateBooking } from "../../../store/bookingsReducer";
-import { getOneBooking } from "../../../store/bookingsReducer";
+import { getOneBooking, updateBooking } from "../../../store/bookingsReducer";
 
 import "./EditBooking.css"
 
@@ -47,7 +46,6 @@ const EditBooking = ({onClose}) => {
         await dispatch(updateBooking(editedBooking, id))
         dispatch(getOneBooking(id))
         onClose()
-        // history.push(`/bookings/${bookingObj?.id}`)
     }
 
     return (

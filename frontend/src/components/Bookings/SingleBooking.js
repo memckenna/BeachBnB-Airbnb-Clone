@@ -3,14 +3,14 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { NavLink, Route, useParams } from 'react-router-dom';
-import { getOneBooking } from "../../store/bookingsReducer";
+import { getOneBooking, getAllBookings, deleteBooking } from "../../store/bookingsReducer";
 import { getSpotById } from "../../store/spotReducer";
 import EditABookingModal from "./EditBooking";
 
 import './Bookings.css';
 
 const SingleBookingDetails = () => {
-    // const history = useHistory();
+    const history = useHistory();
     const dispatch = useDispatch();
     const { id } = useParams();
     console.log(id)
@@ -23,6 +23,14 @@ const SingleBookingDetails = () => {
         dispatch(getOneBooking(id))
         // dispatch(getSpotById(oneBooking?.Spot?.id))
     }, [dispatch, id])
+
+    const cancelBooking = async (e) => {
+        e.preventDefault()
+
+        await dispatch(deleteBooking(id))
+        getAllBookings()
+        history.push(`/bookings`)
+    }
 
     return (
         <div className="single-booking-container">
@@ -40,6 +48,9 @@ const SingleBookingDetails = () => {
             </div>
             <div>
                 <EditABookingModal />
+                <div>
+                    <button onClick={cancelBooking}>Cancel Booking</button>
+                </div>
             </div>
             <div>
                 <h2>Reservation details</h2>
