@@ -19,6 +19,7 @@ html {
 
     /* margin-top: 100px; */
 
+
 }
 
 .bookings-detail {
@@ -156,6 +157,8 @@ html {
     top: 110px;
     box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
     overflow: auto;
+
+
 }
 
 .booking {
@@ -166,26 +169,40 @@ html {
 .booking-calendar {
     display: block;
     box-sizing: border-box;
+    /* border: 1px solid orange; */
+
+}
+
+.booking-calendar-price-section {
+    display: flex;
+    flex-direction: row;
+
+
 }
 
 .booking-calendar-price {
     padding-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
 }
 
-.booking-calendar-dates {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* border: 1px solid red; */
-    border-bottom: .1px solid lightgray;
-    /* padding-bottom: 1px; */
-    align-items: center;
+.booking-calendar-night {
+    font-size: 18px;
+    font-weight: lighter;
+    padding-left: 5px;
+    padding-top: 4px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
 }
+
 
 .reserve {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     padding-top: 20px;
+    border: none;
 }
 
 .reserve-button {
@@ -203,31 +220,93 @@ html {
     background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
 }
 
+.booking-calendar-dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    align-items: center;
+}
+
 .reserve-text {
     text-align: center;
     font-size: 13px;
     padding-top: 10px;
     letter-spacing: 0.03em;
+    font-weight: 300;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+
 }
-
-
 
 .datepicker {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
-    border: 1px solid lightgray;
-    /* padding: 0px 10px 0px 10px; */
     border-radius: 12px;
     width: 350px;
+    cursor: pointer;
+
 }
+
+
 .date {
     border: none;
     text-align: left;
     font-size: 14px;
     padding-bottom: 10px;
+    /* padding-top: 10px; */
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    cursor: pointer;
 }
+
+
+.checkin-date-picker {
+    font-size: 14px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+
+.dates-selected-pricing-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 300;
+}
+.dates-selected-pricing {
+    display: flex;
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    text-decoration: underline;
+    padding-top: 5px;
+    font-weight: 300;
+
+}
+.dates-selected-pricing-total {
+    display: flex;
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.dates-selected-pricing-total-last {
+    display: flex;
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    padding-bottom: 15px;
+}
+
+.dates-selected-total-price-div {
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 10px 0;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 500;
+}
+
+
 
 .checkin-checkout {
     display: flex;
@@ -236,13 +315,11 @@ html {
 
 .single-checkin {
     display: flex;
-    /* text-align: left; */
     font-size: 18px;
 }
 
 .single-checkout {
     display: flex;
-    /* text-align: left; */
     font-size: 18px;
     padding-left: 180px;
 }

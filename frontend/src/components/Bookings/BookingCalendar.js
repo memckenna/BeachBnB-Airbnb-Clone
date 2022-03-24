@@ -21,9 +21,14 @@ const BookingCalendar = ({ spot }) => {
 
      const [startDate, setStartDate] = useState(new Date());
      const [endDate, setEndDate] = useState(new Date());
+     const [defaultShow, setDefaultShow] = useState("Add date")
      // const [spotId, setSpotId] = useState(bookingObj?.spotId)
      // const [userId, setUserId] = useState(sessionUser?.id)
      const [errors, setErrors] = useState([])
+
+     const start = moment(startDate)
+     const end = moment(endDate)
+     console.log(Math.round(moment.duration(end.diff(start)).asDays()))
 
      useEffect(() => {
           dispatch(getOneBooking(id))
@@ -52,7 +57,7 @@ const BookingCalendar = ({ spot }) => {
           dispatch(getAllBookings())
           history.push(`/bookings`)
      }
-    if (!sessionUser) return <Redirect to="/" />;
+     if (!sessionUser) return <Redirect to="/" />;
 
      return (
           <div className='booking-section'>
@@ -61,13 +66,17 @@ const BookingCalendar = ({ spot }) => {
                          <ul>
                               {errors?.map((error, idx) => <li key={idx}>{error}</li>)}
                          </ul>
-                         <div className="booking-calendar-price"><strong>${bookingObj?.Spot?.price}</strong> / night</div>
+                         <div className="booking-calendar-price-section">
+                              <div className="booking-calendar-price">${bookingObj?.Spot?.price}</div>
+                              <div className="booking-calendar-night"> / night</div>
+                         </div>
                          <form onSubmit={createBooking} className="datepicker">
                               <div className="booking-calendar-dates">
                                    <div className="checkin">
-                                        <h3>Check-in</h3>
+                                        <h3 className="checkin-date-picker">CHECK-IN</h3>
                                         <DatePicker
                                              className="date"
+                                             // placeholderText="Add date"
                                              selected={startDate}
                                              selectsStart
                                              startDate={startDate}
@@ -79,37 +88,61 @@ const BookingCalendar = ({ spot }) => {
                                         />
                                    </div>
                                    <div className="checkout">
-                                        <h3>Checkout</h3>
+                                        <h3 className="checkin-date-picker">CHECKOUT</h3>
                                         <DatePicker
                                              className="date"
+                                             placeholderText="Add date"
                                              selected={endDate}
                                              selectsEnd
                                              startDate={startDate}
                                              endDate={endDate}
                                              minDate={startDate}
                                              onChange={handleEndDate}
-                                             // onChange={date => setEndDate(date)}
+                                        // onChange={date => setEndDate(date)}
 
                                         />
                                    </div>
-
                               </div>
                               <div className='reserve'>
                                    <button type="submit" className='reserve-button'>Reserve</button>
-                                   <div className='reserve-text'>You won't be charged yet</div>
+                                   {/* <div className='reserve-text'>You won't be charged yet</div> */}
                               </div>
                          </form>
+
                     </div>
                     {startDate && endDate && (
                          <div>
-                              <p>
-                                   You selected {moment(startDate).format("LL")} to{" "}
-                                   {moment(endDate).format("LL")}
-                              </p>
+                              <div className='reserve-text'>You won't be charged yet</div>
+                              <div className="dates-selected-pricing-div">
+                                   <div className="dates-selected-pricing">
+                                        {/* You selected {moment(startDate).format("LL")} to{" "}
+                                        {moment(endDate).format("LL")} */}
+                                        ${parseFloat(bookingObj?.Spot?.price)} X {Math.round(moment.duration(end.diff(start)).asDays())} nights
+                                   </div>
+                                   <div className="dates-selected-pricing-total">
+                                        ${Math.round(moment.duration(end.diff(start)).asDays()) * parseFloat(bookingObj?.Spot?.price)}
+                                   </div>
+                              </div>
+                              <div className="dates-selected-pricing-div">
+                                   <div className="dates-selected-pricing">Cleaning fee</div>
+                                   <div className="dates-selected-pricing-total"> $150 </div>
+
+                              </div>
+                              <div className="dates-selected-pricing-div">
+                                   <div className="dates-selected-pricing">Service fee</div>
+                                   <div className="dates-selected-pricing-total-last"> $0 </div>
+
+                              </div>
+                              <div className="dates-selected-total-price-div">
+                                   <div className="total-before-taxes">Total before taxes</div>
+                                   <div>${Math.round(moment.duration(end.diff(start)).asDays()) * parseFloat(bookingObj?.Spot?.price) + Number(150)}</div>
+
+                              </div>
                          </div>
+
                     )}
 
-                    <div>
+                    {/* <div>
                          <h3>Unavailable Dates: </h3>
                          {spot?.Bookings?.length ?
                               Object.values(spot?.Bookings)?.map((booking, idx) => (
@@ -119,7 +152,7 @@ const BookingCalendar = ({ spot }) => {
                               )) :
                               <li>Be the first to book this spot</li>
                          }
-                    </div>
+                    </div> */}
                </div>
           </div>
 

@@ -64,6 +64,7 @@ const EditBooking = ({onClose}) => {
                                 endDate={endDate}
                                 minDate={new Date()}
                                 onChange={handleStartDate}
+                                // openToDate={}
 
                             // onChange={newDate => setStartDate(newDate)}
 
@@ -80,6 +81,8 @@ const EditBooking = ({onClose}) => {
                                 minDate={startDate}
                                 onChange={handleEndDate}
                             // onChange={newDate => setEndDate(newDate)}
+                                // openToDate={}
+
 
                             />
                         </div>
