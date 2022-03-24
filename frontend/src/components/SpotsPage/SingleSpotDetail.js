@@ -2,15 +2,12 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
-import { getSpotById } from '../../store/spotReducer';
-import EditSpotForm from './EditSpotForm'
-import { removeSpot } from '../../store/spotReducer';
+import { getSpotById, removeSpot } from '../../store/spotReducer';
 import BookingCalendar from '../Bookings/BookingCalendar';
-import { createNewBooking } from '../../store/bookingsReducer';
-import { getOneBooking } from '../../store/bookingsReducer';
-// import * as sessionActions from "../../store/session";
 import { getAllSpotReviews } from '../../store/reviewReducer';
-import GetAllReviewsOnSpot from '../Reviews/GetAllReviews';
+// import GetAllReviewsOnSpot from '../Reviews/GetAllReviews';
+import CreateAReview from '../Reviews/CreateAReview';
+import moment from "moment";
 import './SpotsPage.css'
 
 const SingleSpotDetailPage = () => {
@@ -23,6 +20,8 @@ const SingleSpotDetailPage = () => {
     const oneSpot = useSelector(state => state.spotState.listings[id])
     const bookingObj = useSelector(state => state.bookingState.trips[id])
     const reviewObj = useSelector(state => state.reviewState)
+    const reviews = Object.values(reviewObj)
+    console.log(reviews)
     console.log("REVIEWS", reviewObj)
     console.log("BOOKING SINGLE SPOT", bookingObj)
     console.log("SPOT STATE", spot.listings[id])
@@ -117,13 +116,21 @@ const SingleSpotDetailPage = () => {
 
             </div>
 
-            <div>
+            <div className='reviews-container'>
                 <h3>REVIEWS</h3>
-                {/* <div>
-                    {reviewObj?.map(review => (
-                        <GetAllReviewsOnSpot key={review?.id} id={review?.id} />
+                <div >
+                    {reviews?.map(review => (
+                        oneSpot?.id === review?.id &&
+                            <div key={review?.id} className='reviews-div'>
+                                <div className='review-user-created'>
+                                    <div className='review-user'>{review.User.username}</div>
+                                    <div>{moment(review.createdAt).format("LLL")}</div>
+                                </div>
+                                <div>{review?.review}</div>
+                            </div>
                     ))}
-                </div> */}
+                </div>
+                <CreateAReview spotId={oneSpot?.id} />
             </div>
             <div>
                 <h3>Where you'll be</h3>
