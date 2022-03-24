@@ -9,7 +9,7 @@ import { getOneBooking, updateBooking } from "../../../store/bookingsReducer";
 
 import "./EditBooking.css"
 
-const EditBooking = ({onClose}) => {
+const EditBooking = ({ onClose }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams()
@@ -18,6 +18,8 @@ const EditBooking = ({onClose}) => {
     console.log(bookingObj.startDate)
     const [startDate, setStartDate] = useState();
     const [endDate, setEndDate] = useState();
+    const start = moment(startDate)
+    const end = moment(endDate)
     // const [startDate, setStartDate] = useState(bookingObj.startDate);
     // const [endDate, setEndDate] = useState(bookingObj.endDate);
 
@@ -49,8 +51,12 @@ const EditBooking = ({onClose}) => {
     }
 
     return (
-        <div>
-            <div className="edit-booking-calendar-price"><strong>${bookingObj?.Spot?.price}</strong> / night</div>
+        <div className="edit-booking">
+            <h2 className="edit-reservations-header">Edit your reservations</h2>
+            <div className="edit-booking-calendar-price-section">
+                <div className="edit-booking-calendar-price">${bookingObj?.Spot?.price}</div>
+                <div className="edit-booking-calendar-night"> / night</div>
+            </div>
             <div className='edit-booking-calendar'>
                 <form onSubmit={editBooking} className="edit-datepicker">
                     <div className="edit-booking-calendar-dates">
@@ -64,10 +70,8 @@ const EditBooking = ({onClose}) => {
                                 endDate={endDate}
                                 minDate={new Date()}
                                 onChange={handleStartDate}
-                                // openToDate={}
-
+                            // openToDate={}
                             // onChange={newDate => setStartDate(newDate)}
-
                             />
                         </div>
                         <div className="checkout">
@@ -81,9 +85,7 @@ const EditBooking = ({onClose}) => {
                                 minDate={startDate}
                                 onChange={handleEndDate}
                             // onChange={newDate => setEndDate(newDate)}
-                                // openToDate={}
-
-
+                            // openToDate={}
                             />
                         </div>
 
@@ -94,6 +96,37 @@ const EditBooking = ({onClose}) => {
                     </div>
                 </form>
             </div>
+            {startDate && endDate && (
+                <div>
+                    <div className='reserve-text'>You won't be charged yet</div>
+                    <div className="dates-selected-pricing-div">
+                        <div className="dates-selected-pricing">
+                            {/* You selected {moment(startDate).format("LL")} to{" "}
+                                        {moment(endDate).format("LL")} */}
+                            ${parseFloat(bookingObj?.Spot?.price)} X {Math.round(moment.duration(end.diff(start)).asDays())} nights
+                        </div>
+                        <div className="dates-selected-pricing-total">
+                            ${Math.round(moment.duration(end.diff(start)).asDays()) * parseFloat(bookingObj?.Spot?.price)}
+                        </div>
+                    </div>
+                    <div className="dates-selected-pricing-div">
+                        <div className="dates-selected-pricing">Cleaning fee</div>
+                        <div className="dates-selected-pricing-total"> $150 </div>
+
+                    </div>
+                    <div className="dates-selected-pricing-div">
+                        <div className="dates-selected-pricing">Service fee</div>
+                        <div className="dates-selected-pricing-total-last"> $0 </div>
+
+                    </div>
+                    <div className="dates-selected-total-price-div">
+                        <div className="total-before-taxes">Total before taxes</div>
+                        <div>${Math.round(moment.duration(end.diff(start)).asDays()) * parseFloat(bookingObj?.Spot?.price) + Number(150)}</div>
+
+                    </div>
+                </div>
+
+            )}
         </div>
     )
 }

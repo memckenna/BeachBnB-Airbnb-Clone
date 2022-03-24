@@ -38,8 +38,9 @@ router.get('/', requireAuth, asyncHandler( async(req, res) => {
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
     const singleBooking = await Booking.findByPk(req.params.id, {
         include: [
+            User,
             Spot,
-            {model: Spot, include: [Image]}
+            {model: Spot, include: [Image, User]}
         ]
     });
 

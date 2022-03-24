@@ -12,8 +12,10 @@ const EditABookingModal = () => {
     return (
         <>
             <div>
-                <div className="edit-booking-button-div">
-                    <button className="edit-booking-button" onClick={() => setShowModal(true)} >Edit Booking</button>
+                <div className="edit-booking-button-div" onClick={() => setShowModal(true)} >
+                    {/* <button className="edit-booking-button" onClick={() => setShowModal(true)} >Edit Booking</button> */}
+                    <div className="edit-booking-button" onClick={() => setShowModal(true)} >Edit your reservations</div>
+                    <div className="edit-booking-arrow"><i onClick={() => setShowModal(true)} className="fas fa-angle-right"></i></div>
                 </div>
                 {showModal && (
                     <EditBookingModal onClose={() => setShowModal(false)}>

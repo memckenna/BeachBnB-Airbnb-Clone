@@ -51,8 +51,9 @@
     position: absolute;
     background-color: white;
     border-radius: 11px;
-    width: 444px;
-    height: 430px;
+    width: 450px;
+    /* height: 430px; */
+    height: auto;
     padding: 20px 10px 24px;
 
 }
