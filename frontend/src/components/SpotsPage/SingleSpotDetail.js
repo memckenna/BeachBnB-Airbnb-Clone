@@ -5,7 +5,7 @@ import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import { getSpotById, removeSpot } from '../../store/spotReducer';
 import BookingCalendar from '../Bookings/BookingCalendar';
 import { getAllSpotReviews } from '../../store/reviewReducer';
-// import GetAllReviewsOnSpot from '../Reviews/GetAllReviews';
+import GetAllReviewsOnSpot from '../Reviews/GetAllReviews';
 import CreateAReview from '../Reviews/CreateAReview';
 import moment from "moment";
 import './SpotsPage.css'
@@ -15,19 +15,12 @@ const SingleSpotDetailPage = () => {
     const history = useHistory();
     const { id } = useParams();
 
-    const spot = useSelector(state => state.spotState)
     const sessionUser = useSelector((state) => state.session.user);
     const oneSpot = useSelector(state => state.spotState.listings[id])
-    const bookingObj = useSelector(state => state.bookingState.trips[id])
-    const reviewObj = useSelector(state => state.reviewState)
-    const reviews = Object.values(reviewObj)
-    console.log(reviews)
-    console.log("REVIEWS", reviewObj)
-    console.log("ONESPOT", oneSpot?.Reviews)
-    console.log("BOOKING SINGLE SPOT", bookingObj)
-    console.log("SPOT STATE", spot.listings[id])
-    // const [deleteSpot, setDeleteSpot] = useEffect(false)
-    // const [showEditSpotForm, setShowEditSpotForm] = useState(false)
+    // const bookingObj = useSelector(state => state.bookingState.trips[id])
+    // const reviewObj = useSelector(state => state.reviewState)
+    // const reviews = Object.values(reviewObj)
+
 
     useEffect(() => {
         dispatch(getSpotById(id))
@@ -92,24 +85,16 @@ const SingleSpotDetailPage = () => {
                             </div>
                         </div>
                         {/* <div className='home-description'>
-                            <div>
-                                <p>HOME DESCRIPTION PARAGRAPH</p>
-                            </div>
+                            <div><p>HOME DESCRIPTION PARAGRAPH</p></div>
                         </div>
                         <div className='sleep-info'>
-                            <div>
-                                <h3>Where you'll sleep</h3>
-                            </div>
+                            <div><h3>Where you'll sleep</h3></div>
                         </div>
                         <div className='amenity-offerings'>
-                            <div>
-                                <h3>What this place offers</h3>
-                            </div>
+                            <div><h3>What this place offers</h3></div>
                         </div>
                         <div className='left-calendar'>
-                            <div>
-                                <h3>NUMBER nights in CITY (calendar underneith)</h3>
-                            </div>
+                            <div><h3>NUMBER nights in CITY (calendar underneith)</h3></div>
                         </div> */}
 
                     </div>
@@ -118,7 +103,7 @@ const SingleSpotDetailPage = () => {
             </div>
 
             <div className='reviews-container'>
-                <h3>REVIEWS</h3>
+                {/* <h3>REVIEWS</h3>
                 <div >
                     {oneSpot?.Reviews?.map(review => (
                         // oneSpot?.id === review?.id &&
@@ -130,7 +115,8 @@ const SingleSpotDetailPage = () => {
                                 <div>{review?.review}</div>
                             </div>
                     ))}
-                </div>
+                </div> */}
+                <GetAllReviewsOnSpot id={oneSpot?.id} />
                 <CreateAReview spotId={oneSpot?.id} />
             </div>
             <div>

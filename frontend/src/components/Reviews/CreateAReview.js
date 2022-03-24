@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import { createNewReview, getOneSpotReview, getAllSpotReviews } from '../../store/reviewReducer';
-
+import { getSpotById } from '../../store/spotReducer';
 
 const CreateAReview = ({spotId}) => {
     const dispatch = useDispatch();
@@ -14,9 +14,14 @@ const CreateAReview = ({spotId}) => {
 
     const [review, setReview] = useState("");
     const [disabled, setDisabled] = useState(true);
-    useEffect(() => {
+    const [errors, setErrors] = useState([])
 
-    },[dispatch])
+
+    useEffect(() => {
+        if(review.length > 0) setDisabled(false)
+        else setDisabled(true)
+
+    },[review, disabled])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -26,9 +31,16 @@ const CreateAReview = ({spotId}) => {
             userId: sessionUser?.id,
             spotId: spotId
         }
-        await dispatch(createNewReview(newReview))
-        dispatch(getAllSpotReviews())
-        setReview("")
+
+        const data = await dispatch(createNewReview(newReview))
+        // dispatch(getAllSpotReviews())
+
+        if(data?.errors) {
+            setErrors(data.errors)
+        } else {
+            dispatch(getSpotById(spotId))
+            setReview("")
+        }
     }
 
 
@@ -37,12 +49,13 @@ const CreateAReview = ({spotId}) => {
             <form onSubmit={handleSubmit}>
                 <textarea
                     className=''
+                    type="text"
                     placeholder='Leave a review'
                     value={review}
                     onChange={(e) => setReview(e.target.value)}
 
                 />
-                <button type='submit'>Create</button>
+                <button disabled={disabled} type='submit'>Create</button>
             </form>
 
         </div>
