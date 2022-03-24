@@ -1,86 +1,94 @@
-html {
-    /* height: 100%;
-    width: 100%;
-    background-color: #EDF6F9;
-    overflow: auto; */
-}
-
 .bookings-container {
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto;
-    /* border: 1px solid red; */
     padding: 0px 40px 40px 40px;
-    /* margin-top: 40px; */
     max-width: 1500px;
     width: 100%;
     min-height: 500px;
     height: 100%;
-
-    /* margin-top: 100px; */
-
-
 }
 
 .bookings-detail {
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto;
-    /* border: 1px solid lightgray; */
     background-color: white;
-    border-radius: 10px;
-    width: 800px;
+    width: 100%;
+    /* width: 800px; */
     height: 225px;
     padding: 0px 20px 0px 0px;
-    /* margin: 6px; */
-    /* box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px; */
+    border-bottom: 1px solid lightgray;
 }
 
 .bookings-detail-div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* width: 100%; */
-    /* border: 1px solid purple; */
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .booking-detail-left {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid orange; */
-    /* width: 50%; */
     padding-right: 20px;
 }
+
 .booking-detail-right {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid blue; */
-    /* width: 50%; */
+    padding-right: 20px;
 
 }
 
-.future-stay-text {
+.bookings-page-city-header {
+    font-weight: 600;
+}
+
+.bookings-page-name-navlink {
+    text-decoration: none;
+    color: gray;
+    font-weight: 300;
+}
+
+.bookings-page-host {
+    text-decoration: none;
+    color: gray;
+    font-weight: 300;
+}
+
+.bookings-page-dates {
+    text-decoration: none;
+    color: gray;
+    font-weight: 300;
+}
+
+.bookings-page-trips-header {
     margin-top: 100px;
-    /* border: 1px solid red; */
-    /* padding-left: 40px; */
     font-size: 36px;
     font-weight: 600;
+    padding-left: 40px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.future-stay-text {
+    /* margin-top: 100px; */
+    font-size: 22px;
+    font-weight: 500;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .already-stayed-text {
     padding: 0px 40px 0px 40px;
-
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .booking-images {
     display: flex;
-    /* align-self: flex-end; */
-    width: 300px;
-    height: 220px;
+    width: 150px;
+    height: 130px;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
 }

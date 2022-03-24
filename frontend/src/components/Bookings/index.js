@@ -32,13 +32,14 @@ const BookingsPage = () => {
 
     return (
         <div className='bookings-page' >
+            <h1 className='bookings-page-trips-header'>Trips</h1>
             {/* <div>
                 {bookings.length &&
                     <button>Start searching</button>
                 }
             </div> */}
             <ul className='bookings-container'>
-                <h1 className='future-stay-text'>Trips</h1>
+                <h2 className='future-stay-text'>Upcoming Trips</h2>
                 {bookings?.map((booking) => (
                      moment(booking.startDate).isAfter(new Date()) &&
                         <BookingDetails key={booking?.id} id={booking?.id} />
