@@ -23,6 +23,7 @@ const SingleSpotDetailPage = () => {
     const reviews = Object.values(reviewObj)
     console.log(reviews)
     console.log("REVIEWS", reviewObj)
+    console.log("ONESPOT", oneSpot?.Reviews)
     console.log("BOOKING SINGLE SPOT", bookingObj)
     console.log("SPOT STATE", spot.listings[id])
     // const [deleteSpot, setDeleteSpot] = useEffect(false)
@@ -119,8 +120,8 @@ const SingleSpotDetailPage = () => {
             <div className='reviews-container'>
                 <h3>REVIEWS</h3>
                 <div >
-                    {reviews?.map(review => (
-                        oneSpot?.id === review?.id &&
+                    {oneSpot?.Reviews?.map(review => (
+                        // oneSpot?.id === review?.id &&
                             <div key={review?.id} className='reviews-div'>
                                 <div className='review-user-created'>
                                     <div className='review-user'>{review.User.username}</div>

@@ -35,7 +35,8 @@ router.get('/', asyncHandler(async(req, res) => {
 router.get('/:id(\\d+)', asyncHandler(async(req, res) => {
     const singleReview = await Review.findByPk(req.params.id, {
         include: [
-            Spot
+            Spot,
+            User
         ]
     });
 

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import { createNewReview, getOneSpotReview, getAllSpotReviews } from '../../store/reviewReducer';
 
+
 const CreateAReview = ({spotId}) => {
     const dispatch = useDispatch();
     const history = useHistory();
@@ -13,6 +14,9 @@ const CreateAReview = ({spotId}) => {
 
     const [review, setReview] = useState("");
     const [disabled, setDisabled] = useState(true);
+    useEffect(() => {
+
+    },[dispatch])
 
     const handleSubmit = async (e) => {
         e.preventDefault()

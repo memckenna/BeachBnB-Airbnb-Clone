@@ -6,7 +6,7 @@ const { handleValidationErrors } = require('../../utils/validation');
 const { requireAuth } = require('../../utils/auth')
 const db = require("../../db/models")
 const { Spot } = require('../../db/models');
-const { Image, Booking } = require('../../db/models');
+const { Image, Booking, Review, User } = require('../../db/models');
 
 const router = express.Router();
 
@@ -15,7 +15,9 @@ router.get('/', asyncHandler(async (req, res) => {
     const spots = await Spot.findAll({
         include: [
             Image,
-            Booking
+            Booking,
+            Review,
+
         ]
     });
 
@@ -27,7 +29,9 @@ router.get("/:id", asyncHandler(async (req, res) => {
     const spotById = await Spot.findByPk(req.params.id, {
         include: [
             Image,
-            Booking
+            Booking,
+            Review,
+            {model: Review, include: [User]}
         ]
     });
 
