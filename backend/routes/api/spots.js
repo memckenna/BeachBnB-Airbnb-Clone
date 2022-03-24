@@ -6,22 +6,33 @@ const { handleValidationErrors } = require('../../utils/validation');
 const { requireAuth } = require('../../utils/auth')
 const db = require("../../db/models")
 const { Spot } = require('../../db/models');
-const { Image } = require('../../db/models');
+const { Image, Booking, Review, User } = require('../../db/models');
 
 const router = express.Router();
 
-/* GET All Listings ??? */
+/* GET All Listings */
 router.get('/', asyncHandler(async (req, res) => {
     const spots = await Spot.findAll({
-        include: [Image]
+        include: [
+            Image,
+            Booking,
+            Review,
+
+        ]
     });
+
     return res.json(spots);
 }))
 
 /* GET EACH LISTING BY ID */
 router.get("/:id", asyncHandler(async (req, res) => {
     const spotById = await Spot.findByPk(req.params.id, {
-        include: [Image]
+        include: [
+            Image,
+            Booking,
+            Review,
+            {model: Review, include: [User]}
+        ]
     });
 
     return res.json(spotById)
@@ -73,6 +84,7 @@ const newSpotValidators = [
 /* POST CREATE A LISTING */
 router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res, next) => {
     const userId = req.user.id;
+
     const { address, city, state, country, zipcode, name, bedrooms, baths, price, image } = req.body;
 
     const newSpot = await Spot.create({ address, city, state, country, zipcode, name, bedrooms, baths, price, image, userId });
@@ -88,6 +100,7 @@ router.post("/new", newSpotValidators, requireAuth, asyncHandler(async (req, res
         // const image = await Image.create({spotId:newSpot.id, url:req.body.image})
         // newSpot.Images = [image]
         const newImg = await Image.create({spotId : newSpot.id, url: req.body.image})
+
         newSpot.dataValues.Images = [newImg]
     }
 

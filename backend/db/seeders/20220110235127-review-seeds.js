@@ -44,6 +44,13 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
      },
+     {
+      userId: "1",
+      spotId: "7",
+      review: "This ocean front property in Malibu is beyond amazing! The whole house is beautifully decorated! We cannot wait to book our next stay at this home!!",
+      createdAt: new Date(),
+      updatedAt: new Date()
+     },
    ], {});
   },
 

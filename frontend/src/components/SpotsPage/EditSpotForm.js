@@ -38,6 +38,8 @@ const EditSpotForm = () => {
             baths,
             image,
         }
+
+        
        const spotUpdated = await dispatch(updateASpot(updatedSpot, id));
 
        if(spotUpdated) {
@@ -163,9 +165,9 @@ const EditSpotForm = () => {
                         name="image"
                         required
                     />
-                    {/* <NavLink to={`/spots/${id}`}> */}
-                        <button className="new-spot-button" type="submit">Update Listing</button>
-                    {/* </NavLink> */}
+
+                    <button className="new-spot-button" type="submit">Update Listing</button>
+
                     {/* <button type="button" onClick={handleCancelClick}>Cancel</button> */}
                 </form>
 

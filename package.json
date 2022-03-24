@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/memckenna/authenticate-me-project/issues"
   },
-  "homepage": "https://github.com/memckenna/authenticate-me-project#readme"
+  "homepage": "https://github.com/memckenna/authenticate-me-project#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
 }

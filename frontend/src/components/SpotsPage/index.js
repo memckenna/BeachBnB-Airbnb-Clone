@@ -21,10 +21,20 @@ const SpotsBrowserPage = () => {
         <div>
             <h1 className='spots-header'>Beach homes that you will love</h1>
             <ul className='spots-container'>
-                {spots.map(({ id, name }) => (
-                    <SpotCardDetail key={id} id={id} name={name}  />
+                {spots.map(spot => (
+                    <div key={spot?.id}>
+                        <SpotCardDetail key={spot?.id} id={spot.id} name={spot.name}  />
+                        {/* <a href={`https://www.google.com/maps/place/${spot.city}+${spot.state}+${spot.country}`} target="_blank">{spot.city}, {spot.state}, {spot.country}</a> */}
+                    </div>
                 ))}
             </ul>
+            {/* <ul className='spots-container'>
+                {spots.map(({ id, name }) => (
+                    <SpotCardDetail key={id} id={id} name={name}  />
+
+                ))}
+            </ul> */}
+
 
         </div>
     )

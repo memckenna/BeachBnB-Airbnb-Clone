@@ -36,3 +36,34 @@ export function Modal({ onClose, children }) {
         modalNode
     );
 }
+
+
+export function EditBookingModal({ onClose, children }) {
+    const modalNode = useContext(ModalContext);
+    if (!modalNode) return null;
+
+    return ReactDOM.createPortal(
+        <div id="edit-modal">
+            <div id="edit-modal-background" onClick={onClose} />
+            <div id="edit-modal-content">
+                {children}
+            </div>
+        </div>,
+        modalNode
+    );
+}
+
+export function EditReviewModal({ onClose, children }) {
+    const modalNode = useContext(ModalContext);
+    if (!modalNode) return null;
+
+    return ReactDOM.createPortal(
+        <div id="edit-modal">
+            <div id="edit-modal-background" onClick={onClose} />
+            <div id="edit-modal-content">
+                {children}
+            </div>
+        </div>,
+        modalNode
+    );
+}

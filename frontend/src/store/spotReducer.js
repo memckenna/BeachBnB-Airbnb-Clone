@@ -11,30 +11,29 @@ export const loadSpots = (spots) => ({
     type: LOAD_SPOTS,
     spots
 });
-
 //GET ONE SPOT
 export const loadOneSpot = (spot) => ({
     type: LOAD_ONE_SPOT,
     spot
 })
-
+//Add a Spot
 export const addSpot = (newSpot) => ({
     type: ADD_SPOT,
     newSpot
 });
-
+//Update a Spot
 export const updateSpot = (spot, spotId) => ({
     type: UPDATE_SPOT,
     spot,
     spotId
 })
-
+//Delete a Spot
 export const deleteSpot = (spotId) => ({
     type: REMOVE_SPOT,
     spotId
 })
 
-/* GET ALL SPOTS */
+/* THUNK ACTION CREATOR - GET ALL SPOTS */
 export const getAllSpots = () => async (dispatch) => {
     const response = await csrfFetch(`/api/spots`);
 

@@ -12,7 +12,7 @@ function Navigation({ isLoaded }) {
     let sessionLinks;
     if (sessionUser) {
         sessionLinks = (
-            <ProfileButton user={sessionUser} />
+            <ProfileButton isLoaded={isLoaded} user={sessionUser} />
         );
     } else {
         sessionLinks = (
@@ -26,16 +26,20 @@ function Navigation({ isLoaded }) {
     return (
         <header id='header'>
             <nav className='nav-bar'>
-                    <ul>
-                        <li className='nav-links'>
-                            <NavLink activeClassName='active' exact to="/">
-                                <img className='logo' src='/images/beachbnb-logo.png' alt="BeachBnB logo" />
-                            </NavLink>
-                            <NavLink className="become-a-host" to="/spot/new">Become A Host</NavLink>
-                            <div>{isLoaded && sessionLinks}</div>
-                            {/* {isLoaded && sessionLinks} */}
-                        </li>
-                    </ul>
+                <div className='nav-links'>
+                    <div className='logo-div'>
+                        <NavLink activeClassName='active' exact to="/">
+                            <img className='logo' src='/images/beachbnb-color-top-trans-logo.png' alt="BeachBnB logo" />
+                        </NavLink>
+                    </div>
+                    <div className='right-nav-div'>
+                        <NavLink className="become-a-host" to="/spot/new">Become A Host</NavLink>
+
+                        <div className='login-signup-button'>{isLoaded && sessionLinks}</div>
+                        {/* {isLoaded && sessionLinks} */}
+                       
+                    </div>
+                </div>
             </nav>
 
         </header>

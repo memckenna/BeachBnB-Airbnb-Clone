@@ -93,6 +93,20 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
     },
+    {
+      userId: 1,
+      address: "9631 Malibu Beach Way",
+      city: "Malibu",
+      state: "California",
+      country: "United States",
+      zipcode: 93013,
+      name: "Malibu Beach at its Best...",
+      bedrooms: 3,
+      baths: 3,
+      price: 2630.00,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
 
    ], {});
   },

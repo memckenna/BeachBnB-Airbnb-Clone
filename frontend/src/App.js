@@ -12,6 +12,8 @@ import SpotDetail from "./components/SpotsPage/SpotDetailPage";
 import SingleSpotDetailPage from "./components/SpotsPage/SingleSpotDetail";
 import CreateNewSpot from "./components/SpotsPage/CreateNewSpot";
 import EditSpotForm from "./components/SpotsPage/EditSpotForm";
+import BookingsPage from "./components/Bookings";
+import SingleBookingDetails from "./components/Bookings/SingleBooking";
 
 
 function App() {
@@ -36,10 +38,16 @@ function App() {
             <SingleSpotDetailPage />
           </Route>
           <Route path="/spots/:id/edit">
-                <EditSpotForm  />
+            <EditSpotForm  />
           </Route>
           <Route path="/spot/new" exact>
             <CreateNewSpot />
+          </Route>
+          <Route path="/bookings" exact>
+            <BookingsPage />
+          </Route>
+          <Route path="/bookings/:id" exact>
+            <SingleBookingDetails />
           </Route>
         </Switch>
       )}
