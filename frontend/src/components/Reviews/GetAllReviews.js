@@ -15,11 +15,11 @@ const GetAllReviewsOnSpot = ({ id }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const oneSpot = useSelector(state => state.spotState.listings[id])
-    // console.log("GET ALL ONE SPOT", oneSpot)
+    console.log("GET ALL ONE SPOT", oneSpot)
     const reviewObj = useSelector(state => state.reviewState)
-    // const reviews = Object.values(reviewObj)
+    const reviews = Object.values(reviewObj)
     // console.log("GET ALL REVIEWS", reviewObj)
-    // console.log(reviews)
+    console.log(reviews)
 
     useEffect(() => {
         dispatch(getAllSpotReviews())
@@ -28,19 +28,20 @@ const GetAllReviewsOnSpot = ({ id }) => {
 
     return (
         <div>
-            <h3>REVIEWS</h3>
-            <div >
+
+
+
+            <h3 className='reviews-header'> {oneSpot?.Reviews?.length} reviews</h3>
+            <div className='single-review-section'>
                 {oneSpot?.Reviews?.map(review => (
                     <div key={review?.id} className='reviews-div'>
                         <div className='review-user-created'>
                             <div className='review-user'>{review?.User?.username}</div>
-                            <div>{moment(review?.createdAt).format("LLL")}</div>
+                            <div className='review-user-created-text'>{moment(review?.createdAt).format("LLL")}</div>
                         </div>
-                        <div>{review?.review}</div>
-                        {/* <button> */}
-                            <EditReviewOnSpot spotId={id} review={review} reviewId={review?.id} />
-                            {/* <EditAReview spotId={id} reviewObj={review} reviewId={review?.id} /> */}
-                        {/* </button> */}
+                        <div className='review-content'>{review?.review}</div>
+
+                        <EditReviewOnSpot spotId={id} review={review} reviewId={review?.id} />
                     </div>
                 ))}
             </div>

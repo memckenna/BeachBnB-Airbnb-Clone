@@ -56,3 +56,34 @@
     padding: 20px 10px 24px;
 
 }
+
+#edit-review-modal {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#edit-review-modal-background {
+    /* position: fixed; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#edit-review-modal-content {
+    position: absolute;
+    background-color: white;
+    border-radius: 11px;
+    width: 450px;
+    height: 250px;
+    padding: 20px 10px 24px;
+
+}

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import { getOneSpotReview, getAllSpotReviews, updateReview, deleteReview } from '../../../store/reviewReducer';
 import { getSpotById } from '../../../store/spotReducer';
+import '../Reviews.css'
 
 const EditAReview = ({ spotId, reviewId, reviewObj, onClose }) => {
     const dispatch = useDispatch()
@@ -58,22 +59,23 @@ const EditAReview = ({ spotId, reviewId, reviewObj, onClose }) => {
     }
 
     return (
-        <div>
+        <div className='edit-review-modal-form-container'>
+            <h3>Edit your review</h3>
             <form onSubmit={handleSubmit}>
                 <textarea
-                    className=''
+                    className='edit-review-modal-textarea'
                     type="text"
                     placeholder='Edit a review'
                     value={review}
                     onChange={(e) => setReview(e.target.value)}
 
                 />
-                <div>
-                    <div>
-                        <button type='submit'>Save</button>
+                <div className='edit-review-modal-buttons'>
+                    <div className='save-edit-modal-btn-div'>
+                        <button className='save-edit-modal-btn' type='submit'>Save</button>
                     </div>
-                    <div>
-                        <button type='submit' onClick={handleDelete} id={reviewObj?.id}>Delete</button>
+                    <div className='delete-edit-modal-btn-div'>
+                        <button className='delete-edit-modal-btn' type='submit' onClick={handleDelete} id={reviewObj?.id}>Delete</button>
                     </div>
                 </div>
 

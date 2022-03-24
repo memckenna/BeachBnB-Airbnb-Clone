@@ -277,7 +277,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 
 
@@ -343,26 +343,4 @@
     position: sticky;
     top: 110px;
 
-}
-
-.reviews-container {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    overflow: scroll;
-}
-
-.reviews-div {
-    display: flex;
-    flex-direction: column;
-}
-
-.review-user {
-    font-weight: bolder;
-}
-
-.review-user-created {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
 }

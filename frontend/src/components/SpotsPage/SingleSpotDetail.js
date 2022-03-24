@@ -20,6 +20,7 @@ const SingleSpotDetailPage = () => {
     // const bookingObj = useSelector(state => state.bookingState.trips[id])
     // const reviewObj = useSelector(state => state.reviewState)
     // const reviews = Object.values(reviewObj)
+    console.log(oneSpot)
 
 
     useEffect(() => {
@@ -78,7 +79,7 @@ const SingleSpotDetailPage = () => {
                             </div>
                             <div>
                                 <h3>Self check-in</h3>
-                                <p>Check yourself in with the lockbox</p>
+                                <p>Check yourself in with the smartlock</p>
                             </div>
                             <div>
                                 <h3>Free cancellation for 48 hours</h3>
@@ -116,6 +117,7 @@ const SingleSpotDetailPage = () => {
                             </div>
                     ))}
                 </div> */}
+
                 <GetAllReviewsOnSpot id={oneSpot?.id} />
                 <CreateAReview spotId={oneSpot?.id} />
             </div>

@@ -58,9 +58,9 @@ export function EditReviewModal({ onClose, children }) {
     if (!modalNode) return null;
 
     return ReactDOM.createPortal(
-        <div id="edit-modal">
-            <div id="edit-modal-background" onClick={onClose} />
-            <div id="edit-modal-content">
+        <div id="edit-review-modal">
+            <div id="edit-review-modal-background" onClick={onClose} />
+            <div id="edit-review-modal-content">
                 {children}
             </div>
         </div>,
