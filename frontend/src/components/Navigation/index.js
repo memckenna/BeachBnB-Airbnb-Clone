@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
+import * as sessionActions from '../../store/session';
 import './Navigation.css';
 import SignupFormModal from '../SignupFormPage';
 
@@ -34,10 +35,9 @@ function Navigation({ isLoaded }) {
                     </div>
                     <div className='right-nav-div'>
                         <NavLink className="become-a-host" to="/spot/new">Become A Host</NavLink>
-
                         <div className='login-signup-button'>{isLoaded && sessionLinks}</div>
                         {/* {isLoaded && sessionLinks} */}
-                       
+
                     </div>
                 </div>
             </nav>

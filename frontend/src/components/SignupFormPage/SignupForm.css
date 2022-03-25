@@ -1,11 +1,21 @@
 #sign-up-nav-button {
-    padding: 5px 10px 5px 10px;
+    /* padding: 5px 10px 5px 10px;
     border-radius: 8px;
     border: 1px solid lightgrey;
     color: #006D77;
     background-color: white;
-    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
-    
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px; */
+    margin-top: 8px;
+    padding: 12px 8px 12px 8px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: #006D77;
+    /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    color: white;
+    font-weight: bolder;
+    font-size: 14px;
+    margin-left: 5px;
 }
 
 .errors {
