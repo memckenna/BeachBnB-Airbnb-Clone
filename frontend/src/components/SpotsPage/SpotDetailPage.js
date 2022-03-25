@@ -18,30 +18,39 @@ const SpotCardDetail = ({ id, name }) => {
         <li className="spot-detail">
             <div className='card-dets'>
                 <div>
-                    <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>
-                        <img className='card-image' id={id} key={oneSpot.id} src={oneSpot.Images[0]?.url}></img>
+                    <NavLink className={"navlink-card"} key={oneSpot?.id} to={`/spots/${id}`}>
+                        <img className='card-image' id={id} key={oneSpot?.id} src={oneSpot?.Images[0]?.url}></img>
                     </NavLink>
                 </div>
                 <div className='spot-info'>
-                    {/* <div>
-                        <h2 className='card-header'>{name}</h2>
-                    </div> */}
-                    <NavLink className={"navlink-card"} key={oneSpot.id} to={`/spots/${id}`}>{oneSpot.name}</NavLink>
+                    <div className='city-state'>{oneSpot?.city}, {oneSpot?.state}</div>
+                    <NavLink className={"navlink-card"} key={oneSpot?.id} to={`/spots/${id}`}>{oneSpot?.name}</NavLink>
                     <div className='city-state'>
-                        {/* <div>{oneSpot.address} |</div>
-                        <div className='city'>{oneSpot.city}, </div>
-                        <div>{oneSpot.state}</div> */}
-                        <a href={`https://www.google.com/maps/place/${oneSpot.city}+${oneSpot.state}+${oneSpot.country}`} target="_blank">{oneSpot.city}, {oneSpot.state}, {oneSpot.country}</a>
+                        {/* <a href={`https://www.google.com/maps/place/${oneSpot.city}+${oneSpot.state}+${oneSpot.country}`} target="_blank">{oneSpot.city}, {oneSpot.state}, {oneSpot.country}</a> */}
                     </div>
+                    <div className='divider'></div>
                     <div className='bed-bath'>
-                        <div className='beds'>{oneSpot.bedrooms} bedrooms</div>
-                        {/* <div className='dot-separator'>
+                        {oneSpot?.bedrooms > 1 ? (
+                            <div className='all-spot-beds'>{oneSpot?.bedrooms} bedrooms</div>
+                        ) : (
+                            <div className='all-spot-beds'>{oneSpot?.bedrooms} bedroom</div>
+                        )
+                        }
+                        <div className='dot-separator'>
                             <i className="fas fa-circle"></i>
-                        </div> */}
-                        <div className='baths'>{oneSpot.baths} baths</div>
+                        </div>
+                        {oneSpot?.baths > 1 ? (
+                            <div className='all-spot-baths'>{oneSpot?.baths} baths</div>
+                        ) : (
+                            <div className='all-spot-baths'>{oneSpot?.baths} bath</div>
+                        )}
                     </div>
-                    <div className='single-spot-price'>
-                        <div className='card-price'>${oneSpot.price}/night</div>
+                    <div className='spot-page-price-div'>
+                        <div className='card-price'>
+                            <div className='price-div'>${oneSpot?.price}</div>
+                            <div className='slash-div'> / </div>
+                            <div className='night-div'>night</div>
+                        </div>
                     </div>
                 </div>
                 {/* <div>

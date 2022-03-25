@@ -27,10 +27,7 @@ const GetAllReviewsOnSpot = ({ id }) => {
     }, [dispatch])
 
     return (
-        <div>
-
-
-
+        <div className='reviews-container-section'>
             <h3 className='reviews-header'> {oneSpot?.Reviews?.length} reviews</h3>
             <div className='single-review-section'>
                 {oneSpot?.Reviews?.map(review => (

@@ -39,7 +39,7 @@ const EditSpotForm = () => {
             image,
         }
 
-        
+
        const spotUpdated = await dispatch(updateASpot(updatedSpot, id));
 
        if(spotUpdated) {
@@ -75,8 +75,9 @@ const EditSpotForm = () => {
                     ))}
                 </ul>
                 <form onSubmit={handleSubmit}>
+                    <label className='top-edit-labels'>home name</label>
                     <input
-                        className="input-box"
+                        className="top-input-box"
                         type="text"
                         onChange={(e) => setName(e.target.value)}
                         value={name}
@@ -84,6 +85,7 @@ const EditSpotForm = () => {
                         name="name"
                         required
                     />
+                    <label className='edit-labels'>address</label>
                     <input
                         className="input-box"
                         type="text"
@@ -93,6 +95,7 @@ const EditSpotForm = () => {
                         name="address"
                         required
                     />
+                    <label className='edit-labels'>city</label>
                     <input
                         className="input-box"
                         type="text"
@@ -102,6 +105,7 @@ const EditSpotForm = () => {
                         name="city"
                         required
                     />
+                    <label className='edit-labels'>state</label>
                     <input
                         className="input-box"
                         type="text"
@@ -111,6 +115,7 @@ const EditSpotForm = () => {
                         name="state"
                         required
                     />
+                    <label className='edit-labels'>country</label>
                     <input
                         className="input-box"
                         type="text"
@@ -120,6 +125,7 @@ const EditSpotForm = () => {
                         name="country"
                         required
                     />
+                    <label className='edit-labels'>zipcode</label>
                     <input
                         className="input-box"
                         type="number"
@@ -129,6 +135,7 @@ const EditSpotForm = () => {
                         name="zipcode"
                         required
                     />
+                    <label className='edit-labels'>bedrooms</label>
                     <input
                         className="input-box"
                         type="number"
@@ -138,6 +145,7 @@ const EditSpotForm = () => {
                         name="bedrooms"
                         required
                     />
+                    <label className='edit-labels'>baths</label>
                     <input
                         className="input-box"
                         type="number"
@@ -147,6 +155,7 @@ const EditSpotForm = () => {
                         name="bathrooms"
                         required
                     />
+                    <label className='edit-labels'>listing price</label>
                     <input
                         className="input-box"
                         type="number"
@@ -156,6 +165,7 @@ const EditSpotForm = () => {
                         name="price"
                         required
                     />
+                    <label className='edit-labels'>photo url</label>
                     <input
                         className="input-box"
                         type="url"
@@ -167,7 +177,6 @@ const EditSpotForm = () => {
                     />
 
                     <button className="new-spot-button" type="submit">Update Listing</button>
-
                     {/* <button type="button" onClick={handleCancelClick}>Cancel</button> */}
                 </form>
 

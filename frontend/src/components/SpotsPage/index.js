@@ -10,8 +10,8 @@ const SpotsBrowserPage = () => {
     const dispatch = useDispatch();
     // const { spotId } = useParams();
     const spotsObject = useSelector(state => state.spotState.listings);
-
     const spots = Object.values(spotsObject);
+    console.log("SPOTSSSS", spots)
 
     useEffect(() => {
         dispatch(getAllSpots());
@@ -19,7 +19,7 @@ const SpotsBrowserPage = () => {
 
     return (
         <div>
-            <h1 className='spots-header'>Beach homes that you will love</h1>
+            <h1 className='spots-header'>{spots?.length} beach stays suggestions</h1>
             <ul className='spots-container'>
                 {spots.map(spot => (
                     <div key={spot?.id}>
