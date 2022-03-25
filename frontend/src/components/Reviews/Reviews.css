@@ -92,14 +92,22 @@
     color: white;
     font-weight: bolder;
     font-size: 16px;
+    cursor: pointer;
 }
 
-/* .create-review-button:disabled {
-    padding: 10px 10px 10px 10px;
+.create-review-button:disabled {
+    margin-top: 8px;
+    padding: 12px 10px 12px 10px;
     width: 100px;
-    border-radius: 15px;
-    background-color: rgb(248, 248, 248);
-} */
+    border-radius: 10px;
+    border: none;
+    background-color: #9abdc0;
+    /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    cursor: not-allowed;
+}
 
 .edit-review-modal-button-container {
     padding: 5px 0 5px 0;
