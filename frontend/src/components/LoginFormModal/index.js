@@ -17,11 +17,18 @@ function LoginFormModal() {
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <LoginForm />
+          <div className='demo-user-modal'>
+            <div className='demo-user-modal-text'>
+              Log in as a Demo User
+            </div>
+            <div>
+              <button className='demo-button' onClick={() => dispatch(sessionActions.login({ credential, password }))}  >DEMO</button>
+            </div>
+          </div>
         </Modal>
       )}
 
 
-      <button className='demo-button' onClick={() => dispatch(sessionActions.login({ credential, password }))}  >DEMO</button>
     </>
   );
 }

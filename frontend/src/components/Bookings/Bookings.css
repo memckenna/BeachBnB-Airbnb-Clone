@@ -1,88 +1,251 @@
-html {
-    /* height: 100%;
-    width: 100%;
-    background-color: #EDF6F9;
-    overflow: auto; */
-}
-
 .bookings-container {
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto;
-    /* border: 1px solid red; */
     padding: 0px 40px 40px 40px;
-    /* margin-top: 40px; */
     max-width: 1500px;
     width: 100%;
     min-height: 500px;
     height: 100%;
-
-    /* margin-top: 100px; */
-
 }
 
 .bookings-detail {
     box-sizing: border-box;
     display: grid;
     grid-template-rows: auto;
-    /* border: 1px solid lightgray; */
     background-color: white;
-    border-radius: 10px;
-    width: 800px;
+    width: 100%;
+    /* width: 800px; */
     height: 225px;
     padding: 0px 20px 0px 0px;
-    /* margin: 6px; */
-    /* box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px; */
+    border-bottom: 1px solid lightgray;
 }
 
 .bookings-detail-div {
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* width: 100%; */
-    /* border: 1px solid purple; */
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .booking-detail-left {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid orange; */
-    /* width: 50%; */
     padding-right: 20px;
 }
+
 .booking-detail-right {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid blue; */
-    /* width: 50%; */
+    padding-right: 20px;
 
 }
 
-.future-stay-text {
+.bookings-page-city-header {
+    font-weight: 600;
+}
+
+.bookings-page-name-navlink {
+    text-decoration: none;
+    color: gray;
+    font-weight: 300;
+}
+
+.bookings-page-host {
+    text-decoration: none;
+    color: gray;
+    font-weight: 300;
+}
+
+.bookings-page-dates {
+    text-decoration: none;
+    color: gray;
+    font-weight: 300;
+}
+
+.bookings-page-trips-header {
     margin-top: 100px;
-    /* border: 1px solid red; */
-    /* padding-left: 40px; */
     font-size: 36px;
     font-weight: 600;
+    padding-left: 40px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.future-stay-text {
+    /* margin-top: 100px; */
+    font-size: 22px;
+    font-weight: 500;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .already-stayed-text {
     padding: 0px 40px 0px 40px;
-
     font-size: 22px;
-    font-weight: 600;
+    font-weight: 500;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .booking-images {
     display: flex;
-    /* align-self: flex-end; */
-    width: 300px;
-    height: 220px;
+    width: 150px;
+    height: 130px;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
 }
+
+.booking-section {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    padding: 24px 44px 24px 44px;
+    max-width: 390px;
+    /* width: 100%; */
+    max-height: 475px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 110px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
+    overflow: auto;
+
+
+}
+
+.booking {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-calendar {
+    display: block;
+    box-sizing: border-box;
+}
+
+.booking-calendar-price-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.booking-calendar-price {
+    padding-bottom: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.booking-calendar-night {
+    font-size: 18px;
+    font-weight: lighter;
+    padding-left: 5px;
+    padding-top: 4px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+
+.reserve {
+    padding-top: 20px;
+    border: none;
+}
+
+.reserve-button {
+    display: flex;
+    justify-content: center;
+    padding: 16px 10px 16px 10px;
+    border-radius: 8px;
+    border: 1px solid lightgrey;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+
+    background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
+}
+
+.booking-calendar-dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: 1px solid lightgray;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.reserve-text {
+    text-align: center;
+    font-size: 13px;
+    padding-top: 10px;
+    letter-spacing: 0.03em;
+    font-weight: 300;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.datepicker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    width: 350px;
+    cursor: pointer;
+}
+
+
+.date {
+    border: none;
+    text-align: left;
+    font-size: 14px;
+    padding-bottom: 10px;
+    /* padding-top: 10px; */
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    cursor: pointer;
+}
+
+
+.checkin-date-picker {
+    font-size: 14px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+
+.dates-selected-pricing-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 10px 0;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 300;
+}
+.dates-selected-pricing {
+    display: flex;
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    text-decoration: underline;
+    padding-top: 5px;
+    font-weight: 300;
+
+}
+.dates-selected-pricing-total {
+    display: flex;
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.dates-selected-pricing-total-last {
+    display: flex;
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    padding-bottom: 15px;
+}
+
+.dates-selected-total-price-div {
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 10px 0;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 500;
+}
+
 
 .single-booking-container {
     margin-top: 130px;
@@ -99,7 +262,7 @@ html {
     width: 100%;
     max-width: 700px;
     border-radius: 10px;
-    padding: 0px 0px 0px 00px;
+    padding: 0px 0px 0px 40px;
 }
 
 .single-booking-header {
@@ -107,8 +270,8 @@ html {
     position: relative;
     top: 0px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     flex-direction: column;
     margin: 50px 40px;
     overflow-wrap: auto;
@@ -141,110 +304,64 @@ html {
     text-shadow: 1px 1px 2px gray;
 }
 
-.booking-section {
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    border: 1px solid lightgray;
-    border-radius: 12px;
-    padding: 24px 44px 24px 44px;
-    max-width: 390px;
-    /* width: 100%; */
-    max-height: 475px;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 110px;
-    box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
-    overflow: auto;
-}
-
-.booking {
-    display: flex;
-    flex-direction: column;
-}
-
-.booking-calendar {
-    display: block;
-    box-sizing: border-box;
-}
-
-.booking-calendar-price {
-    padding-bottom: 15px;
-}
-
-.booking-calendar-dates {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* border: 1px solid red; */
-    border-bottom: .1px solid lightgray;
-    /* padding-bottom: 1px; */
-    align-items: center;
-}
-
-.reserve {
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-}
-
-.reserve-button {
-    display: flex;
-    justify-content: center;
-    padding: 16px 10px 16px 10px;
-    border-radius: 8px;
-    border: 1px solid lightgrey;
-    color: white;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
-
-    background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
-}
-
-.reserve-text {
-    text-align: center;
-    font-size: 13px;
-    padding-top: 10px;
-    letter-spacing: 0.03em;
-}
-
-
-
-.datepicker {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    border: 1px solid lightgray;
-    /* padding: 0px 10px 0px 10px; */
-    border-radius: 12px;
-    width: 350px;
-}
-.date {
-    border: none;
-    text-align: left;
-    font-size: 14px;
-    padding-bottom: 10px;
-}
-
 .checkin-checkout {
     display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
     padding-top: 30px;
+}
+
+.single-checkin-div {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightgray;
+    align-items: flex-start;
+    width: 50%;
+    padding-left: 10px;
+
 }
 
 .single-checkin {
     display: flex;
-    /* text-align: left; */
-    font-size: 18px;
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.single-checkin-date {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    line-height: 22px;
+}
+
+.single-checkout-div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+
 }
 
 .single-checkout {
     display: flex;
-    /* text-align: left; */
-    font-size: 18px;
-    padding-left: 180px;
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+.single-checkout-date {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .checkin {
@@ -262,7 +379,8 @@ html {
 
 .edit-delete-bookings-buttons {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* justify-content: space-between; */
     width: 100%;
     max-width: 1300px;
 }
@@ -272,14 +390,95 @@ html {
 }
 
 .delete-single-booking-button-div {
-    padding-right: 40px;
+    padding-top: 10px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
 }
 
 .delete-single-booking-button {
-    padding: 15px 20px 15px 20px;
+    padding: 10px 0px 20px 0px;
     font-size: 16px;
     font-weight: bolder;
     border-radius: 20px;
     border: none;
+}
+
+.delete-booking-arrow {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
+
+
+.reservation-details-section {
+    margin-top: 40px;
+    border-top: 8px solid rgb(238, 235, 235);
+}
+
+.reservation-details-header {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.reservation-detail-h3 {
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 700;
+}
+
+.reservation-detail-h4 {
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 300;
+}
+
+.reservation-detail-content {
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 300;
+    padding-bottom: 20px;
+}
+
+.reservation-details-divider {
+    border-bottom: 1px solid lightgray;
+}
+
+.cancel-by {
+    font-size: 15px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+
+.cancel-by-dates {
+    display: flex;
+    padding: 0px 0 20px 0;
+    /* justify-content: space-around; */
+}
+
+.cancellation-date {
+    padding-right: 50px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.delete-event-button-div {
+    padding-top: 7px;
+    /* border-bottom: 1px solid lightgray; */
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.delete-event-button {
+    padding: 10px 0px 20px 0px;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 20px;
 
 }

@@ -1,0 +1,181 @@
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: scroll;
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    border-top: 1px solid lightgray;
+    margin-bottom: 30px;
+}
+.reviews-container-section {
+    margin: auto;
+}
+
+.single-review-section {
+    padding-top: 10px;
+    padding-bottom: 10px;;
+}
+
+.reviews-header {
+    font-size: 22px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 600;
+}
+
+.reviews-div {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    padding-bottom: 30px;;
+}
+
+.review-user {
+    font-weight: bolder;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+}
+
+.review-user-created {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+
+.review-user-created-text {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+
+    font-weight: lighter;
+
+}
+
+.review-content {
+    font-size: 16px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 300;
+
+}
+
+.create-review-container {
+    display: flex;
+
+}
+
+.create-review-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+}
+
+.create-review-textarea {
+    resize: none;
+    width: 800px;
+    /* width: 100%; */
+
+    height: 100px;
+    overflow: scroll;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 5px 5px 5px 5px;
+}
+
+.create-review-button {
+    margin-top: 8px;
+    padding: 12px 10px 12px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: #006D77;
+    /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.create-review-button:disabled {
+    margin-top: 8px;
+    padding: 12px 10px 12px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: #9abdc0;
+    /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    cursor: not-allowed;
+}
+
+.edit-review-modal-button-container {
+    padding: 5px 0 5px 0;
+
+}
+
+.edit-review-modal-button {
+    /* padding: 10px 10px 10px 10px; */
+    border: none;
+    background-color: white;
+}
+
+
+.review-edit-icon {
+    font-size: 18px;
+}
+
+.edit-review-modal-form-container {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* padding-top: 20px; */
+    align-items: center;
+
+}
+
+.edit-review-modal-textarea {
+    width: 430px;
+    height: 100px;
+    resize: none;
+    overflow: scroll;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 5px 5px 5px 5px;
+
+}
+
+.edit-review-modal-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.save-edit-modal-btn {
+    margin-top: 8px;
+    padding: 12px 10px 12px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: #006D77;
+    /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.delete-edit-modal-btn {
+    margin-top: 8px;
+    padding: 12px 10px 12px 10px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    color: white;
+    font-weight: bolder;
+    font-size: 16px;
+    margin-left: 5px;
+}

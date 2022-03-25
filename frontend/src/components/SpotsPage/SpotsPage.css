@@ -4,163 +4,228 @@
     display: grid;
     grid-template-rows: auto;
     /* border: 1px solid red; */
-    padding: 50px 50px 50px 50px;
+    padding: 0px 50px 50px 50px;
     margin-top: 40px;
     max-width: 1000px;
 }
 
 /* create media for max and min sizing*/
 
-.spot-detail {
-    box-sizing: border-box;
-    display: grid;
-    grid-template-rows: auto;
-    border: 1px solid lightgray;
-    background-color: white;
-    border-radius: 10px;
-
-    padding: 50px 20px 80px 20px;
-    margin: 6px;
-    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
-
-}
 
 .spots-header {
     margin-top: 100px;
     padding: 0;
     margin-bottom: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     margin-left: 60px;
-    font-size: 25px;
+    font-size: 16px;
+    font-weight: 300;
 }
 
 .creds {
     font-weight: bold;
-
 }
+
 .errors {
     color: black;
-    margin: 0;
-    /* border: 1px solid lightgray; */
-    /* background-color: white; */
+    /* margin: 0; */
     border-radius: 10px;
-    /* align-self: center; */
-
     padding: 20px 60px 20px 60px;
-    list-style: square;
+    list-style: none;
+    /* list-style: square; */
 }
 
+.spot-detail {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: auto;
+
+    background-color: white;
+    border-top: 1px solid #EBEBEB;
+    padding: 40px 0px 40px 0px;
+    /* margin: 6px; */
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .card-dets {
     display: flex;
-    justify-content: space-around;
-    /* flex-direction: column; */
-    font-family: Arial, Helvetica, sans-serif;
+    /* margin-left: auto;
+    margin-right: auto; */
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
-.navlink-card {
-    text-decoration: none;
-    font-weight: bolder;
-    color: black;
-    margin-bottom: 10px;
-}
+
 .card-header {
     display: flex;
     justify-content: row;
-}
-
-.bed-bath {
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    align-items: center;
-    /* padding-top: 10px;
-    padding-left: 2px; */
-}
-
-.dot-separator {
-    display: flex;
-    /* align-self: center;
-    margin-right: 10px; */
-
-}
-
-.fa-circle {
-    font-size: 5px;
 }
 
 .card-image {
     display: flex;
     align-self: flex-end;
     width: 300px;
-    height: 220px;
+    height: 200px;
     border-radius: 10px;
     box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
 }
 .city-state {
     display: flex;
     justify-content: row;
-
+    font-size: 14px;
+    font-weight: 300;
+    color: gray;
+    padding-bottom: 5px;
 }
 .city {
     padding-right: 8px;
     padding-left: 8px;
 }
+
+.navlink-card {
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.divider {
+    border-top: 1.5px solid #DDDDDD;
+    width: 40px;
+}
+
+.bed-bath {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 300;
+    color: gray;
+    padding-top: 10px;
+}
+
+.all-spot-baths {
+    padding-left: 10px;
+}
+
+.dot-separator {
+    display: flex;
+    padding-top: 9px;
+    padding-left: 10px;
+}
+
+.fa-circle {
+    font-size: 3px;
+}
+
+.spot-page-price-div {
+    display: flex;
+    flex-direction: column;
+    width: 650px;
+}
 .card-price {
-    /* display: flex;
-    justify-content: flex-end; */
-    padding-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 90px;
     font-weight: bold;
     letter-spacing: 1px;
+    width: 100%;
+}
+
+.price-div {
+    font-size: 17px;
+}
+
+.slash-div {
+    font-weight: 300;
+    padding-left: 3px;
+    font-size: 17px;
+}
+
+.night-div {
+    font-weight: 300;
+    padding-left: 3px;
+    font-size: 17px;
 }
 
 .spot-info {
     display: flex;
-
     flex-direction: column;
+    padding-left: 20px;
 }
 
+
+/* Edit Spot Form  */
 
 .input-form-div {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin-top: 100px;
-    /* background-color: seagreen; */
-
+    /* margin-left: 20px; */
+    /* margin-top: 100px; */
 }
 
 .new-spot-form {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    width: 400px;
+    align-items: center;
+    width: 500px;
+
+}
+
+.edit-labels {
+    margin: 0px 10px 10px 25px;
+    padding: 0 5px 0 5px;
+    font-size: 12px;
+    position: absolute;
+    background-color: white;
+}
+
+.top-edit-labels {
+    margin: 0px 10px 10px 25px;
+    padding: 0 5px 0 5px;
+
+    font-size: 12px;
+    position: absolute;
+    background-color: white;
+}
+
+.top-input-box {
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px 20px 10px;
+    margin: 7px 10px 5px 10px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    width: 500px;
+    height: 30px;
 }
 
 .input-box {
     display: flex;
     justify-content: center;
     padding: 20px 10px 20px 10px;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 4px 10px;
     border: 1px solid lightgray;
     border-radius: 8px;
-    width: 450px;
+    width: 500px;
+    height: 30px;
 }
 
 .new-spot-button {
-    /* padding: 5px 10px 5px 10px; */
     display: flex;
     justify-content: center;
+
     padding: 20px 10px 20px 10px;
     border-radius: 8px;
     border: 1px solid lightgrey;
     color: white;
-    /* background-color: white; */
     background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%);
     font-size: 16px;
     font-weight: 700;
     box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
     margin: 10px 10px 10px 10px;
-    width: 450px;
+    width: 520px;
 }
 
 .form-header {
@@ -169,125 +234,252 @@
 
 }
 
-.edit-delete-button {
+.single-spot-detail-container{
+    /* margin: auto; */
     display: flex;
-    justify-content: row;
-    margin: 10px 20px 50px 10px;
-
-}
-
-.edit-listing {
-    padding-right: 10px;
-    padding: 5px 10px 5px 10px;
-    margin: 5px;
-    border-radius: 8px;
-    border: 1px solid lightgrey;
-    color: #006D77;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
-}
-.spot-detail-page {
-    margin-top: 130px;
-    margin-bottom: 60px;
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: normal;
-    background-color: white;
-    width: auto;
-    max-width: 1400px;
-    border-radius: 10px;
-    padding: 20px 20px 20px 30px;
-
-    margin-left: 80px;
-    margin-right: 80px;
+    justify-content: center;
     padding: 0 80px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 90px;
+    margin-bottom: 60px;
+    max-width: 1400px;
+    background-color: white;
+    flex-shrink: 1;
 }
 
-.spot-images {
+.spot-detail-page {
     display: flex;
-    align-self: flex-end;
-    width: 300px;
-    height: 220px;
-    border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
+    align-items: center;
+    flex-direction: column;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 18px;
+    width: 100%;
+}
+
+.single-spot-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+
+}
+
+.single-spot-name {
+    display: flex;
+    font-size: 26px;
+    font-weight: 600;
 }
 
 .spot-address {
     display: flex;
-    justify-content: flex-start;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    padding: 0px 0px 20px 0px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    padding: 0px 0px 12px 0px;
+    color: gray;
+
 }
 
-.spot-price {
+.spot-images-multiple-div {
     display: flex;
-    justify-content: flex-start;
+    width: 100%;
+}
 
-    font-weight: bold;
-    padding: 0px 20px 0px 20px;
-    margin: 20px 0px;
+.spot-images-multiple-div-left {
+    display: flex;
+
+}
+
+.spot-images-multiple-div-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.spot-images-left {
+    display: flex;
+    width: 800px;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
+}
+
+.spot-images-right {
+    display: flex;
+    max-width: 1120;
+    width: 400px;
+    height: 240px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
+}
+
+.spot-images-div {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+
+}
+
+.spot-images {
+    display: flex;
+    width: 800px;
+    height: 480px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 8px 28px;
 }
 
 .detail-section {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* border: 1px solid gray; */
-    width: fit-content;
+    width: 100%;
     padding: 0px 20px 20px 0px;
     margin: 0px 10px;
-    /* border-radius: 8px; */
-    /* background-color: white; */
-
+    height: auto;
 }
 
 .home-details {
     display: flex;
+    height: auto;
 
 }
 .details-header {
     padding: 0px 10px 0px 10px;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 
+}
+
+.single-bed-bath {
+    display: flex;
 }
 
 .beds {
     padding: 0px 10px 10px 10px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+
 }
+
 .baths {
     padding: 0px 10px 10px 10px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+
+}
+
+.single-dot-separator {
+    display: flex;
+    padding-top: 10px;
+    padding-left: 2px;
+}
+
+
+.single-spot-price {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+    padding: 0px 80px 0px 20px;
+    margin: 20px 0px;
+    width: 100%;
+}
+
+.single-spot-price-div {
+    display: flex;
+}
+
+.calendar-edit-details-container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+}
+
+.calendar-edit-section {
+    display: flex;
+    justify-content: flex-end;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 110px;
+    height: auto;
+
+}
+
+.edit-delete-button-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px 20px 50px 10px;
+}
+
+.owner-edit-button-div {
+    display: flex;
+    border-top: 1px solid lightgray;
+}
+
+.owner-edit-btn-nav {
+    text-decoration: none;
+}
+
+.edit-listing-button {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    padding: 15px 10px 12px 0px;
+    width: 500px;
+    border: none;
+    background-color: white;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.edit-listing-button-text {
+    display: flex;
+}
+
+.edit-listing-button-arrow {
+    display: flex;
+}
+
+.owner-delete-button-div {
+    display: flex;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+
+}
+
+.delete-listing-button {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 5px;
+    margin-bottom: 8px;
+    padding: 15px 10px 12px 0px;
+    width: 500px;
+    border: none;
+    background-color: white;
+    font-weight: bolder;
+    font-size: 16px;
 }
 
 .home-info-container {
     box-sizing: border-box;
     display: flex;
-    align-items: stretch;
-
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-
     width: 100%;
+    height: auto;
 
-    padding-left: 24px;
-    padding-right: 24px;
-
-    margin-left: auto;
-    margin-right: auto;
-
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
-
-
 
 .stay-info {
     display: block;
     box-sizing: border-box;
-
-
-    border-top: 1px solid black;
+    border-top: 1px solid lightgray;
     /* border-bottom: 1px solid black; */
     padding: 32px 0;
     margin: 0 0 24px;
@@ -297,9 +489,8 @@
     max-height: 300px;
     height: 100%;
     flex: 0 1 auto;
-
-
 }
+
 .stay-info h3 {
     font-size: 16px;
     font-weight: bolder;
@@ -320,49 +511,56 @@
     padding-bottom: 48px;
 }
 
-.sleep-info {
-    border-bottom: 1px solid black;
-    display: block;
-}
-
-.amenity-offerings {
-    border-bottom: 1px solid black;
-    display: block;
-}
-
-.calendar-edit-details-container {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-.calendar-edit-section {
-    display: flex;
-    justify-content: flex-end;
-
-    position: -webkit-sticky;
-    position: sticky;
-    top: 110px;
-
-}
-
-.reviews-container {
+.single-spot-where-div {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
-    height: auto;
-    overflow: scroll;
+    width: 100%;
+    border-top: 1px solid lightgray;
+
 }
 
-.reviews-div {
+.single-spot-where-header {
+    /* padding: 0px 10px 0px 10px; */
+    font-size: 22px;
+    font-weight: 500;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+}
+
+.single-spot-where-address-div {
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
-.review-user {
-    font-weight: bolder;
+.single-spot-where-address {
+    padding: 10px 0 0px 0;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
 }
 
-.review-user-created {
+.single-spot-where-link {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: gray;
+}
+
+.single-spot-host {
+    margin-top: 30px;
     display: flex;
-    justify-content: space-between;
-    padding-bottom: 10px;
+    flex-direction: column;
+    width: 100%;
+    border-top: 1px solid lightgray;
+    margin-bottom: 90px;
+
+}
+
+.single-spot-host-details {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }

@@ -58,9 +58,24 @@ export function EditReviewModal({ onClose, children }) {
     if (!modalNode) return null;
 
     return ReactDOM.createPortal(
-        <div id="edit-modal">
-            <div id="edit-modal-background" onClick={onClose} />
-            <div id="edit-modal-content">
+        <div id="edit-review-modal">
+            <div id="edit-review-modal-background" onClick={onClose} />
+            <div id="edit-review-modal-content">
+                {children}
+            </div>
+        </div>,
+        modalNode
+    );
+}
+
+export function EditSpotModal({ onClose, children }) {
+    const modalNode = useContext(ModalContext);
+    if (!modalNode) return null;
+
+    return ReactDOM.createPortal(
+        <div id="edit-spot-modal">
+            <div id="edit-spot-modal-background" onClick={onClose} />
+            <div id="edit-spot-modal-content">
                 {children}
             </div>
         </div>,

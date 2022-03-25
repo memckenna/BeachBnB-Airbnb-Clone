@@ -30,6 +30,7 @@ router.get("/:id", asyncHandler(async (req, res) => {
         include: [
             Image,
             Booking,
+            User,
             Review,
             {model: Review, include: [User]}
         ]

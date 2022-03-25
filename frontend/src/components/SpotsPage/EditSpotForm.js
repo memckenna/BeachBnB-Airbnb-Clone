@@ -4,7 +4,7 @@ import { NavLink, Route } from 'react-router-dom';
 import { useHistory, useParams } from 'react-router-dom';
 import { updateASpot } from '../../store/spotReducer';
 
-const EditSpotForm = () => {
+const EditSpotForm = ({onClose}) => {
 
     const { id } = useParams();
     const spotDetails = useSelector(state => state.spotState.listings[id])
@@ -39,44 +39,59 @@ const EditSpotForm = () => {
             image,
         }
 
-        
-       const spotUpdated = await dispatch(updateASpot(updatedSpot, id));
-
-       if(spotUpdated) {
-            history.push(`/spots/${spotUpdated.id}`)
-       }
-    }
-
-    useEffect(() => {
         const validationErrors = [];
+        if (!name) validationErrors.push("Name cannot be left blank");
+        if (name.length < 4) validationErrors.push("Name must be between 5 and 100 characters");
 
-        if(name.length < 4) validationErrors.push("Please enter the name of your home");
-        if(address.length < 10) validationErrors.push("Please enter the address of your home");
-        if(city.length < 3) validationErrors.push("Please enter the city of your home");
-        if(state.length < 3) validationErrors.push("Please enter the state of your home");
-        if(country.length < 3) validationErrors.push("Please enter the country of your home");
-        if(zipcode.length === 0) validationErrors.push("Please provide a zip code");
-        if(bedrooms <= 0) validationErrors.push("Please provide the amount of bedrooms or beds");
-        if(baths <= 0 ) validationErrors.push("Please provide the amount of bathrooms");
-        if(price <= 0) validationErrors.push("Please provide the nightly rate for your home");
-        if(!image.startsWith("https://")) validationErrors.push("Please provide the full image address");
+        if (!address) validationErrors.push("Address cannot be left blank");
+        if (address.length < 10) validationErrors.push("Address must be between 5 and 255 characters");
 
+        if (!city) validationErrors.push("City cannot be left blank");
+        if (city.length < 3) validationErrors.push("City must be between 5 and 255 characters");
+
+        if (!state) validationErrors.push("State cannot be left blank");
+        if (state.length < 3) validationErrors.push("State must be between 5 and 255 characters");
+
+        if (!country) validationErrors.push("Country cannot be left blank");
+        if (country.length < 3) validationErrors.push("Country must be between 5 and 255 characters");
+
+        if (!zipcode) validationErrors.push("Zipcode cannot be left blank");
+        if (zipcode.length < 5) validationErrors.push("Zipcode must be between 2 and 50 characters");
+
+        if (!bedrooms) validationErrors.push("Bedrooms cannot be left blank");
+        if (bedrooms <= 0) validationErrors.push("Please provide the amount of bedrooms or beds");
+
+        if (!baths) validationErrors.push("Baths cannot be left blank");
+        if (baths <= 0) validationErrors.push("Please provide the amount of bathrooms");
+
+        if (!price) validationErrors.push("Price cannot be left blank");
+        if (price <= 0) validationErrors.push("Please provide the nightly rate for your home");
+
+        if (!image) validationErrors.push("Image cannot be left blank");
+        if (!image.startsWith("https://")) validationErrors.push("Image URL must be between 5 and 255 characters");
         setErrors(validationErrors)
-    }, [name, address, city, state, country, zipcode, price, bedrooms, baths, image]);
 
+        if (!validationErrors.length) {
+            await dispatch(updateASpot(updatedSpot, id));
+            // history.push(`/spots/${spotUpdated.id}`)
+            onClose()
+        }
+    }
 
     return (
         <div className="input-form-div">
             <div className="new-spot-form">
                 <h1 className="form-header">Edit Your Listing</h1>
                 <ul className="errors">
-                    {errors.map((error) => (
-                        <li key={error}>{error}</li>
-                    ))}
+                    {errors.length > 0 &&
+                        errors.map((error) => (
+                            <li key={error}>{error}</li>
+                        ))}
                 </ul>
                 <form onSubmit={handleSubmit}>
+                    <label className='top-edit-labels'>home name</label>
                     <input
-                        className="input-box"
+                        className="top-input-box"
                         type="text"
                         onChange={(e) => setName(e.target.value)}
                         value={name}
@@ -84,6 +99,7 @@ const EditSpotForm = () => {
                         name="name"
                         required
                     />
+                    <label className='edit-labels'>address</label>
                     <input
                         className="input-box"
                         type="text"
@@ -93,6 +109,7 @@ const EditSpotForm = () => {
                         name="address"
                         required
                     />
+                    <label className='edit-labels'>city</label>
                     <input
                         className="input-box"
                         type="text"
@@ -102,6 +119,7 @@ const EditSpotForm = () => {
                         name="city"
                         required
                     />
+                    <label className='edit-labels'>state</label>
                     <input
                         className="input-box"
                         type="text"
@@ -111,6 +129,7 @@ const EditSpotForm = () => {
                         name="state"
                         required
                     />
+                    <label className='edit-labels'>country</label>
                     <input
                         className="input-box"
                         type="text"
@@ -120,6 +139,7 @@ const EditSpotForm = () => {
                         name="country"
                         required
                     />
+                    <label className='edit-labels'>zipcode</label>
                     <input
                         className="input-box"
                         type="number"
@@ -129,6 +149,7 @@ const EditSpotForm = () => {
                         name="zipcode"
                         required
                     />
+                    <label className='edit-labels'>bedrooms</label>
                     <input
                         className="input-box"
                         type="number"
@@ -138,6 +159,7 @@ const EditSpotForm = () => {
                         name="bedrooms"
                         required
                     />
+                    <label className='edit-labels'>baths</label>
                     <input
                         className="input-box"
                         type="number"
@@ -147,6 +169,7 @@ const EditSpotForm = () => {
                         name="bathrooms"
                         required
                     />
+                    <label className='edit-labels'>listing price</label>
                     <input
                         className="input-box"
                         type="number"
@@ -156,6 +179,7 @@ const EditSpotForm = () => {
                         name="price"
                         required
                     />
+                    <label className='edit-labels'>photo url</label>
                     <input
                         className="input-box"
                         type="url"
@@ -167,7 +191,6 @@ const EditSpotForm = () => {
                     />
 
                     <button className="new-spot-button" type="submit">Update Listing</button>
-
                     {/* <button type="button" onClick={handleCancelClick}>Cancel</button> */}
                 </form>
 

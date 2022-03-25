@@ -27,7 +27,7 @@ const SplashPage = () => {
                 <button onClick={showAllSpots} className='flexible-button' >I'm Flexible</button>
                 {/* </NavLink> */}
             </div>
-            <div>
+            <div className='splash-page-trips'>
                 <TripInspiration />
             </div>
             <div >

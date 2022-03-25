@@ -1,4 +1,12 @@
+.edit-booking {
+    padding: 0 40px 0 40px;
+}
 
+.edit-reservations-header {
+    display: flex;
+    justify-content: center;
+
+}
 
 .edit-booking-calendar {
     /* display: block; */
@@ -8,20 +16,36 @@
     align-items: center;
 }
 
+.edit-booking-calendar-price-section {
+    display: flex;
+    flex-direction: row;
+    /* padding-left: 40px; */
+    padding-top: 10px;
+}
+
 .edit-booking-calendar-price {
     padding-bottom: 15px;
-    padding-left: 45px;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.edit-booking-calendar-night {
+    font-size: 18px;
+    font-weight: lighter;
+    padding-left: 5px;
+    padding-top: 4px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
 }
 
 .edit-booking-calendar-dates {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* border: 1px solid red; */
-    border-bottom: .1px solid lightgray;
-    /* padding-bottom: 1px; */
+    border: 1px solid lightgray;
+    border-radius: 12px;
     align-items: center;
-
 }
 
 .reserve {
@@ -58,12 +82,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
-    border: 1px solid lightgray;
-    /* padding: 0px 10px 0px 10px; */
     border-radius: 12px;
-    width: 400px;
-    height: 175px;
+    width: 380px;
+    cursor: pointer;
 }
 
 .edit-date {
@@ -71,6 +92,9 @@
     text-align: left;
     font-size: 14px;
     padding-bottom: 10px;
+    /* padding-top: 10px; */
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    cursor: pointer;
 }
 
 .checkin {
@@ -88,7 +112,7 @@
 
 
 .edit-booking-button {
-    padding: 15px 20px 15px 20px;
+    padding: 20px 0px 20px 0px;
     font-size: 16px;
     font-weight: bolder;
     border-radius: 20px;
@@ -96,6 +120,14 @@
 }
 
 .edit-booking-button-div {
-    padding-left: 40px;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+}
 
+.edit-booking-arrow {
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
 }

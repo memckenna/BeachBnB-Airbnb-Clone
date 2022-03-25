@@ -1,10 +1,20 @@
 #log-in-nav-button {
-    padding: 5px 10px 5px 10px;
+    /* padding: 5px 10px 5px 10px;
     border-radius: 8px;
     border: 1px solid lightgrey;
     color: #006D77;
     background-color: white;
-    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
+    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px; */
+    margin-top: 8px;
+    padding: 12px 6px 12px 6px;
+    width: 100px;
+    border-radius: 10px;
+    border: none;
+    background-color: #006D77;
+    /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    color: white;
+    font-weight: bolder;
+    font-size: 14px;
 }
 
 .login-form {
@@ -40,6 +50,7 @@
     font-size: 16px;
     margin-top: 20px;
     margin-bottom: 20px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 .welcome-header {
@@ -47,6 +58,7 @@
     padding-left: 15px;
     font-weight:normal;
     font-size: 22px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 /* .login-input-container {
@@ -68,6 +80,8 @@
     width: 100%;
     max-width: 520px;
     border: 1px solid rgb(161, 157, 157);
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
 }
 
 label {
@@ -92,15 +106,42 @@ label {
     width: 100%;
     max-width: 520px;
     margin-bottom: 20px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
 
 }
 
 .demo-button {
-    padding: 5px 10px 5px 10px;
+    display: block;
+    box-sizing: border-box;
+    border: none;
     border-radius: 8px;
-    border: 1px solid lightgrey;
-    color: #006D77;
-    background-color: white;
-    box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
-    margin: 10px 10px;
+    text-align: center;
+    align-self: center;
+    font-size: 16px;
+    color: white;
+    line-height: 20px;
+    /* background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% ); */
+    /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
+    background-color: #006D77;
+    margin: 1em auto 1em;
+    padding: 14px 24px 14px 24px;
+
+    width: 520px;
+    margin-bottom: 20px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
+}
+
+.demo-user-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.demo-user-modal-text {
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight:normal;
+    font-size: 22px;
 }

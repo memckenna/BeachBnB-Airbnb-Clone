@@ -4,12 +4,15 @@ html {
     /* background-color: #EDF6F9; */
     background-color: white;
     overflow: auto;
+
 }
 
 .splash-container {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
-    margin-left: 70px;
-    margin-right: 70px;
+    margin-left: 80px;
+    margin-right: 80px;
 }
 
 #splash-page {
@@ -19,8 +22,17 @@ html {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: 50px 40px;
+    /* margin: 50px 40px; */
     overflow-wrap: auto;
+}
+
+.splash-page-trips {
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+    margin: 100px 0px 30px 0px;
+    /* margin-left: 80px;
+    margin-right: 80px; */
 }
 
 .splash-page-image {
@@ -57,61 +69,59 @@ html {
     border: none;
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
     font-weight: bold;
-    /* color: linear-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
-    /* background-image: linear-gradient(45deg, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1));
-    background-clip: text;
-    background-size: 100%;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -moz-text-fill-color: transparent; */
-
 }
 
-.inspo-trip-container {
+.trip-inspo-cards-section {
+    padding-left: 0;
+}
+
+.trip-inspo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 1300px;
+    /* max-width: 1300px; */
     height: 100%;
     max-height: 568px;
+    /* padding-left: 0; */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 .trip-section-text {
+    display: flex;
+    flex-shrink: 1;
     font-size: 38px;
     font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 43px;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 50px 310px;
-    position: relative;
-
-    top: 100px;
-    padding: 40px 0px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     width: 100%;
-    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    /* padding-left: 220px; */
+
 }
 
 .trip-inspo-cards {
     display: flex;
+
     list-style: none;
     text-align: center;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 30px;
     padding-bottom: 40px;
-    padding-right: 30px;
-
-    /* overflow-wrap: auto; */
+    padding-left: 0;
+    width: 100%;
 }
 
 .trip-inspo-cards li {
     display: flex;
     flex-direction: column;
     margin: 0 15px;
-
 }
 
 .trip-inspo-cards img {
-    /* border-radius: 15px; */
     border-top-right-radius: 15px;
     border-top-left-radius: 15px;
     margin-left: auto;
@@ -186,7 +196,7 @@ html {
     /* justify-content: center; */
     align-self: center;
     top: 230px;
-    right: 520px;
+    /* right: 520px; */
     padding: 14px 18px 14px 18px;
     font-size: 16px;
     border-radius: 12px;

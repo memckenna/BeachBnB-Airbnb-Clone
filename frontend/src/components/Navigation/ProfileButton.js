@@ -53,7 +53,6 @@ function ProfileButton({ user }) {
                     <button className="profile-button" onClick={openMenu}>
                         <img className="profile-menu-lines" src="/images/thin_lines_menu_icon.png" />
                         <i className="fas fa-user-circle"></i>
-                        {/* <i className="far fa-address-card"></i> */}
                     </button>
                     {showMenu && (
                         <ul className="profile-dropdown">
@@ -62,7 +61,6 @@ function ProfileButton({ user }) {
                             {/* <li className="profile-links">
                               <div className="profile-links">{isLoaded && sessionLinks}</div>
                             </li> */}
-
                             <li>
                             <NavLink className="profile-links" to={`/bookings`}>Bookings</NavLink>
                             </li>
@@ -73,7 +71,6 @@ function ProfileButton({ user }) {
                                 <li className="profile-links logout">
                                   <LoginFormModal />
                                   <SignupFormModal />
-
                                 </li> :
                                 <li className="profile-links logout">
                                       <button className="logout-button" onClick={logout}>Log Out</button>
