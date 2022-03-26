@@ -41,7 +41,7 @@ const BookingsPage = () => {
             <ul className='bookings-container'>
                 <h2 className='future-stay-text'>Upcoming Trips</h2>
                 {bookings?.map((booking) => (
-                     moment(booking.startDate).isAfter(new Date()) &&
+                     moment(booking?.startDate).isAfter(new Date()) &&
                         <BookingDetails key={booking?.id} id={booking?.id} />
                 ))}
             </ul>
@@ -49,7 +49,7 @@ const BookingsPage = () => {
             <h2 className='already-stayed-text'>Where you've been</h2>
             <ul className='bookings-container'>
                 {bookings?.map((booking) => (
-                     moment(booking.startDate).isBefore(new Date())&&
+                     moment(booking?.startDate).isBefore(new Date())&&
                         <BookingDetails key={booking?.id} id={booking?.id} />
                 ))}
             </ul>
