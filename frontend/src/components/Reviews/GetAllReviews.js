@@ -20,7 +20,6 @@ const GetAllReviewsOnSpot = ({ id }) => {
     const reviews = Object.values(reviewObj)
     // console.log("GET ALL REVIEWS", reviewObj)
     console.log(reviews)
-
     useEffect(() => {
         dispatch(getAllSpotReviews())
         // dispatch(getSpotById(id))
@@ -34,11 +33,13 @@ const GetAllReviewsOnSpot = ({ id }) => {
                     <div key={review?.id} className='reviews-div'>
                         <div className='review-user-created'>
                             <div className='review-user'>{review?.User?.username}</div>
+                            <div className='review-content'>{review?.review}</div>
+                            <EditReviewOnSpot spotId={id} review={review} reviewId={review?.id} />
+                        </div>
+                        <div className='review-content'>
                             <div className='review-user-created-text'>{moment(review?.createdAt).format("LLL")}</div>
                         </div>
-                        <div className='review-content'>{review?.review}</div>
 
-                        <EditReviewOnSpot spotId={id} review={review} reviewId={review?.id} />
                     </div>
                 ))}
             </div>

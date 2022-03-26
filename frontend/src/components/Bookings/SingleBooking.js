@@ -35,14 +35,20 @@ const SingleBookingDetails = () => {
         history.push(`/bookings`)
     }
 
+    const onClick = () => {
+        history.push(`/bookings`)
+    }
+
     return (
         <div className="single-booking-container">
             <div className="single-booking-header">
+                <div className="back-arrow-all-bookings">
+                    <button onClick={onClick} className="back-arrow-all-bookings-btn">
+                        <i onClick={onClick}  className="fas fa-arrow-left arrow-left"></i>
+                    </button>
+                </div>
                 <div className="booking-image-text">Your stay at {oneBooking?.Spot?.name}</div>
-                {/* <NavLink to={`/spots/${oneSpot.id}`}> */}
                 <img className='booking-image' id={id} key={oneBooking?.Spot?.id} src={oneBooking?.Spot?.Images[0]?.url} />
-                {/* </NavLink> */}
-
                 <div className="checkin-checkout">
                     <div className="single-checkin-div">
                         <div className="single-checkin">Check-in</div>

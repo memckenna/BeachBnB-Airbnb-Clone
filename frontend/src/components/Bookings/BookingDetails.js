@@ -1,13 +1,15 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, Route, useParams } from 'react-router-dom';
+import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import moment from "moment";
 
 
 import './Bookings.css';
 
 const BookingDetails = ({id}) => {
+    const history = useHistory()
+    const dispatch = useDispatch()
     const bookingDetail = useSelector(state => state.bookingState.trips[id]);
     const bookingsObject = useSelector(state => state.bookingState.trips)
     const bookings = Object.values(bookingsObject);
@@ -17,18 +19,26 @@ const BookingDetails = ({id}) => {
     // console.log("SPOTTTTT", oneSpot)
     // console.log("BOOKING DETAIL", bookingDetail);
 
+    const onClick = () => {
+        history.push(`/bookings/${id}`)
+    }
 
     return (
         // <ul className='bookings-container'>
         //     <h2>Where you've been</h2>
-        //     {bookings?.map((booking) => ())}
             <li className="bookings-detail">
                 <div className="bookings-detail-div">
                     <div className="booking-detail-left">
                         <div>
-                            <NavLink key={bookingDetail?.id} to={`/bookings/${id}`}>
-                                <img className='booking-images' id={id} key={bookingDetail?.Spot?.id} src={bookingDetail?.Spot?.Images[0]?.url}></img>
-                            </NavLink>
+                            {/* <NavLink key={bookingDetail?.id} to={`/bookings/${id}`}> */}
+                                <img
+                                    onClick={onClick}
+                                    className='booking-images'
+                                    id={id}
+                                    key={bookingDetail?.Spot?.id}
+                                    src={bookingDetail?.Spot?.Images[0]?.url}
+                                />
+                            {/* </NavLink> */}
                         </div>
                     </div>
                     <div className="booking-detail-right">
@@ -48,7 +58,6 @@ const BookingDetails = ({id}) => {
                     </div>
                 </div>
             </li>
-
         // </ul>
     )
 }

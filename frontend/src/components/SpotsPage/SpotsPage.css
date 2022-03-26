@@ -396,6 +396,8 @@
     justify-content: space-between;
     width: 100%;
     height: auto;
+
+
 }
 
 .calendar-edit-section {
@@ -412,7 +414,10 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 10px 20px 50px 10px;
+    /* margin: 10px 20px 50px 10px; */
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
 }
 
 .owner-edit-button-div {
@@ -472,15 +477,12 @@
     flex-wrap: wrap;
     width: 100%;
     height: auto;
-
-    /* border-bottom: 1px solid black; */
 }
 
 .stay-info {
     display: block;
     box-sizing: border-box;
     border-top: 1px solid lightgray;
-    /* border-bottom: 1px solid black; */
     padding: 32px 0;
     margin: 0 0 24px;
 
@@ -563,4 +565,18 @@
     font-weight: 600;
     line-height: 20px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    border-top: 1px solid lightgray;
+    margin-bottom: 30px;
+    max-width: 1400px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 100%;
 }
