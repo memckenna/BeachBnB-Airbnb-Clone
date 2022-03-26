@@ -20,7 +20,6 @@ const GetAllReviewsOnSpot = ({ id }) => {
     const reviews = Object.values(reviewObj)
     // console.log("GET ALL REVIEWS", reviewObj)
     console.log(reviews)
-
     useEffect(() => {
         dispatch(getAllSpotReviews())
         // dispatch(getSpotById(id))
