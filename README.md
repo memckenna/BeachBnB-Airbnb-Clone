@@ -7,6 +7,8 @@
 
 BeachBnb is a full-stack applicationan, inspired by AirBnB, that allows users to become a host for their beach home vacation rentals, as well as view the vactation rentals of other users. Logged in users can view the feedpage where they can either click to become a host or navigate to inspired getaway vacation rental suggestions. 
 
+Check out a live version of BeachBnB here:<a href='https://beachbnb.herokuapp.com/'>BeachBnB Live</a>
+
 <br>
 </br>
 
