@@ -7,7 +7,7 @@
 
 BeachBnb is a full-stack applicationan, inspired by AirBnB, that allows users to become a host for their beach home vacation rentals, as well as view the vactation rentals of other users. Logged in users can view the feedpage where they can either click to become a host or navigate to inspired getaway vacation rental suggestions. 
 
-Check out a live version of BeachBnB here:<a href='https://beachbnb.herokuapp.com/'>BeachBnB Live</a>
+Check out a live version of BeachBnB here: <a href='https://beachbnb.herokuapp.com/'>BeachBnB Live</a>
 
 <br>
 </br>
@@ -31,43 +31,45 @@ BeachBnB is developed using React, Redux, Express, and Sequelize to create a ful
 <br>
 </br>
 
-## Setup
-
-To start, you'll need to install our backend and frontend dependencies. If you're in the root
-of this project, you'll need to first move (`cd`) into the backend directory and
-run `npm install`. Next, you will need to move back into the root directory and then (`cd`) into the frontend directory and run `npm install`.
-
-Then, you'll need to create a `.env` file in your backend directory based on the `.env.example` file
-that's available in this directory. Be sure to create a password for your
-database user.
-
-Using `psql` in the terminal, create a user with a password and `createdb` that
-matches the one described in the `.env` file. We'll be using `dotenv` with
-`sequelize` to pass our environment variables declared in the `.env` to our
-`sequelize` commands.
-
-After quitting out of the `psql` instance, you can run the following commands to
-finish database setup.
-
-* `npm run db:setup`
-
-This command will run the following three in order:
-
-* `npx dotenv sequelize db:create`
-* `npx dotenv sequelize db:migrate`
-* `npx dotenv sequelize db:seed:all`
-
-Because we specified that the port for the backend should be `5000`, we will
-need to set up the `proxy` key in our frontend `package.json` so that our
-frontend can pass any `/api` calls to the backend server.
-
-Place the following at the bottom of your `frontend/package.json` file.
-
-```json
+## Getting Started
+1. Clone this repository
+   ```bash
+   git clone https://github.com/memckenna/BeachBnB-Airbnb-Clone.git
+   ```
+2. CD into the backend directory and install dependencies
+   ```bash
+   npm install
+   ```    
+3. CD into the front directory and install dependencies
+   ```bash
+   npm install
+   ```    
+4. Create a .env file based on the .env.example file given
+5. Create a user in psql based on your .env DB_USERNAME
+   ```bash
+   psql -c "CREATE USER <username> PASSWORD '<password>' CREATEDB"
+   ```    
+6. Create the databse, migrate, and seed by running the following commands in order
+   ```bash
+   npm run db:setup
+   ```  
+   ```bash
+    npx dotenv sequelize db:create
+   ```  
+   ```bash
+   npx dotenv sequelize db:migrate
+   ```  
+   ```bash
+   npx dotenv sequelize db:seed:all
+   ```  
+7. Set up the `proxy` key in the frontend `package.json` so that the frontend can pass `/api` call to backend server by placing the following at the bottom of your `frontend/package.json` file:
+    ```json
     "proxy": "http://localhost:5000"
-```
-
-Once you have completed the backend application setup, you can run `npm start` for both the backend server and the frontend server and text  that everything is working but creating the test route below.
+    ```
+9. Open up two terminals and cd into the backend and frontend directories, respectively. Start the server in each by running:
+   ```bash
+   npm start
+   ```  
 
 ## API Documentation
 
