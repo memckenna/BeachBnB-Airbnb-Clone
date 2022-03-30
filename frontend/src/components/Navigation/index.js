@@ -32,10 +32,12 @@ function Navigation({ isLoaded }) {
                         <NavLink activeClassName='active' exact to="/">
                             <img className='logo' src='/images/beachbnb-color-top-trans-logo.png' alt="BeachBnB logo" />
                         </NavLink>
+                    </div>
+                    <div className='places-host-div'>
                         <NavLink className="places-to-stay" to={'/spots'}>Places to stay</NavLink>
+                        <NavLink className="become-a-host" to="/spot/new">Become A Host</NavLink>
                     </div>
                     <div className='right-nav-div'>
-                        <NavLink className="become-a-host" to="/spot/new">Become A Host</NavLink>
                         <div className='login-signup-button'>{isLoaded && sessionLinks}</div>
                         {/* {isLoaded && sessionLinks} */}
 

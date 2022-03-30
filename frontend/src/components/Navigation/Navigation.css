@@ -51,6 +51,7 @@
 
 .logo-div {
     display: flex;
+    justify-content: flex-start;
     align-self: center;
     padding-top: 15px;
 }
@@ -93,11 +94,6 @@
     cursor: pointer;
 }
 
-
-/* .profile-button:hover {
-
-} */
-
 .profile-dropdown-container {
     display: flex;
     flex-direction: column;
@@ -105,8 +101,6 @@
     padding-right: 80px;
     /* position: relative; */
     padding-bottom: 20px;
-
-
 }
 
 .profile-dropdown-container ul {
@@ -114,14 +108,12 @@
     margin-top: 55px;
     width: 300px;
     height: 300px;
-
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: left;
     list-style: none;
     cursor: pointer;
-
 }
 
 .profile-dropdown {
@@ -129,7 +121,6 @@
     display: grid;
     grid-template-rows: repeat(3, auto);
     list-style-type:none;
-    /* border: 1px solid lightgrey; */
     box-shadow: rgb(0 0 0 / 28%) 0px 8px 28px;
     border-radius: 10px;
     background-color: white;
@@ -138,7 +129,6 @@
     position: absolute;
     left: auto;
     right: 70px;
-
 }
 
 
@@ -169,10 +159,33 @@
 .become-a-host {
     text-decoration: none;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-    font-size: 18px;
-    padding-right: 15px;
+    font-size: 15px;
+    /* padding-right: 15px; */
     align-items: center;
     color: #006D77;
     font-weight: bolder;
-    text-shadow: gray 1px 1px 1px;
+}
+
+.places-host-div {
+    display: flex;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+
+.places-to-stay {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-size: 15px;
+    padding-right: 25px;
+    align-items: center;
+    color: #006D77;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.places-to-stay:hover, .become-a-host:hover {
+    /* text-shadow: gray 1px 1px; */
+    text-shadow: #97c3c7 1px 1px;
 }
