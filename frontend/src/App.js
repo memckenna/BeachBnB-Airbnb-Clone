@@ -14,7 +14,7 @@ import CreateNewSpot from "./components/SpotsPage/CreateNewSpot";
 import EditSpotForm from "./components/SpotsPage/EditSpotForm";
 import BookingsPage from "./components/Bookings";
 import SingleBookingDetails from "./components/Bookings/SingleBooking";
-
+import ManageHostSpots from "./components/SpotsPage/ManageHostSpots";
 
 function App() {
   const dispatch = useDispatch();
@@ -28,25 +28,28 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route path="/" exact>
+          <Route path="/" exact={true}>
             <SplashPage />
           </Route>
-          <Route path="/spots" exact>
+          <Route path="/spots" exact={true}>
             <SpotsBrowserPage />
           </Route>
-          <Route path="/spots/:id" exact>
+          <Route path="/spots/:id" exact={true}>
             <SingleSpotDetailPage />
           </Route>
-          <Route path="/spots/:id/edit">
+          <Route path="/spots/:id/edit" exact={true}>
             <EditSpotForm  />
           </Route>
-          <Route path="/spot/new" exact>
+          <Route path="/spot/new" exact={true}>
             <CreateNewSpot />
           </Route>
-          <Route path="/bookings" exact>
+          <Route path="users/:id" exact={true}>
+            <ManageHostSpots />
+          </Route>
+          <Route path="/bookings" exact={true}>
             <BookingsPage />
           </Route>
-          <Route path="/bookings/:id" exact>
+          <Route path="/bookings/:id" exact={true}>
             <SingleBookingDetails />
           </Route>
         </Switch>

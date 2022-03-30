@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
 const { setTokenCookie, requireAuth } = require('../../utils/auth');
-const { User } = require('../../db/models');
+const { User, Spot, Booking, Review } = require('../../db/models');
 
 const router = express.Router();
 
@@ -46,5 +46,31 @@ router.post(
     }),
 );
 
+router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
+  const userId = req.params.id;
+  const user = await User.findByPk(userId, {
+    include: [
+      Booking,
+      Review,
+      Spot
+    ]
+  });
+  return res.json(user);
+}));
+
+
+// Get all Spots By Host
+router.get('/:id/host', asyncHandler(async (req, res) => {
+  const userId = req.params.id;
+  const user = await User.findByPk(userId, {
+    include: [
+      Booking,
+      Review,
+      Spot
+    ]
+  });
+
+  return res.json(spots);
+}))
 
 module.exports = router;
