@@ -16,14 +16,9 @@ const CreateNewSpot = () => {
     const sessionUser = useSelector((state) => state.session.user);
 
     if (!sessionUser) {
-        window.location.pathname = "/"
+        // window.location.pathname = "/"
+        history.push("/")
         window.alert("You must be signed in to perform this action")
-
-        // setTimeout(() => {
-        //     <LoginFormModal />
-        //     // window.location.reload(true);
-        // }, 2000);
-        // return
     }
 
     const [name, setName] = useState("");
@@ -36,6 +31,9 @@ const CreateNewSpot = () => {
     const [bedrooms, setBedrooms] = useState("")
     const [baths, setBaths] = useState("")
     const [image, setImage] = useState("");
+    // const [imageLoading, setImageLoading] = useState(false);
+    // const [photoPrev, setPhotoPrev] = useState('#')
+    // const [photoClass, setPhotoClass] = useState('photo-hidden')
     const [errors, setErrors] = useState([])
 
 
@@ -105,7 +103,7 @@ const CreateNewSpot = () => {
                         ))}
                 </ul>
                 <h2>Create your listing</h2>
-                <form onSubmit={handleSubmit}>
+                <form className="create-new-listing-form" onSubmit={handleSubmit}>
                     <label className='top-edit-labels'>home name</label>
                     <input
                         className="input-box"

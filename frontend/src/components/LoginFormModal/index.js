@@ -21,7 +21,7 @@ function LoginFormModal() {
             <div className='demo-user-modal-text'>
               Log in as a Demo User
             </div>
-            <div>
+            <div className='login-modal-demo'>
               <button className='demo-button' onClick={() => dispatch(sessionActions.login({ credential, password }))}  >DEMO</button>
             </div>
           </div>

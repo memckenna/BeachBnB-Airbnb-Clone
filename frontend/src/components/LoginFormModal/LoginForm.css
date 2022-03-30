@@ -23,7 +23,7 @@
     flex-direction: column;
 
     width: 568px;
-    height: 500px;
+    height: 450px;
     border-top: 1px solid lightgray;
     /* margin: 1% auto; */
 
@@ -40,7 +40,7 @@
     flex-direction: column;
     border-radius: 12px;
     padding: 20px, 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
 }
 
 
@@ -138,10 +138,20 @@ label {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color: white;
+    border-end-end-radius: 11px;
+    border-bottom-left-radius: 11px;
+    /* border: 3px solid red; */
+    padding-top: 10px;
 }
 
 .demo-user-modal-text {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-    font-weight:normal;
+    font-weight: 600;
     font-size: 22px;
+
+}
+
+.login-modal-demo {
+    background-color: white;
 }
