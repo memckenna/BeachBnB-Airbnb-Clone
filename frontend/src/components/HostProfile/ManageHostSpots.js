@@ -30,7 +30,10 @@ const ManageHostSpots = () => {
                     <div key={spot?.id}>
                         {console.log(spot)}
                         <div>
-                            <img src={spot?.Images[0]?.url} />
+                            <img className='host-spot-image' src={spot?.Images[0]?.url} />
+                        </div>
+                        <div>
+                            {spot?.name}
                         </div>
                         {/* <SpotCardDetail key={sessionUser?.id} /> */}
                     </div>
