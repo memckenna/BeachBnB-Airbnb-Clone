@@ -14,7 +14,7 @@ import CreateNewSpot from "./components/SpotsPage/CreateNewSpot";
 import EditSpotForm from "./components/SpotsPage/EditSpotForm";
 import BookingsPage from "./components/Bookings";
 import SingleBookingDetails from "./components/Bookings/SingleBooking";
-import ManageHostSpots from "./components/SpotsPage/ManageHostSpots";
+import ManageHostSpots from "./components/HostProfile/ManageHostSpots";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,7 +43,7 @@ function App() {
           <Route path="/spot/new" exact={true}>
             <CreateNewSpot />
           </Route>
-          <Route path="users/:id" exact={true}>
+          <Route path="/hosts" exact={true}>
             <ManageHostSpots />
           </Route>
           <Route path="/bookings" exact={true}>
