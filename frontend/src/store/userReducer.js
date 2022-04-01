@@ -43,10 +43,13 @@ const userReducer = (state = {}, action) => {
     switch (action.type) {
         case LOAD_USER:
             newState = { ...state }
+            console.log("NEW STATE", newState)
+
             newState[action.userId] = action.user;
             return newState;
         case LOAD_USER_HOST_SPOTS:
             newState = { ...state }
+            console.log("NEW STATE", newState)
             newState[action.userId] = action.user;
             return newState;
 

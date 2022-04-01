@@ -24,7 +24,9 @@
 
 .host-each-spot-container {
     display: flex;
+    padding-top: 30px;
     padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
 }
 
 .host-spot-img-div {
@@ -32,13 +34,35 @@
 }
 
 .host-spot-image {
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
     border-radius: 12px;
 }
 
 .host-spot-details {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.host-spot-details-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.host-spot-details-link {
+    display: flex;
+    padding-left: 20px;
+}
+
+
+
+.manage-host-spot-detail-link {
+    text-decoration: none;
+    color: black;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+
 }

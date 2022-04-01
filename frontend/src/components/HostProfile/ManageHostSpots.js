@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { NavLink, Route, useParams } from 'react-router-dom';
+import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import { getAllSpots } from '../../store/spotReducer';
 import { loadUser, loadUserHostedSpots } from '../../store/userReducer';
 import EditSingleSpotModal from '../SpotsPage/EditSpotModal';
 import SpotCardDetail from '../SpotsPage/SpotDetailPage';
-import { removeSpot } from '../../store/spotReducer';
-import { getSpotById } from '../../store/spotReducer';
+import { removeSpot, getSpotById } from '../../store/spotReducer';
+
 import "./ManageHost.css"
 
 const ManageHostSpots = () => {
     const dispatch = useDispatch();
-    // const { spotId } = useParams();
+    const history = useDispatch();
     const sessionUser = useSelector(state => state.session.user)
     console.log(sessionUser)
     const user = useSelector(state => state.userState[1])
@@ -19,14 +19,16 @@ const ManageHostSpots = () => {
     // const oneSpot = useSelector(state => state.spotState.listings)
     // console.log(oneSpot)
 
-    const onClick = () => {
-
-    }
-
+    const userSpot = user?.Spots.map((spot) => {
+        console.log(spot)
+        return spot
+    })
+    console.log(userSpot)
 
     useEffect(() => {
         dispatch(loadUserHostedSpots(sessionUser?.id))
         dispatch(loadUser(sessionUser?.id))
+
     }, [dispatch, sessionUser]);
 
     return (
@@ -50,18 +52,21 @@ const ManageHostSpots = () => {
                             <img className='host-spot-image' src={spot?.Images[0]?.url} />
                         </div>
                         <div className='host-spot-details'>
-                            <div>
-                                {spot?.name}
+                            <div className='host-spot-details-info'>
+                                <div>
+                                    {spot?.name}
+                                </div>
+                                <div>
+                                    {spot?.city}, {spot?.state}
+                                </div>
                             </div>
-                            <div>
-                                {spot?.city}, {spot?.state}
+                            <div className='host-spot-details-link'>
+                                <NavLink className="manage-host-spot-detail-link" to={`spots/${spot?.id}`}>Go to spot detail page to edit listing</NavLink>
+                                {/* <EditSingleSpotModal/> */}
                             </div>
-                            <div>Add Edit Listing
-                                <EditSingleSpotModal/>
-                            </div>
-                            <div>
+                            {/* <div>
                                 <button onClick={() => dispatch(removeSpot(spot?.id))}>Add Delete Listing</button>
-                            </div>
+                            </div> */}
                         </div>
                         {/* <SpotCardDetail key={sessionUser?.id} /> */}
                     </div>
