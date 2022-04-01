@@ -19,10 +19,10 @@ export const loadUser = (userId) => async (dispatch) => {
     return user;
 };
 //Action
-export const loadAUserHostedSpots = (spots, userId) => {
+export const loadAUserHostedSpots = (userId) => {
     return {
         type: LOAD_USER,
-        spots,
+        // spots,
         userId
     }
 };
@@ -30,10 +30,10 @@ export const loadAUserHostedSpots = (spots, userId) => {
 //Thunk
 export const loadUserHostedSpots = (userId) => async (dispatch) => {
     const response = await csrfFetch(`/api/users/${userId}/host`);
-    const spots = await response.json();
-    dispatch(loadAUserHostedSpots(spots, userId));
-    console.log("USER THUNK", spots)
 
+    const spots = await response.json();
+    dispatch(loadAUserHostedSpots(spots));
+    console.log("USER THUNK", spots)
     return spots;
 };
 

@@ -1,8 +1,44 @@
 .host-spots-container {
-    margin-top: 200px;
+    margin-top: 150px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.hosting-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.your-reservations {
+    display: flex;
+
+}
+
+.reservation-count {
+    display: flex;
+    text-decoration: underline;
+
+}
+
+.host-each-spot-container {
+    display: flex;
+    padding-bottom: 30px;
+}
+
+.host-spot-img-div {
+    display: flex;
 }
 
 .host-spot-image {
     width: 250px;
     height: 200px;
+    border-radius: 12px;
+}
+
+.host-spot-details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
 }
