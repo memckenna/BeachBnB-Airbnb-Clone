@@ -49,18 +49,20 @@ const ManageHostSpots = () => {
                     <div key={spot?.id} className='host-each-spot-container'>
                         {console.log(spot)}
                         <div className='host-spot-img-div'>
+                        <NavLink  to={`spots/${spot?.id}`}>
                             <img className='host-spot-image' src={spot?.Images[0]?.url} />
+                        </NavLink>
                         </div>
                         <div className='host-spot-details'>
                             <div className='host-spot-details-info'>
-                                <div>
+                                <div className='host-spot-name'>
                                     {spot?.name}
                                 </div>
-                                <div>
+                                <div className='host-spot-city'>
                                     {spot?.city}, {spot?.state}
                                 </div>
                             </div>
-                            <div className='host-spot-details-link'>
+                            <div className='host-spot-details-link-div'>
                                 <NavLink className="manage-host-spot-detail-link" to={`spots/${spot?.id}`}>Go to spot detail page to edit listing</NavLink>
                                 {/* <EditSingleSpotModal/> */}
                             </div>

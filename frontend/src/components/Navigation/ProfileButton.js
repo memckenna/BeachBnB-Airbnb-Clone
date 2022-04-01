@@ -75,7 +75,7 @@ function ProfileButton({ user }) {
                 </div>
               </div>
               <div className="logout">
-                <button className="logout-button" onClick={logout}>Log out</button>
+                <div className="logout-button" onClick={logout}>Log out</div>
               </div>
               {/* {!sessionUser ?
                                 <li className="profile-links logout">

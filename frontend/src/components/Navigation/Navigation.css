@@ -130,6 +130,7 @@
 
 }
 
+
 .logout {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -173,15 +174,16 @@
     text-decoration: none;
 }
 
-.profile-links:hover {
+.profile-links:hover, .profile-links-trips:hover, .logout:hover {
     background-color: #F7F7F7;
-    padding-left: 0;
+    /* padding-left: 0; */
 
 }
 
 .logout-button {
     border: none;
-    background-color: white;
+    /* background-color: white; */
+    color: black;
     padding-bottom: 5px;
     padding-top: 10px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;

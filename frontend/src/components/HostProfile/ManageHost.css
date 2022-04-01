@@ -37,6 +37,7 @@
     width: 200px;
     height: 150px;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .host-spot-details {
@@ -53,16 +54,26 @@
     padding-left: 20px;
 }
 
-.host-spot-details-link {
+.host-spot-details-link-div {
     display: flex;
     padding-left: 20px;
 }
 
-
+.host-spot-name, .host-spot-city {
+    font-size: 18px;
+}
 
 .manage-host-spot-detail-link {
+    /* border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px; */
     text-decoration: none;
     color: black;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
 
+.manage-host-spot-detail-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
