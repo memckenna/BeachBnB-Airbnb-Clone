@@ -106,7 +106,7 @@
 .profile-dropdown {
     position: absolute;
     margin-top: 55px;
-    width: 300px;
+    width: 250px;
     height: 300px;
     cursor: pointer;
     display: flex;
@@ -119,14 +119,21 @@
     overflow: visible;
     left: auto;
     right: 70px;
+    overflow-y: auto;
 }
 
-.profile-user-info, .profile-user-hosting, .profile-user-trips, .logout {
-    padding-top: 10px;
-    padding-bottom: 10px;
+.profile-user-info, .profile-user-hosting, .profile-user-trips {
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 25px;
     border-bottom: 1px solid lightgray;
 
+}
+
+.logout {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 25px;
 }
 
 .profile-username, .profile-email {
@@ -139,21 +146,38 @@
 }
 
 .profile-user-hosting {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     padding-left: 25px;
     border-bottom: 1px solid lightgray;
 }
 
+.host-experience {
+    /* padding-bottom: 10px; */
+}
+
+.profile-links-trips {
+    display: flex;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 600;
+    padding: 10px 5px 10px 5px;
+    color: black;
+    text-decoration: none;
+}
 .profile-links {
     display: flex;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-weight: 600;
-    padding: 5px 5px 5px 5px;
+    padding: 10px 5px 10px 5px;
     color: black;
     text-decoration: none;
 }
 
+.profile-links:hover {
+    background-color: #F7F7F7;
+    padding-left: 0;
+
+}
 
 .logout-button {
     border: none;
