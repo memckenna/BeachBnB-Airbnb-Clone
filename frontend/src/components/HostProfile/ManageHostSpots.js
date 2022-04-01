@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams } from 'react-router-dom';
 import { getAllSpots } from '../../store/spotReducer';
 import { loadUser, loadUserHostedSpots } from '../../store/userReducer';
+import EditSingleSpotModal from '../SpotsPage/EditSpotModal';
 import SpotCardDetail from '../SpotsPage/SpotDetailPage';
+import { removeSpot } from '../../store/spotReducer';
 import "./ManageHost.css"
 
 const ManageHostSpots = () => {
@@ -37,6 +39,12 @@ const ManageHostSpots = () => {
                         </div>
                         <div>
                             {spot?.city}, {spot?.state}
+                        </div>
+                        <div>Add Edit Listing
+                            <EditSingleSpotModal/>
+                        </div>
+                        <div>
+                            <button onClick={() => dispatch(removeSpot(spot?.id))}>Add Delete Listing</button>
                         </div>
                         {/* <SpotCardDetail key={sessionUser?.id} /> */}
                     </div>
