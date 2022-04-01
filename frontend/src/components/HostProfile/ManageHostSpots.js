@@ -35,6 +35,9 @@ const ManageHostSpots = () => {
                         <div>
                             {spot?.name}
                         </div>
+                        <div>
+                            {spot?.city}, {spot?.state}
+                        </div>
                         {/* <SpotCardDetail key={sessionUser?.id} /> */}
                     </div>
             ))}

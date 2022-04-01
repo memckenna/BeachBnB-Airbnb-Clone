@@ -43,7 +43,7 @@ function App() {
           <Route path="/spot/new" exact={true}>
             <CreateNewSpot />
           </Route>
-          <Route path="/hosts" exact={true}>
+          <Route path="/hosting" exact={true}>
             <ManageHostSpots />
           </Route>
           <Route path="/bookings" exact={true}>

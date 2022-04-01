@@ -69,6 +69,9 @@ function ProfileButton({ user }) {
               <div className="profile-user-hosting">
                 <NavLink className="profile-links" to="/spot/new">Host an experience</NavLink>
               </div>
+              <div>
+                <NavLink to={`/hosting`} >Manage listings</NavLink>
+              </div>
               <div className="logout">
                 <button className="logout-button" onClick={logout}>Log Out</button>
               </div>
