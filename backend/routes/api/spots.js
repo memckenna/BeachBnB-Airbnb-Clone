@@ -17,12 +17,14 @@ router.get('/', asyncHandler(async (req, res) => {
             Image,
             Booking,
             Review,
-
+            User
         ]
     });
 
     return res.json(spots);
 }))
+
+
 
 /* GET EACH LISTING BY ID */
 router.get("/:id", asyncHandler(async (req, res) => {
@@ -38,6 +40,8 @@ router.get("/:id", asyncHandler(async (req, res) => {
 
     return res.json(spotById)
 }))
+
+
 
 
 const newSpotValidators = [

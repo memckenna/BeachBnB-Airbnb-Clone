@@ -46,28 +46,38 @@ function ProfileButton({ user }) {
   // }
 
 
-    return (
-        <>
-            <div className="profile">
-                <div className='profile-dropdown-container'>
-                    <button className="profile-button" onClick={openMenu}>
-                        <img className="profile-menu-lines" src="/images/thin_lines_menu_icon.png" />
-                        <i className="fas fa-user-circle"></i>
-                    </button>
-                    {showMenu && (
-                        <ul className="profile-dropdown">
-                            <li className="profile-links">{user.username}</li>
-                            <li className="profile-links">{user.email}</li>
-                            {/* <li className="profile-links">
+  return (
+    <>
+      <div className="profile">
+        <div className='profile-dropdown-container'>
+          <button className="profile-button" onClick={openMenu}>
+            <img className="profile-menu-lines" src="/images/thin_lines_menu_icon.png" />
+            <i className="fas fa-user-circle"></i>
+          </button>
+          {showMenu && (
+            <div className="profile-dropdown">
+              {/* <div className="profile-user-info">
+                <div className="profile-username">{user.username}</div>
+                <div className="profile-email">{user.email}</div>
+              </div> */}
+              {/* <li className="profile-links">
                               <div className="profile-links">{isLoaded && sessionLinks}</div>
                             </li> */}
-                            <li>
-                            <NavLink className="profile-links" to={`/bookings`}>Bookings</NavLink>
-                            </li>
-                            <li className="profile-links logout">
-                                <button className="logout-button" onClick={logout}>Log Out</button>
-                            </li>
-                            {/* {!sessionUser ?
+              <div className="profile-user-trips">
+                <NavLink className="profile-links-trips" to={`/bookings`}>Trips</NavLink>
+              </div>
+              <div className="profile-user-hosting">
+                <div className="host-experience">
+                  <NavLink className="profile-links" to="/spot/new">Host an experience</NavLink>
+                </div>
+                <div className="host-manage-listing">
+                  <NavLink className="profile-links" to={`/hosting`} >Manage listings</NavLink>
+                </div>
+              </div>
+              <div className="logout">
+                <div className="logout-button" onClick={logout}>Log out</div>
+              </div>
+              {/* {!sessionUser ?
                                 <li className="profile-links logout">
                                   <LoginFormModal />
                                   <SignupFormModal />
@@ -76,22 +86,12 @@ function ProfileButton({ user }) {
                                       <button className="logout-button" onClick={logout}>Log Out</button>
                                 </li>
                             } */}
-                            {/* {sessionUser ?
-                              <li className="profile-links logout">
-                                  <button className="logout-button" onClick={logout}>Log Out</button>
-                              </li> :
-                              <li className="profile-links logout">
-                                <LoginFormModal />
-                                <SignupFormModal />
-
-                              </li>
-                            } */}
-                        </ul>
-                    )}
-                </div>
-            </ div>
-        </>
-    )
+            </div>
+          )}
+        </div>
+      </ div>
+    </>
+  )
 }
 
 

@@ -41,6 +41,13 @@ export const getAllSpots = () => async (dispatch) => {
     dispatch(loadSpots(data));
 }
 
+// export const getAllSpotsByHost = (id) => async (dispatch) => {
+//     const response = await csrfFetch(`/api/users/${id}/host`);
+
+//     const data = await response.json();
+//     dispatch(loadSpots(data))
+// }
+
 export const getSpotById = (id) => async (dispatch) => {
     const response = await csrfFetch(`/api/spots/${id}`);
 

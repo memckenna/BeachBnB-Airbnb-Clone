@@ -1,0 +1,79 @@
+.host-spots-container {
+    margin-top: 150px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.hosting-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.your-reservations {
+    display: flex;
+
+}
+
+.reservation-count {
+    display: flex;
+    text-decoration: underline;
+
+}
+
+.host-each-spot-container {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+.host-spot-img-div {
+    display: flex;
+}
+
+.host-spot-image {
+    width: 200px;
+    height: 150px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.host-spot-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.host-spot-details-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.host-spot-details-link-div {
+    display: flex;
+    padding-left: 20px;
+}
+
+.host-spot-name, .host-spot-city {
+    font-size: 18px;
+}
+
+.manage-host-spot-detail-link {
+    /* border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px; */
+    text-decoration: none;
+    color: black;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+}
+
+.manage-host-spot-detail-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
