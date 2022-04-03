@@ -40,7 +40,6 @@ function Navigation({ isLoaded }) {
                     <div className='right-nav-div'>
                         <div className='login-signup-button'>{isLoaded && sessionLinks}</div>
                         {/* {isLoaded && sessionLinks} */}
-
                     </div>
                 </div>
             </nav>

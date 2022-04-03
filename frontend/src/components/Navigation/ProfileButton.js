@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, NavLink } from "react-router-dom";
+import { Route, NavLink, Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import BookingsPage from '../Bookings/index';
@@ -9,6 +9,7 @@ import SignupFormModal from "../SignupFormPage";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
+  const history = useHistory()
   const [showMenu, setShowMenu] = useState(false);
   const sessionUser = useSelector(state => state.session.user)
 
@@ -34,18 +35,6 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
-  // let sessionLinks;
-  // if (!user) {
-  //     sessionLinks = (
-  //         // <ProfileButton user={sessionUser} />
-  //         <>
-  //             <LoginFormModal />
-  //             <SignupFormModal />
-  //         </>
-  //     );
-  // }
-
-
   return (
     <>
       <div className="profile">
@@ -60,15 +49,16 @@ function ProfileButton({ user }) {
                 <div className="profile-username">{user.username}</div>
                 <div className="profile-email">{user.email}</div>
               </div> */}
-              {/* <li className="profile-links">
-                              <div className="profile-links">{isLoaded && sessionLinks}</div>
-                            </li> */}
               <div className="profile-user-trips">
-                <NavLink className="profile-links-trips" to={`/bookings`}>Trips</NavLink>
+                <div>
+                  <NavLink className="profile-links-trips" to={`/bookings`}>Trips</NavLink>
+                </div>
               </div>
               <div className="profile-user-hosting">
                 <div className="host-experience">
-                  <NavLink className="profile-links" to="/spot/new">Host an experience</NavLink>
+                  <div>
+                    <NavLink className="profile-links" to="/spot/new">Host an experience</NavLink>
+                  </div>
                 </div>
                 <div className="host-manage-listing">
                   <NavLink className="profile-links" to={`/hosting`} >Manage listings</NavLink>
@@ -77,15 +67,6 @@ function ProfileButton({ user }) {
               <div className="logout">
                 <div className="logout-button" onClick={logout}>Log out</div>
               </div>
-              {/* {!sessionUser ?
-                                <li className="profile-links logout">
-                                  <LoginFormModal />
-                                  <SignupFormModal />
-                                </li> :
-                                <li className="profile-links logout">
-                                      <button className="logout-button" onClick={logout}>Log Out</button>
-                                </li>
-                            } */}
             </div>
           )}
         </div>
