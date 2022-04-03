@@ -26,7 +26,7 @@ const TripInspiration = () => {
                     <NavLink className='trip-nav' to='/spots'>
                         <li>
                             <img src="images/HomePageImages/beach-water.png" />
-                            <div id="trip-img-3" className="image-content">Quite Beach Getaway</div>
+                            <div id="trip-img-3" className="image-content">Quiet Beach Getaway</div>
                         </li>
                     </NavLink>
                     <NavLink className='trip-nav' to='/spots'>
