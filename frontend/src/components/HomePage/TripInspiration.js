@@ -8,7 +8,6 @@ const TripInspiration = () => {
             <ul className="trip-inspo-cards-section">
                 <div>
                     <h2 className="trip-section-text">Inspiration for your next beach getaway</h2>
-
                 </div>
                 <div className="trip-inspo-cards">
                     <NavLink className='trip-nav' to='/spots'>
