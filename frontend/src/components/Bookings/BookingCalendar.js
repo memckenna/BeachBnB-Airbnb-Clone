@@ -1,6 +1,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
 import moment from "moment";
+// import { extendMoment } from 'moment-range';
 
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,17 +19,16 @@ const BookingCalendar = ({ spot }) => {
      const bookingObj = useSelector(state => state.bookingState.trips[id])
      const sessionUser = useSelector(state => state.session.user)
      console.log("BOOKING STATE", bookingObj)
+     console.log(spot?.Bookings)
 
      const [startDate, setStartDate] = useState(new Date());
      const [endDate, setEndDate] = useState(new Date());
      const [defaultShow, setDefaultShow] = useState("Add date")
-     // const [spotId, setSpotId] = useState(bookingObj?.spotId)
-     // const [userId, setUserId] = useState(sessionUser?.id)
      const [errors, setErrors] = useState([])
 
      const start = moment(startDate)
      const end = moment(endDate)
-     console.log(Math.round(moment.duration(end.diff(start)).asDays()))
+
 
      useEffect(() => {
           dispatch(getOneBooking(id))
@@ -42,6 +42,10 @@ const BookingCalendar = ({ spot }) => {
           setEndDate(date)
      }
 
+     // const startRange = moment(bookingObj?.startDate)
+     // const endRange = moment(bookingObj?.endDate)
+     // const availabilityRange = moment.range(startRange, endRange)
+     // console.log(availabilityRange)
      const createBooking = async (e) => {
           e.preventDefault()
 
@@ -82,6 +86,8 @@ const BookingCalendar = ({ spot }) => {
                                              startDate={startDate}
                                              endDate={endDate}
                                              minDate={new Date()}
+                                             // excludeDates={startDate, endDate}
+                                             // monthsShown="2"
                                              // onChange={date => setStartDate(date)}
                                              onChange={handleStartDate}
 
@@ -97,6 +103,8 @@ const BookingCalendar = ({ spot }) => {
                                              startDate={startDate}
                                              endDate={endDate}
                                              minDate={startDate}
+                                             // excludeDates={startDate, endDate}
+                                             // monthsShown="2"
                                              onChange={handleEndDate}
                                         // onChange={date => setEndDate(date)}
 

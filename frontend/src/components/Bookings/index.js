@@ -49,6 +49,14 @@ const BookingsPage = () => {
                 ))}
             </ul>
 
+            <h2 className='future-stay-text'>Current Trips</h2>
+            <ul className='bookings-container'>
+                {bookings?.map((booking) => (
+                    moment(new Date()).isBetween(booking?.startDate, booking?.endDate) &&
+                    <BookingDetails key={booking?.id} id={booking?.id} />
+                ))}
+            </ul>
+
             <h2 className='already-stayed-text'>Where you've been</h2>
             <ul className='bookings-container'>
                 {bookings?.map((booking) => (

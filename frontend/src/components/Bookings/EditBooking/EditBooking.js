@@ -15,14 +15,11 @@ const EditBooking = ({ onClose }) => {
     const { id } = useParams()
     const bookingObj = useSelector(state => state.bookingState.trips[id])
     const sessionUser = useSelector(state => state.session.user)
-    console.log(bookingObj.startDate)
     const [startDate, setStartDate] = useState(new Date(bookingObj.startDate));
     const [endDate, setEndDate] = useState(new Date(bookingObj.endDate));
     const start = moment(startDate)
     const end = moment(endDate)
-    // const [startDate, setStartDate] = useState(bookingObj.startDate);
-    // const [endDate, setEndDate] = useState(bookingObj.endDate);
-    console.log(new Date(bookingObj.endDate))
+
     useEffect(() => {
         dispatch(getOneBooking(id))
     }, [dispatch, id])
@@ -70,8 +67,6 @@ const EditBooking = ({ onClose }) => {
                                 endDate={endDate}
                                 minDate={new Date()}
                                 onChange={handleStartDate}
-                            // openToDate={}
-                            // onChange={newDate => setStartDate(newDate)}
                             />
                         </div>
                         <div className="checkout">
@@ -84,8 +79,6 @@ const EditBooking = ({ onClose }) => {
                                 endDate={endDate}
                                 minDate={startDate}
                                 onChange={handleEndDate}
-                            // onChange={newDate => setEndDate(newDate)}
-                            // openToDate={}
                             />
                         </div>
 
