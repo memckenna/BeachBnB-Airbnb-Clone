@@ -124,6 +124,8 @@ label {
     /* background-image: radial-gradient(circle, #FF385C 0%, #E61E4D 27.5%, #E31C5F 40%, #D70466 57.5%, #BD1E59 75%, #BD1E59 100% ); */
     /* background-image: radial-gradient(circle, rgba(0,109,119,1) 0%, rgba(226,149,120,1) 0%, rgba(131,197,190,1) 100%); */
     background-color: #006D77;
+    /* color: #006D77; */
+    /* background-color: white; */
     margin: 1em auto 1em;
     padding: 14px 24px 14px 24px;
 
@@ -148,7 +150,7 @@ label {
 
 .demo-user-modal-text {
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 22px;
 
 }
