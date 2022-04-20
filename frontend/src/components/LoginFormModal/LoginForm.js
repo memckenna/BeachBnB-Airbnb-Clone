@@ -22,7 +22,10 @@ function LoginForm() {
 
     return (
         <div className='login-container'>
-            <h1 className='login-header'>Log in or sign up</h1>
+            {/* <div className='login-header-exit'> */}
+                <h1 className='login-header'>Log in or sign up</h1>
+                {/* <i className="fas fa-times exit"></i> */}
+            {/* </div> */}
             <form className='login-form' onSubmit={handleSubmit}>
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
