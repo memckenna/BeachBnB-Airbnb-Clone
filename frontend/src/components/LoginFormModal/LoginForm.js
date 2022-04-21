@@ -23,7 +23,7 @@ function LoginForm({onClose}) {
     return (
         <div className='login-container'>
             <div className='login-header-exit'>
-                <h1 className='login-header'>Log in or sign up</h1>
+                <h1 className='login-header'>Log in</h1>
                 <i onClick={onClose} className="fas fa-times exit"></i>
             </div>
             <form className='login-form' onSubmit={handleSubmit}>

@@ -34,7 +34,7 @@ const SignupForm = ({onClose}) => {
         <div>
             <div className="signup-container">
                 <div className="signup-header-exit">
-                    <h1 className='signup-header'>Log in or sign up</h1>
+                    <h1 className='signup-header'>Sign up</h1>
                     <i onClick={onClose} className="fas fa-times exit"></i>
                 </div>
                 <form className="signup-form" onSubmit={handleSubmit}>
