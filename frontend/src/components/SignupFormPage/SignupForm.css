@@ -110,3 +110,16 @@ label {
     margin-bottom: 20px;
 
 }
+
+.signup-header-exit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 220px;
+    margin-right: 30px;
+}
+
+.exit {
+    font-size: 20px;
+}

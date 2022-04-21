@@ -6,7 +6,7 @@ import './SignupForm.css';
 
 
 
-const SignupForm = () => {
+const SignupForm = ({onClose}) => {
     const dispatch = useDispatch();
     // const sessionUser = useSelector((state) => state.session.user);
     const [email, setEmail] = useState("");
@@ -33,7 +33,10 @@ const SignupForm = () => {
     return (
         <div>
             <div className="signup-container">
-                <h1 className='signup-header'>Log in or sign up</h1>
+                <div className="signup-header-exit">
+                    <h1 className='signup-header'>Log in or sign up</h1>
+                    <i onClick={onClose} className="fas fa-times exit"></i>
+                </div>
                 <form className="signup-form" onSubmit={handleSubmit}>
                     <ul className="errors">
                         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
