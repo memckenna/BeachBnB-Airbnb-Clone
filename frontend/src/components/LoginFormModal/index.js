@@ -11,12 +11,16 @@ function LoginFormModal() {
   const [credential, setCredential] = useState("Demo-lition")
   const [password, setPassword] = useState("password")
 
+  const onClose = () => {
+    setShowModal(false)
+  }
+
   return (
     <>
       <button id='log-in-nav-button' onClick={() => setShowModal(true)}>Log In</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
-          <LoginForm />
+          <LoginForm onClose={onClose} />
           <div className='demo-user-modal'>
             <div className='demo-user-modal-text'>
               Log in as a Demo User

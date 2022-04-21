@@ -165,13 +165,7 @@ router.delete("/:id", asyncHandler(async (req, res, next) => {
 }));
 
 
-// router.post("/:id/likes", asyncHandler( async(req, res, next) => {
-//     const { userId }
-// }));
 
-// router.delete("/:id/likes", asyncHandler( async(req, res, next) => {
-
-// }))
 
 
 module.exports = router;

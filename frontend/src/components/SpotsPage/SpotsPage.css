@@ -248,6 +248,8 @@
     max-width: 1400px;
     background-color: white;
     flex-shrink: 1;
+    box-sizing: border-box;
+
 }
 
 .spot-detail-page {

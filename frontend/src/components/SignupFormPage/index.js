@@ -10,12 +10,16 @@ import './SignupForm.css';
 const SignupFormModal = () => {
     const [showModal, setShowModal] = useState(false);
 
+    const onClose = () => {
+      setShowModal(false)
+    }
+
     return (
         <>
           <button id="sign-up-nav-button" onClick={() => setShowModal(true)}>Sign Up</button>
           {showModal && (
             <Modal onClose={() => setShowModal(false)}>
-              <SignupForm />
+              <SignupForm onClose={onClose} />
             </Modal>
           )}
         </>

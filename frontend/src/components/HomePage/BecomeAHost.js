@@ -12,7 +12,6 @@ const BecomeAHost = ({ isLoaded }) => {
         history.push("/spot/new")
     }
 
-
     return (
         <div className='become-a-host-section'>
             <div className="hosting-section">
