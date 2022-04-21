@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import './LoginForm.css';
 
-function LoginForm() {
+function LoginForm({onClose}) {
     const dispatch = useDispatch();
     const [credential, setCredential] = useState('');
     const [password, setPassword] = useState('');
@@ -22,10 +22,10 @@ function LoginForm() {
 
     return (
         <div className='login-container'>
-            {/* <div className='login-header-exit'> */}
+            <div className='login-header-exit'>
                 <h1 className='login-header'>Log in or sign up</h1>
-                {/* <i className="fas fa-times exit"></i> */}
-            {/* </div> */}
+                <i onClick={onClose} className="fas fa-times exit"></i>
+            </div>
             <form className='login-form' onSubmit={handleSubmit}>
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}

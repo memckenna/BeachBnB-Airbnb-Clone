@@ -159,7 +159,7 @@ label {
     background-color: white;
 }
 
-/* .login-header-exit {
+.login-header-exit {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -170,4 +170,4 @@ label {
 
 .exit {
     font-size: 20px;
-} */
+}
