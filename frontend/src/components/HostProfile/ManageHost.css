@@ -71,6 +71,7 @@
     text-decoration: none;
     color: black;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-weight: 700;
 }
 
 .manage-host-spot-detail-link:hover {
