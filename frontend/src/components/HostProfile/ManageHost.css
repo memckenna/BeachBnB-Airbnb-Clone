@@ -61,6 +61,8 @@
 
 .host-spot-name, .host-spot-city {
     font-size: 18px;
+    padding-bottom: 6px;
+    font-weight: 400;
 }
 
 .manage-host-spot-detail-link {
