@@ -95,8 +95,13 @@ const CreateNewSpot = () => {
     return (
         <div className="input-form-div">
             <div className="new-spot-form">
-                <h1>Create your listing</h1>
-                <h3 className="please-provide-details">To create your listing, please provide the following details:</h3>
+                <div className="create-listing-text">
+                    <h1>To become a host:</h1>
+                    <h2>Create your listing</h2>
+                    <h3 className="please-provide-details">1. To create your listing, please provide the requested details about your home</h3>
+                    <h3 className="please-provide-details">2. Once you have completed the form, press Submit</h3>
+                    <h3 className="please-provide-details">3. After you submit the form, you will be redirected to your listings detail page where you will have the ability to manage your listing</h3>
+                </div>
                 {errors.length ?
                     <ul className="errors">
                         {errors.length > 0 &&
