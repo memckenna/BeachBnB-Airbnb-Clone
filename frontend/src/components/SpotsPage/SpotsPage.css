@@ -188,6 +188,11 @@
     flex-wrap: wrap;
 }
 
+.become-host-detail-heading {
+    margin-top: 60px;
+    font-size: 22px;
+}
+
 .please-provide-details {
     font-weight: 400;
     font-size: 16px;
@@ -253,6 +258,7 @@
     box-shadow: rgb(0 0 0 / 20%) 0px 8px 28px;
     margin: 10px 10px 10px 10px;
     width: 520px;
+    cursor: pointer;
 }
 
 .form-header {
