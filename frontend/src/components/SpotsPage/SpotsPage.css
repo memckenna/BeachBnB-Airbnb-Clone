@@ -166,7 +166,7 @@
     /* align-items: center; */
     /* flex-direction: column; */
     /* margin-left: 20px; */
-    /* margin-top: 100px; */
+    margin-top: 100px;
     /* margin-top: 200px; */
 }
 
@@ -178,6 +178,10 @@
 
 }
 
+.please-provide-details {
+    font-weight: 400;
+
+}
 .create-new-listing-form {
     /* display: grid; */
 }
