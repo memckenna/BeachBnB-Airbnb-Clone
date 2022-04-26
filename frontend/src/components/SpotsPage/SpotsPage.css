@@ -186,11 +186,17 @@
     margin-right: 80px;
     margin-left: 80px;
     flex-wrap: wrap;
+    /* color: #006D77; */
+}
+
+.errors {
+    color: #006D77;
+    
 }
 
 .become-host-detail-heading {
-    margin-top: 60px;
-    font-size: 22px;
+    margin-top: 50px;
+    font-size: 21px;
 }
 
 .please-provide-details {
