@@ -170,6 +170,7 @@
     /* margin-top: 200px; */
     margin-left: 40px;
     margin-right: 40px;
+    margin-bottom: 150px;
 }
 
 .new-spot-form {
@@ -191,7 +192,7 @@
 
 .errors {
     color: #006D77;
-    
+
 }
 
 .become-host-detail-heading {
