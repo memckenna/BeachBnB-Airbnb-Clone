@@ -95,15 +95,24 @@ const CreateNewSpot = () => {
     return (
         <div className="input-form-div">
             <div className="new-spot-form">
-                <h1 className="form-header">Create New Listing</h1>
-                <ul className="errors">
-                    {errors.length > 0 &&
-                        errors.map((error) => (
-                            <li key={error}>{error}</li>
-                        ))}
-                </ul>
-                <h2>Create your listing</h2>
+                <div className="create-listing-text">
+                    <h1>To become a host:</h1>
+                    <h2 className="become-host-detail-heading">Create your listing</h2>
+                    <h3 className="please-provide-details">1. To create your listing, please provide the requested details about your home</h3>
+                    <h3 className="please-provide-details">2. Once you have completed the form, press Submit</h3>
+                    <h2 className="become-host-detail-heading">Manage your listing</h2>
+                    <h3 className="please-provide-details">1. After you submit the form, you will be redirected to your listings detail page where you will have the ability to manage your listing</h3>
+                </div>
                 <form className="create-new-listing-form" onSubmit={handleSubmit}>
+                {errors.length ?
+                    <ul className="errors">
+                        {errors.length > 0 &&
+                            errors.map((error) => (
+                                <li key={error}>{error}</li>
+                            ))}
+                    </ul> :
+                    <></>
+                }
                     <label className='top-edit-labels'>home name</label>
                     <input
                         className="input-box"
