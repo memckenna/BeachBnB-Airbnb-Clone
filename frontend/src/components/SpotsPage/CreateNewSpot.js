@@ -95,14 +95,13 @@ const CreateNewSpot = () => {
     return (
         <div className="input-form-div">
             <div className="new-spot-form">
-                <h1 className="form-header">Create New Listing</h1>
                 <ul className="errors">
                     {errors.length > 0 &&
                         errors.map((error) => (
                             <li key={error}>{error}</li>
                         ))}
                 </ul>
-                <h2>Create your listing</h2>
+                <h1>Create your listing</h1>
                 <form className="create-new-listing-form" onSubmit={handleSubmit}>
                     <label className='top-edit-labels'>home name</label>
                     <input
