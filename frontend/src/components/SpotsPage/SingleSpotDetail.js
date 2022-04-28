@@ -21,7 +21,6 @@ const SingleSpotDetailPage = () => {
     // const bookingObj = useSelector(state => state.bookingState.trips[id])
     // const reviewObj = useSelector(state => state.reviewState)
     // const reviews = Object.values(reviewObj)
-    console.log("SINGLE SPOT", oneSpot)
 
 
     useEffect(() => {
