@@ -11,7 +11,6 @@ const SpotsBrowserPage = () => {
     // const { spotId } = useParams();
     const spotsObject = useSelector(state => state.spotState.listings);
     const spots = Object.values(spotsObject);
-    console.log("SPOTSSSS", spots)
 
     useEffect(() => {
         dispatch(getAllSpots());
