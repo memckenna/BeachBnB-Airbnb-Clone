@@ -22,7 +22,7 @@ router.get('/', requireAuth, asyncHandler( async(req, res) => {
         },
 
     });
-    console.log("BOOKINGS", bookings)
+   
 
     if(!req.user) {
         const error = new Error("Must log in to access bookings");
