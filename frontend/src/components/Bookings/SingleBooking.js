@@ -15,7 +15,6 @@ const SingleBookingDetails = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const { id } = useParams();
-    console.log(id)
     const oneBooking = useSelector(state => state.bookingState.trips[id]);
 
     // const oneSpot = useSelector(state => state.spotState)
