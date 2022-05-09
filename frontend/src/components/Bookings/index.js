@@ -12,13 +12,11 @@ const BookingsPage = () => {
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const spots = useSelector(state => state.spotState)
-    console.log(spots.listings)
-    // console.log(sessionUser)
+
     const bookingsObject = useSelector(state => state.bookingState.trips)
     const bookings = Object.values(bookingsObject);
-    console.log('bookings object', bookingsObject)
+
     const bookingById = bookings?.map(booking => booking.id)
-    console.log(bookingById)
 
     if (!sessionUser) {
         window.alert("You must be signed in to access bookings")
