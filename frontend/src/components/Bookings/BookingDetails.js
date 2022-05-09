@@ -15,9 +15,6 @@ const BookingDetails = ({id}) => {
     const bookings = Object.values(bookingsObject);
     const oneSpot = useSelector(state => state.spotState.listings[id]);
     // const spot = useSelector(state => state.spotState)
-    // console.log("SPOT STATE", spot)
-    // console.log("SPOTTTTT", oneSpot)
-    // console.log("BOOKING DETAIL", bookingDetail);
 
     const onClick = () => {
         history.push(`/bookings/${id}`)
