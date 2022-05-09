@@ -18,8 +18,6 @@ const SingleBookingDetails = () => {
     const oneBooking = useSelector(state => state.bookingState.trips[id]);
 
     // const oneSpot = useSelector(state => state.spotState)
-    // console.log("THIS IS ONE SPOT" , oneSpot)
-    console.log("booking state", oneBooking)
 
     useEffect(() => {
         dispatch(getOneBooking(id))
