@@ -84,13 +84,16 @@ const EditSpotForm = ({onClose}) => {
         <div className="input-form-div">
             <div className="new-spot-form">
                 <h1 className="form-header">Edit Your Listing</h1>
-                <ul className="errors">
-                    {errors.length > 0 &&
-                        errors.map((error) => (
-                            <li key={error}>{error}</li>
-                        ))}
-                </ul>
                 <form onSubmit={handleSubmit}>
+                    {errors.length ?
+                        <ul className="errors">
+                            {errors.length > 0 &&
+                                errors.map((error) => (
+                                    <li key={error}>{error}</li>
+                                ))}
+                        </ul> :
+                        <></>
+                    }
                     <label className='top-edit-labels'>home name</label>
                     <input
                         className="top-input-box"
