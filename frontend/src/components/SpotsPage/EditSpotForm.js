@@ -82,9 +82,6 @@ const EditSpotForm = ({onClose}) => {
 
     return (
         <div className="edit-input-form-div">
-            <div className='exit-div'>
-                <i className="fas fa-times exit"></i>
-            </div>
             <div className="edit-spot-form">
                 <h1 className="form-header">Edit Your Listing</h1>
                 <form onSubmit={handleSubmit}>
