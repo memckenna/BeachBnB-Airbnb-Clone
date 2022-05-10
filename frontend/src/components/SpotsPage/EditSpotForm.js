@@ -4,6 +4,8 @@ import { NavLink, Route } from 'react-router-dom';
 import { useHistory, useParams } from 'react-router-dom';
 import { updateASpot } from '../../store/spotReducer';
 
+import './SpotsPage.css';
+
 const EditSpotForm = ({onClose}) => {
 
     const { id } = useParams();
