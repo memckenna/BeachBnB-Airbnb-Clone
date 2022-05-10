@@ -157,7 +157,7 @@
 
 
 
-/* Edit Spot Form  */
+/* Create and Edit Spot Form  */
 
 .input-form-div {
     display: flex;
@@ -177,6 +177,26 @@
     display: flex;
     /* flex-direction: column; */
     /* align-items: center; */
+    /* width: 500px; */
+
+}
+.edit-input-form-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    /* align-items: center; */
+    /* flex-direction: column; */
+    /* margin-left: 20px; */
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+}
+
+.edit-spot-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     /* width: 500px; */
 
 }

@@ -81,8 +81,8 @@ const EditSpotForm = ({onClose}) => {
     }
 
     return (
-        <div className="input-form-div">
-            <div className="new-spot-form">
+        <div className="edit-input-form-div">
+            <div className="edit-spot-form">
                 <h1 className="form-header">Edit Your Listing</h1>
                 <form onSubmit={handleSubmit}>
                     {errors.length ?
