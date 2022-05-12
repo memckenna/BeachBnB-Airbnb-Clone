@@ -15,7 +15,7 @@ const GetAllReviewsOnSpot = ({ id }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const oneSpot = useSelector(state => state.spotState.listings[id])
-    console.log("GET ALL ONE SPOT", oneSpot)
+  
     const reviewObj = useSelector(state => state.reviewState)
     const reviews = Object.values(reviewObj)
 
