@@ -17,13 +17,11 @@ const ManageHostSpots = () => {
     const user = useSelector(state => state.userState[1])
 
     // const oneSpot = useSelector(state => state.spotState.listings)
- 
 
     const userSpot = user?.Spots.map((spot) => {
         console.log(spot)
         return spot
     })
-    console.log(userSpot)
 
     useEffect(() => {
         dispatch(loadUserHostedSpots(sessionUser?.id))
