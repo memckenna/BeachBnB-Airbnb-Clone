@@ -13,11 +13,11 @@ const ManageHostSpots = () => {
     const dispatch = useDispatch();
     const history = useDispatch();
     const sessionUser = useSelector(state => state.session.user)
-    console.log(sessionUser)
+
     const user = useSelector(state => state.userState[1])
-    console.log(user)
+
     // const oneSpot = useSelector(state => state.spotState.listings)
-    // console.log(oneSpot)
+ 
 
     const userSpot = user?.Spots.map((spot) => {
         console.log(spot)
