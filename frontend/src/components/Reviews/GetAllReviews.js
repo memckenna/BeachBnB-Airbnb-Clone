@@ -18,8 +18,7 @@ const GetAllReviewsOnSpot = ({ id }) => {
     console.log("GET ALL ONE SPOT", oneSpot)
     const reviewObj = useSelector(state => state.reviewState)
     const reviews = Object.values(reviewObj)
-    // console.log("GET ALL REVIEWS", reviewObj)
-    console.log(reviews)
+
     useEffect(() => {
         dispatch(getAllSpotReviews())
         // dispatch(getSpotById(id))
