@@ -11,7 +11,6 @@ const EditAReview = ({ spotId, reviewId, reviewObj, onClose }) => {
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user);
     // const reviewObj = useSelector(state => state.reviewState)
-    // console.log(reviewObj)
 
     const [review, setReview] = useState(reviewObj?.review);
     const [disabled, setDisabled] = useState(true);
