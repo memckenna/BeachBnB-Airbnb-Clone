@@ -44,7 +44,6 @@ const ManageHostSpots = () => {
             {user?.Spots?.map(spot => (
                 sessionUser?.id === user?.id &&
                     <div key={spot?.id} className='host-each-spot-container'>
-                        {console.log(spot)}
                         <div className='host-spot-img-div'>
                         <NavLink  to={`spots/${spot?.id}`}>
                             <img className='host-spot-image' src={spot?.Images[0]?.url} />
