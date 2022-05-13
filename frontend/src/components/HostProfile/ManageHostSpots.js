@@ -19,7 +19,6 @@ const ManageHostSpots = () => {
     // const oneSpot = useSelector(state => state.spotState.listings)
 
     const userSpot = user?.Spots.map((spot) => {
-        console.log(spot)
         return spot
     })
 
