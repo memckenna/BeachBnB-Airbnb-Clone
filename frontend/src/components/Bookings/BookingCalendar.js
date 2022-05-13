@@ -44,7 +44,7 @@ const BookingCalendar = ({ spot }) => {
      // const startRange = moment(bookingObj?.startDate)
      // const endRange = moment(bookingObj?.endDate)
      // const availabilityRange = moment.range(startRange, endRange)
-     // console.log(availabilityRange)
+
      const createBooking = async (e) => {
           e.preventDefault()
 
