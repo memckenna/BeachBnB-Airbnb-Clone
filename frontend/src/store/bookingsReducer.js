@@ -51,7 +51,7 @@ export const createNewBooking = (booking) => async(dispatch) => {
 
     const newBooking = await response.json();
     dispatch(createANewBooking(newBooking));
-    console.log("NEW BOOKING THUNK", newBooking)
+    // console.log("NEW BOOKING THUNK", newBooking)
 }
 
 // -------------------- UPDATE -------------------- //
