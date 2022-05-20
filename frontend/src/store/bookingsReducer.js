@@ -105,7 +105,7 @@ const bookingReducer = (state = initialState, action) => {
             return newState;
         case LOAD_ONE_BOOKING:
             newState = {...state}
-            console.log("ONE BOOKING STATE", newState)
+            // console.log("ONE BOOKING STATE", newState)
             newState.trips[action.booking.id] = action.booking;
             return newState;
         case CREATE_NEW_BOOKING:
