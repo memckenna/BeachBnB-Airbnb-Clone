@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 import moment from "moment";
 
-
 import './Bookings.css';
 
 const BookingDetails = ({id}) => {
