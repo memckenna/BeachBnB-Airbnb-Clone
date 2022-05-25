@@ -18,8 +18,6 @@ const BookingCalendar = ({ spot }) => {
      const { id } = useParams()
      const bookingObj = useSelector(state => state.bookingState.trips[id])
      const sessionUser = useSelector(state => state.session.user)
-
-
      const [startDate, setStartDate] = useState(new Date());
      const [endDate, setEndDate] = useState(new Date());
      const [defaultShow, setDefaultShow] = useState("Add date")
