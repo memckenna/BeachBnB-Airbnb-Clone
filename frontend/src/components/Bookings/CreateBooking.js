@@ -3,7 +3,6 @@
 // import { useDispatch, useSelector } from 'react-redux';
 // import { NavLink, Route, useParams, useHistory } from 'react-router-dom';
 
-
 // const CreateNewBooking = () => {
 //     const dispatch = useDispatch();
 //     const history = useHistory();
