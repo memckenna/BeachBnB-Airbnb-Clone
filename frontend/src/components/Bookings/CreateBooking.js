@@ -8,9 +8,6 @@
 //     const dispatch = useDispatch();
 //     const history = useHistory();
 
-
-
-
 //     const createBooking = async (e) => {
 //         e.preventDefault()
 
