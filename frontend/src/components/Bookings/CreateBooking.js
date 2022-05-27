@@ -15,7 +15,6 @@
 //         const booking = await dispatch(createNewBooking(newBooking))
 //         if (booking) {
 //             history.push(`/bookings/${booking.id}`)
-
 //         }
 //     }
 
