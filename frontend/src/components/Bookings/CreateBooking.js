@@ -9,7 +9,6 @@
 
 //     const createBooking = async (e) => {
 //         e.preventDefault()
-
 //         const newBooking = { startDate, endDate };
 
 //         const booking = await dispatch(createNewBooking(newBooking))
