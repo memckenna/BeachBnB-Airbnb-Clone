@@ -22,7 +22,6 @@
 //             <div className='booking-section'>
 //                 <div className='booking'>
 //                     <div className='booking-calendar'>
-
 //                         <BookingCalendar />
 //                     </div>
 //                     <div className='reserve'>

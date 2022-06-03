@@ -5,7 +5,6 @@
 .edit-reservations-header {
     display: flex;
     justify-content: center;
-
 }
 
 .edit-booking-calendar {
@@ -36,7 +35,6 @@
     padding-left: 5px;
     padding-top: 4px;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-
 }
 
 .edit-booking-calendar-dates {
