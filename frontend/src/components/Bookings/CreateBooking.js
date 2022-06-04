@@ -16,7 +16,6 @@
 //             history.push(`/bookings/${booking.id}`)
 //         }
 //     }
-
 //     return (
 //         <>
 //             <div className='booking-section'>
