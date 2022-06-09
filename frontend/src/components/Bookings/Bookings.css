@@ -334,7 +334,6 @@
     align-items: flex-start;
     width: 50%;
     padding-left: 10px;
-
 }
 
 .single-checkin {
@@ -359,7 +358,6 @@
     display: flex;
     flex-direction: column;
     padding-left: 20px;
-
 }
 
 .single-checkout {
@@ -384,7 +382,6 @@
     text-align: left;
     font-size: 14px;
     border-right: 1px solid lightgray;
-
 }
 
 .checkout {
