@@ -485,7 +485,6 @@
     justify-content: space-between;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
-
 }
 
 .delete-event-button {
@@ -493,5 +492,4 @@
     font-size: 16px;
     font-weight: bolder;
     border-radius: 20px;
-
 }
