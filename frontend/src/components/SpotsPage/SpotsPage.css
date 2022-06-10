@@ -394,14 +394,13 @@
 .home-details {
     display: flex;
     height: auto;
-
 }
+
 .details-header {
     padding: 0px 10px 0px 10px;
     font-size: 22px;
     font-weight: 500;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-
 }
 
 .single-bed-bath {
@@ -413,7 +412,6 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-size: 16px;
     font-weight: 300;
-
 }
 
 .baths {
