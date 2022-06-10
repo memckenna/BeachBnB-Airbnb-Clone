@@ -419,7 +419,6 @@
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
     font-size: 16px;
     font-weight: 300;
-
 }
 
 .single-dot-separator {
@@ -427,7 +426,6 @@
     padding-top: 10px;
     padding-left: 2px;
 }
-
 
 .single-spot-price {
     display: flex;
@@ -448,8 +446,6 @@
     justify-content: space-between;
     width: 100%;
     height: auto;
-
-
 }
 
 .calendar-edit-section {
@@ -459,7 +455,6 @@
     position: sticky;
     top: 110px;
     height: auto;
-
 }
 
 .edit-delete-button-div {
@@ -506,7 +501,6 @@
     display: flex;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
-
 }
 
 .delete-listing-button {
@@ -554,7 +548,6 @@
 .stay-info p {
     font-size: 14px;
     font-weight: 300;
-
 }
 
 .home-description {
@@ -571,7 +564,6 @@
     flex-direction: column;
     width: 100%;
     border-top: 1px solid lightgray;
-
 }
 
 .single-spot-where-header {
@@ -579,7 +571,6 @@
     font-size: 22px;
     font-weight: 500;
     font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-
 }
 
 .single-spot-where-address-div {
