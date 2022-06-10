@@ -320,7 +320,6 @@
     flex-direction: column;
     width: 100%;
     align-items: flex-start;
-
 }
 
 .single-spot-name {
@@ -335,7 +334,6 @@
     font-size: 14px;
     padding: 0px 0px 12px 0px;
     color: gray;
-
 }
 
 .spot-images-multiple-div {
@@ -345,7 +343,6 @@
 
 .spot-images-multiple-div-left {
     display: flex;
-
 }
 
 .spot-images-multiple-div-right {
@@ -374,7 +371,6 @@
     display: flex;
     width: 100%;
     border-radius: 10px;
-
 }
 
 .spot-images {
