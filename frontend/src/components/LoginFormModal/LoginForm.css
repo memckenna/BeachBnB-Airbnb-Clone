@@ -21,17 +21,14 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     width: 568px;
     height: 450px;
     border-top: 1px solid lightgray;
     /* margin: 1% auto; */
-
     position: relative;
     /* box-shadow: rgb(0 0 0 / 10%) 0px 8px 28px; */
     flex: 1 1 auto;
     overflow-y: auto;
-
 }
 
 .login-container {
